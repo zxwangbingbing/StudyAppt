@@ -1,0 +1,6 @@
+{
+	"usingComponents": {},
+	"enablePullDownRefresh": true,
+	"backgroundTextStyle": "dark",
+	"navigationBarTitleText": "校友详情"
+}

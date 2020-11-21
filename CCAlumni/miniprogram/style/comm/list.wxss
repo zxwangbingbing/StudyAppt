@@ -1,0 +1,306 @@
+/* ==================
+          列表
+ ==================== */
+ .grayscale {
+	filter: grayscale(1);
+}
+
+.comm-list+.comm-list {
+	margin-top: 30rpx
+}
+
+.comm-list>.item {
+	transition: all .6s ease-in-out 0s;
+	transform: translateX(0rpx)
+}
+
+.comm-list>.item.move-cur {
+	transform: translateX(-260rpx)
+}
+
+.comm-list>.item .move {
+	position: absolute;
+	right: 0;
+	display: flex;
+	width: 260rpx;
+	height: 100%;
+	transform: translateX(100%)
+}
+
+.comm-list>.item .move view {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center
+}
+
+.comm-list.menu-avatar {
+	overflow: hidden;
+}
+
+.comm-list.menu-avatar>.item {
+	position: relative;
+	display: flex;
+	padding-right: 10rpx;
+	height: 140rpx;
+	background-color: var(--white);
+	justify-content: flex-end;
+	align-items: center
+}
+
+.comm-list.menu-avatar>.item>.avatar {
+	position: absolute;
+	left: 30rpx
+}
+
+.comm-list.menu-avatar>.item .flex .text-cut {
+	max-width: 510rpx
+}
+
+.comm-list.menu-avatar>.item .content {
+	position: absolute;
+	left: 146rpx;
+	width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
+	line-height: 1.6em;
+}
+
+.comm-list.menu-avatar>.item .content.flex-sub {
+	width: calc(100% - 96rpx - 60rpx - 20rpx);
+}
+
+.comm-list.menu-avatar>.item .content>view:first-child {
+	font-size: 30rpx;
+	display: flex;
+	align-items: center
+}
+
+.comm-list.menu-avatar>.item .content .tag.small {
+	display: inline-block;
+	margin-left: 10rpx;
+	height: 28rpx;
+	font-size: 16rpx;
+	line-height: 32rpx
+}
+
+.comm-list.menu-avatar>.item .action {
+	width: 100rpx;
+	text-align: center
+}
+
+.comm-list.menu-avatar>.item .action view+view {
+	margin-top: 10rpx
+}
+
+.comm-list.menu-avatar.comment>.item .content {
+	position: relative;
+	left: 0;
+	width: auto;
+	flex: 1;
+}
+
+.comm-list.menu-avatar.comment>.item {
+	padding: 30rpx 30rpx 30rpx 120rpx;
+	height: auto
+}
+
+.comm-list.menu-avatar.comment .avatar {
+	align-self: flex-start
+}
+
+.comm-list.menu>.item {
+	position: relative;
+	display: flex;
+	padding: 0 30rpx;
+	min-height: 100rpx;
+	background-color: var(--white);
+	justify-content: space-between;
+	align-items: center
+}
+
+.comm-list.menu>.item:last-child:after {
+	border: none
+}
+
+.comm-list.menu>.item:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 200%;
+	height: 200%;
+	border-bottom: 1rpx solid #ddd;
+	border-radius: inherit;
+	content: " ";
+	transform: scale(.5);
+	transform-origin: 0 0;
+	pointer-events: none
+}
+
+.comm-list.menu>.item.grayscale {
+	background-color: #f5f5f5
+}
+
+.comm-list.menu>.item.cur {
+	background-color: #fcf7e9
+}
+
+.comm-list.menu>.item.arrow {
+	padding-right: 90rpx
+}
+
+.comm-list.menu>.item.arrow:before {
+	position: absolute;
+	top: 0;
+	right: 30rpx;
+	bottom: 0;
+	display: block;
+	margin: auto;
+	width: 30rpx;
+	height: 30rpx;
+	color: var(--grey);
+	content: "\e6a3";
+	text-align: center;
+	font-size: 34rpx;
+	font-family: "icon";
+	line-height: 30rpx
+}
+
+.comm-list.menu>.item button.content {
+	padding: 0;
+	background-color: transparent;
+	justify-content: flex-start
+}
+
+.comm-list.menu>.item button.content:after {
+	display: none
+}
+
+.comm-list.menu>.item .avatar-group .avatar {
+	border-color: var(--white)
+}
+
+.comm-list.menu>.item .content>view:first-child {
+	display: flex;
+	align-items: center
+}
+
+.comm-list.menu>.item .content>text[class*=icon] {
+	display: inline-block;
+	margin-right: 10rpx;
+	width: 1.6em;
+	text-align: center
+}
+
+.comm-list.menu>.item .content>image {
+	display: inline-block;
+	margin-right: 10rpx;
+	width: 1.6em;
+	height: 1.6em;
+	vertical-align: middle
+}
+
+.comm-list.menu>.item .content {
+	font-size: 30rpx;
+	line-height: 1.6em;
+	flex: 1
+}
+
+.comm-list.menu>.item .content .tag.small {
+	display: inline-block;
+	margin-left: 10rpx;
+	height: 28rpx;
+	font-size: 16rpx;
+	line-height: 32rpx
+}
+
+.comm-list.menu>.item .action .tag:empty {
+	right: 10rpx
+}
+
+.comm-list.menu {
+	display: block;
+	overflow: hidden
+}
+
+.comm-list.menu.small-border>.item:after {
+	left: 30rpx;
+	width: calc(200% - 120rpx)
+}
+
+.comm-list.grid>.item {
+	position: relative;
+	display: flex;
+	padding: 20rpx 0 30rpx;
+	transition-duration: 0s;
+	flex-direction: column
+}
+
+.comm-list.grid>.item:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 200%;
+	height: 200%;
+	border-right: 1px solid rgba(0, 0, 0, .1);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	border-radius: inherit;
+	content: " ";
+	transform: scale(.5);
+	transform-origin: 0 0;
+	pointer-events: none
+}
+
+.comm-list.grid>.item text {
+	display: block;
+	margin-top: 10rpx;
+	color: #888;
+	font-size: 26rpx;
+	line-height: 40rpx
+}
+
+.comm-list.grid>.item [class*=icon] {
+	position: relative;
+	display: block;
+	margin-top: 20rpx;
+	width: 100%;
+	font-size: 48rpx
+}
+
+.comm-list.grid>.item .tag {
+	right: auto;
+	left: 50%;
+	margin-left: 20rpx
+}
+
+.comm-list.grid {
+	background-color: var(--white);
+	text-align: center
+}
+
+.comm-list.grid.no-border>.item {
+	padding-top: 10rpx;
+	padding-bottom: 20rpx
+}
+
+.comm-list.grid.no-border>.item:after {
+	border: none
+}
+
+.comm-list.grid.no-border {
+	padding: 20rpx 10rpx
+}
+
+.comm-list.grid.col-3>.item:nth-child(3n):after,
+.comm-list.grid.col-4>.item:nth-child(4n):after,
+.comm-list.grid.col-5>.item:nth-child(5n):after {
+	border-right-width: 0
+}
+
+.comm-list.card-menu {
+	overflow: hidden;
+	margin-right: 30rpx;
+	margin-left: 30rpx;
+	border-radius: 20rpx
+}
+

@@ -1,0 +1,7 @@
+{
+	"usingComponents": { 
+	},
+	"enablePullDownRefresh": true,
+	"backgroundTextStyle": "dark",
+	"navigationBarTitleText": "互助详情"
+}

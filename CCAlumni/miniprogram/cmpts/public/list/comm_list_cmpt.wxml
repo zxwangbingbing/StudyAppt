@@ -1,0 +1,57 @@
+<view class="top_bar bar search fixed flex-direction" wx:if="{{isTotalMenu}}">
+	<!-- search form BEGIN -->
+	<view class="bar search bg-white " style="width:100%">
+		<view class="search-form round">
+			<text class="icon-search"></text>
+			<input type="text" maxlength="30" value="{{search}}" placeholder="{{placeholder}}" disabled='true' bindtap="bindSearchTap"></input>
+			<view wx:if="{{search}}" class="text-large" bindtap="bindSearchClearTap">
+				<text class="icon-roundclose text-right  text-gray"></text>
+			</view>
+		</view>
+		<slot name="searchEnd" />
+	</view>
+	<!-- search form END-->
+
+	<!-- sort begin-->
+	<view class='tabs bg-white' style="width:100%;padding:0 20rpx;" wx:if="{{sortItems.length || sortMenus.length}}">
+		<!-- pulldown menu begin-->
+		<view wx:for="{{sortItems}}" wx:key="key" bindtap='bindSortTap' class="tab {{sortIndex == index ? 'text-darkgreen cur color-'+skin : ''}} " data-index="{{index}}">
+			<text>{{ index==sortIndex && item.items[sortItemIndex] ? item.items[sortItemIndex].label: item.items[0].label}}</text>
+			<text class="icon-{{item.show?'fold':'unfold'}} large text-black"></text>
+		</view>
+		<!-- pulldown menu end-->
+
+		<!-- sort menu begin-->
+		<scroll-view scroll-left="0" scroll-x="true"  style="white-space: nowrap;">
+			<view  bindtap="bindSortTap"  wx:for="{{sortMenus}}" wx:key="key" class="list-scroll-view tab tab-menu {{sortIndex == index+5 ? 'text-darkgreen cur after-'+skin+' color-'+skin : ''}}  " data-index="{{index+5}}">{{item.label}}</view>
+		</scroll-view>
+		<!-- sort menu end-->
+
+		<slot name="menuEnd" />
+
+		<!-- pulldown detail begin--> 
+		<block wx:for="{{sortItems}}" wx:for-index="index" wx:key="key"> 
+			<view class='sort' catchtouchmove="move" bindtap='bindSortItemTap' wx:if="{{item.show}}">
+				<view class="sort-item  {{idx == sortItemIndex && index == sortIndex ? 'text-darkgreen cur color-'+skin : ''}}  " wx:for="{{item.items}}" wx:key="key" wx:for-item="its" data-idx="{{idx}}" wx:key="key" wx:for-index="idx">{{its.label}}</view>
+			</view> 
+		</block> 
+		<!-- pulldown detail end-->
+
+	</view>
+	<!-- sort end -->
+
+</view>
+
+<view wx:if="{{!isTotalMenu}}" class="box-list" style="height:(100vh);margin-top:0rpx;">
+	<scroll-view    refresher-enabled="true" refresher-triggered="{{refresherTriggered}}" scroll-y="true" class="box-list-scroll" bindrefresherrefresh='bindPullDownRefresh' bindscrolltolower='bindReachBottom' scroll-top='{{topNum}}' bindscroll="bindScrollTop">
+		<slot  />  
+	</scroll-view>
+</view>
+
+<view wx:if="{{isTotalMenu}}" class="box-list" style="height:calc(100vh - {{(!sortItems.length && !sortMenus.length)? '110' : '190'}}rpx);margin-top:{{(!sortItems.length && !sortMenus.length)? '110' : '190'}}rpx">
+	<scroll-view    refresher-enabled="true" refresher-triggered="{{refresherTriggered}}" scroll-y="true" class="box-list-scroll" bindrefresherrefresh='bindPullDownRefresh' bindscrolltolower='bindReachBottom' scroll-top='{{topNum}}' bindscroll="bindScrollTop">
+		<slot  />   
+	</scroll-view>
+</view>
+  
+<button wx:if="{{topShow}}"  class="btn-fixed bg-gray text-gray" bindtap="bindTopTap" style="bottom:{{topBottom}}rpx"><text class="icon-top"></text></button>

@@ -1,0 +1,435 @@
+
+/* ==================
+          布局
+ ==================== */
+
+/*  -- flex弹性布局 -- */
+
+.flex {
+	display: flex;
+}
+
+.basis-xs {
+	flex-basis: 20%;
+}
+
+.basis-sm {
+	flex-basis: 40%;
+}
+
+.basis-df {
+	flex-basis: 50%;
+}
+
+.basis-lg {
+	flex-basis: 60%;
+}
+
+.basis-xl {
+	flex-basis: 80%;
+}
+
+.flex-sub {
+	flex: 1;
+}
+
+.flex-twice {
+	flex: 2;
+}
+
+.flex-treble {
+	flex: 3;
+}
+
+.flex-direction {
+	flex-direction: column;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-center {
+	align-self: flex-center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.align-stretch {
+	align-items: stretch;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+/*  -- 内外边距 -- */
+
+.margin-0 {
+	margin: 0;
+}
+
+.margin-xs {
+	margin: 10rpx;
+}
+
+.margin-s {
+	margin: 20rpx;
+}
+
+.margin {
+	margin: 30rpx;
+}
+
+.margin-lg {
+	margin: 40rpx;
+}
+
+.margin-xl {
+	margin: 50rpx;
+}
+
+.margin-top-xs {
+	margin-top: 10rpx;
+}
+
+.margin-top-s {
+	margin-top: 20rpx;
+}
+
+.margin-top {
+	margin-top: 30rpx;
+}
+
+.margin-top-l {
+	margin-top: 40rpx;
+}
+
+.margin-top-xl {
+	margin-top: 50rpx;
+}
+
+.margin-right-xxs {
+	margin-right: 6rpx;
+}
+
+.margin-right-xs {
+	margin-right: 10rpx;
+}
+
+.margin-right-s {
+	margin-right: 20rpx;
+}
+
+.margin-right {
+	margin-right: 30rpx;
+}
+
+.margin-right-l {
+	margin-right: 40rpx;
+}
+
+.margin-right-xl {
+	margin-right: 50rpx;
+}
+
+.margin-bottom-xxs {
+	margin-bottom: 6rpx;
+}
+
+.margin-bottom-xs {
+	margin-bottom: 10rpx;
+}
+
+.margin-bottom-s {
+	margin-bottom: 20rpx;
+}
+
+.margin-bottom {
+	margin-bottom: 30rpx;
+}
+
+.margin-bottom-l {
+	margin-bottom: 40rpx;
+}
+
+.margin-bottom-xl {
+	margin-bottom: 50rpx;
+}
+
+.margin-left-xs {
+	margin-left: 10rpx;
+}
+
+.margin-left-s {
+	margin-left: 20rpx;
+}
+
+.margin-left {
+	margin-left: 30rpx;
+}
+
+.margin-left-l {
+	margin-left: 40rpx;
+}
+
+.margin-left-xl {
+	margin-left: 50rpx;
+}
+
+
+.padding-0 {
+	padding: 0;
+}
+
+.padding-xs {
+	padding: 10rpx;
+}
+
+.padding-s {
+	padding: 20rpx;
+}
+
+.padding {
+	padding: 30rpx;
+}
+
+.padding-l {
+	padding: 40rpx;
+}
+
+.padding-xl {
+	padding: 50rpx;
+}
+
+.padding-top-xs {
+	padding-top: 10rpx;
+}
+
+.padding-top-s {
+	padding-top: 20rpx;
+}
+
+.padding-top {
+	padding-top: 30rpx;
+}
+
+.padding-top-l {
+	padding-top: 40rpx;
+}
+
+.padding-top-xl {
+	padding-top: 50rpx;
+}
+
+.padding-right-xs {
+	padding-right: 10rpx;
+}
+
+.padding-right-s {
+	padding-right: 20rpx;
+}
+
+.padding-right {
+	padding-right: 30rpx;
+}
+
+.padding-right-l {
+	padding-right: 40rpx;
+}
+
+.padding-right-xl {
+	padding-right: 50rpx;
+}
+
+.padding-bottom-xs {
+	padding-bottom: 10rpx;
+}
+
+.padding-bottom-s {
+	padding-bottom: 20rpx;
+}
+
+.padding-bottom {
+	padding-bottom: 30rpx;
+}
+
+.padding-bottom-l {
+	padding-bottom: 40rpx;
+}
+
+.padding-bottom-xl {
+	padding-bottom: 50rpx;
+}
+
+.padding-left-xs {
+	padding-left: 10rpx;
+}
+
+.padding-left-s {
+	padding-left: 20rpx;
+}
+
+.padding-left {
+	padding-left: 30rpx;
+}
+
+.padding-left-l {
+	padding-left: 40rpx;
+}
+
+.padding-left-xl {
+	padding-left: 50rpx;
+}
+
+
+
+/* grid布局 */
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grid.grid-square {
+	overflow: hidden;
+}
+
+.grid.grid-square .cu-tag {
+	position: absolute;
+	right: 0;
+	top: 0;
+	border-bottom-left-radius: 6rpx;
+	padding: 6rpx 12rpx;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid.grid-square>view>text[class*="cuIcon-"] {
+	font-size: 52rpx;
+	position: absolute;
+	color: var(--grey);
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.grid.grid-square>view {
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+	border-radius: 6rpx;
+	position: relative;
+	overflow: hidden;
+}
+
+.grid.grid-square>view.bg-img image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.grid.col-1.grid-square>view {
+	padding-bottom: 100%;
+	height: 0;
+	margin-right: 0;
+}
+
+.grid.col-2.grid-square>view {
+	padding-bottom: calc((100% - 20rpx)/2);
+	height: 0;
+	width: calc((100% - 20rpx)/2);
+}
+
+.grid.col-3.grid-square>view {
+	padding-bottom: calc((100% - 40rpx)/3);
+	height: 0;
+	width: calc((100% - 40rpx)/3);
+}
+
+.grid.col-4.grid-square>view {
+	padding-bottom: calc((100% - 60rpx)/4);
+	height: 0;
+	width: calc((100% - 60rpx)/4);
+}
+
+.grid.col-5.grid-square>view {
+	padding-bottom: calc((100% - 80rpx)/5);
+	height: 0;
+	width: calc((100% - 80rpx)/5);
+}
+
+.grid.col-2.grid-square>view:nth-child(2n),
+.grid.col-3.grid-square>view:nth-child(3n),
+.grid.col-4.grid-square>view:nth-child(4n),
+.grid.col-5.grid-square>view:nth-child(5n){
+	margin-right: 0;
+}
+
+.grid.col-1>view {
+	width: 100%;
+}
+
+.grid.col-2>view {
+	width: 50%;
+}
+
+.grid.col-3>view {
+	width: 33.33%;
+}
+
+.grid.col-4>view {
+	width: 25%;
+}
+
+.grid.col-5>view {
+	width: 20%;
+}
+ 

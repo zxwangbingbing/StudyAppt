@@ -1,0 +1,6 @@
+<template name="topTpl">
+	<view wx:if="{{topBtnShow}}" bindtap="top" class="btn-fixed bg-gray"
+		style="color:#888!important;bottom:{{bottom||'200'}}rpx;right:{{right||'12'}}rpx">
+		<text class="icon-top"></text>
+	</view>
+</template>

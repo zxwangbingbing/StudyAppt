@@ -1,0 +1,78 @@
+.user-list {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 30rpx 30rpx 30rpx 30rpx; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.user-list .item { 
+	border-radius: 20rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 20rpx;
+	margin-bottom: 24rpx;
+	position: relative; 
+}
+
+.user-list .item .pic {
+	width: 140rpx;
+}
+
+.user-list .item .detail {
+	flex: 1;
+	box-sizing: border-box;
+	width: 400rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-list .item .detail .name {
+	font-size: 24rpx;  
+	margin-bottom: 10rpx; 
+	z-index: 999; 
+}
+
+.user-list .item .detail .name .yname{
+	font-size: 32rpx; 
+	font-weight: bold; 
+	margin-right:10rpx;
+} 
+
+.user-list .item .detail .name text {
+	font-size: 24rpx; 
+	font-weight: normal;
+}
+
+.user-list .item .line {
+	margin:0 6rpx;
+	color: #ddd;
+}
+
+.user-list .item .detail .desc  {
+	line-height: 1.7;
+	font-size: 24rpx;
+	color: #666; 
+} 
+
+.user-list .item .detail .desc.last  {
+	line-height: 1.7;
+	font-size: 24rpx;
+	color: #aaa; 
+} 
+
+.user-list .item .mark {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 52rpx;
+	width: 112rpx;
+	color: white;
+	background-color: #CECECE;
+	line-height: 52rpx;
+	font-size: 24rpx;
+	text-align: center;
+	border-radius: 0 20rpx 0 20rpx;
+}
