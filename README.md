@@ -75,15 +75,7 @@ npm install –product
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2020/1122/060203_71503106_1810934.png "客户端配置.png")
 
-
-#### 7  内容安全
-  腾讯对小程序有严格的审核机制，每个小程序都要接入内容安全校验，
-
-打开https://developers.weixin.qq.com/community/servicemarket/detail/000a246b6fca70b76a896e6a25ec15 页面，点击购买（实际免费）
-
-![输入图片说明](https://images.gitee.com/uploads/images/2020/1122/060221_e5bc208f_1810934.png "内容安全.png")
  
-
 
 
 至此完全配置完毕。
