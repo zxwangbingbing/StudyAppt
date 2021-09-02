@@ -81,6 +81,10 @@ npm install –product
 
  
 
+#### 7  上传云函数&指定云环境ID
+
+ ![输入图片说明](https://images.gitee.com/uploads/images/2021/0828/101935_d116bfc6_9645159.png "上传到云.png")
+
 
 至此完全配置完毕。
 
