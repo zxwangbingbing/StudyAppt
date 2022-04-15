@@ -1,8 +1,0 @@
-<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-darkgreen color-{{skin}}"></view>
-<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-darkgreen color-{{skin}}"></view>
-
-<view  wx:if="{{isLoad&&isLogin}}" class="main main-info-add main-{{skin}}">
- 	<import src="info_form_tpl.wxml" />
-
- 	<template is="infoForm" data="{{skin,typeOptions,expireStart,expireEnd,imgMax,imgList,formTypeIndex,formTitle,formTitleFocus,formContent,formContentFocus,formExpireTime,formRegion}}" />
- </view>

@@ -1,9 +1,0 @@
-{
-	"usingComponents": {
-		"cmpt-comm-list": "../../../cmpts/public/list/comm_list_cmpt"
-	},
-	"enablePullDownRefresh": false,
-	"disableScroll": true,
-	"backgroundTextStyle": "dark",
-	"navigationBarTitleText": "找校友"
-}

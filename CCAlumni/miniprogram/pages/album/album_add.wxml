@@ -1,5 +1,0 @@
-<view class="main main-album-add main-{{skin}}" wx:if="{{isLogin}}">
- 	<import src="album_form_tpl.wxml" />
-
- 	<template is="albumForm" data="{{skin,typeOptions,imgMax,imgList,formTypeIndex,formTitle,formTitleFocus,formContent,formContentFocus}}" />
- </view>

@@ -1,7 +1,0 @@
-{
-	"usingComponents": { 
-	},
-	"enablePullDownRefresh": true,
-	"backgroundTextStyle": "dark",
-	"navigationBarTitleText": "相册浏览"
-}

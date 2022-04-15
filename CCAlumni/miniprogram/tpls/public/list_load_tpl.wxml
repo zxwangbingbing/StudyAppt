@@ -1,7 +1,0 @@
-<template name="listLoadTpl">
-	<view wx:if="{{!dataList || (dataList && dataList.page < dataList.count)}}"
-		class="load text-darkgreen loading color-{{skin}}"></view>
-	<view wx:if="{{dataList && dataList.page > 1 && dataList.page == dataList.count }}"
-		class="load text-darkgreen over color-{{skin}}"></view>
-	<view wx:if="{{dataList && dataList.total == 0}}" class="load text-darkgreen color-{{skin}}">暂无数据</view>
-</template>

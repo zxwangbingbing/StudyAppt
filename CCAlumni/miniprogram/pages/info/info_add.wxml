@@ -1,5 +1,0 @@
-<view class="main main-info-add main-{{skin}}" wx:if="{{isLogin}}">
- 	<import src="info_form_tpl.wxml" />
-
- 	<template is="infoForm" data="{{skin,typeOptions,expireStart,expireEnd,imgMax,imgList,formTypeIndex,formTitle,formTitleFocus,formContent,formContentFocus,formExpireTime,formRegion}}" />
- </view>

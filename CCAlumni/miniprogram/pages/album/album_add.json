@@ -1,7 +1,0 @@
-{
-	"usingComponents": {
-	  "cmpt-img-upload": "../../cmpts/public/img/img_upload_cmpt"
-	},
-	"enablePullDownRefresh":false,
-	"navigationBarTitleText": "创建相册"
-  }
