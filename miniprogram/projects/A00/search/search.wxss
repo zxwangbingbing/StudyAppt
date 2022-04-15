@@ -1,0 +1,2 @@
+@import "../skin/skin.wxss";
+@import "../../../style/project/search_base.wxss"; 

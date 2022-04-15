@@ -1,0 +1,73 @@
+.main {
+	padding: 0rpx 0rpx 100rpx;
+}
+
+.up {
+	width: 100%; 
+}
+
+.up image {
+	width: 100%;
+	height: 400rpx; 
+}
+
+.down {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10rpx 30rpx;
+	margin-top: -200rpx;
+	z-index: 9999;
+}
+
+.menu {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #fff;
+	padding: 20rpx 10rpx;
+	border-radius: 20rpx;
+}
+
+.menu .item {
+	width: 33.3%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 180rpx;
+
+}
+
+.menu .item .item-inner {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu .item-inner .img {
+	width: 75rpx;
+	height: 75rpx; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu .item-inner .img image {
+	width: 75rpx;
+	height: 75rpx;
+}
+
+.menu .item-inner .title {
+	margin-top: 20rpx;
+	font-size: 26rpx;
+	color: #333;
+}
+
+.meet-list-box {
+	width: 100%;
+	padding:0;
+	margin-top:40rpx;
+	overflow:unset;
+}

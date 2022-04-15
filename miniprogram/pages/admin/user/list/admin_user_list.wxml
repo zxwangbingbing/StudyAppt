@@ -1,0 +1,70 @@
+<block wx:if="{{isAdmin}}">
+	<cmpt-comm-list type="admin-meet" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/user_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索" bind:list="bindCommListCmpt" sortMenusDefaultIndex="0">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../export/admin_user_export?condition={{dataList.condition}}" class="btn mid radius bg-admin text-white margin-right-s"><text class="icon-down margin-right-xxs"></text>导出用户资料</button>
+		</view>
+
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录 </view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="header">
+					<view class="left text-cut">{{item.USER_NAME}}
+					</view>
+					<view class="right">
+						 
+					</view>
+				</view>
+
+				<view class="info">
+					<view class="info-item" bindtap="url" data-type="phone" data-url="{{item.USER_MOBILE}}">
+						<view class="title">手机</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_MOBILE||'未填写'}} <text wx:if="{{item.USER_MOBILE}}" class="icon-phone margin-left-s"></text></view>
+					</view> 
+
+					<view class="info-item">
+						<view class="title">城市</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_CITY}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">行业</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_TRADE}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">单位</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_WORK}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">注册</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+
+						<view bindtap="bindDelTap" data-id="{{item.USER_MINI_OPENID}}" class="btn  margin-right-s"><text class="icon-delete margin-right-xxs text-orange"></text>删除</view>
+
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'text-grey',dataList}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

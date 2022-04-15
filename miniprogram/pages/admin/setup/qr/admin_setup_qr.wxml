@@ -1,0 +1,17 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>
+
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+
+	<view class="form-box shadow margin-top-xs">
+
+		<view class="checkin">
+			<view class="notice"><text class="icon-scan margin-right-s text-bold"></text>放在推广的地方展示</view>
+
+			<image bindtap="url" data-type="img" data-url="{{qrUrl}}" mode="aspectFill" class="loading" show-menu-by-longpress="true" src="{{qrUrl}}"></image>
+			<view class="oprt">长按图片保存小程序码</view>
+		</view>
+
+	</view>
+
+</view>

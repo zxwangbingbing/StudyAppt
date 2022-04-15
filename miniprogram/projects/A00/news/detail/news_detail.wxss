@@ -1,0 +1,4 @@
+@import "../../../../style/project/base/detail.wxss"; 
+@import "../../skin/skin.wxss"; 
+@import "../../../../style/project/news_detail_base.wxss";  
+ 

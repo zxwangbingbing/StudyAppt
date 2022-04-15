@@ -1,0 +1,9 @@
+{
+	"usingComponents": { 
+		"cmpt-picker-multi": "../../../../cmpts/public/picker_multi/picker_multi_cmpt",
+		"cmpt-calendar": "../../../../cmpts/public/calendar/calendar_meet/calendar_meet_cmpt"
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white", 
+	"navigationBarTitleText": "时间设置"
+}

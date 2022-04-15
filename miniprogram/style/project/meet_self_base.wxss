@@ -1,0 +1,3 @@
+.load.loading::after {
+    content: "自助签到中，请稍候...";
+}

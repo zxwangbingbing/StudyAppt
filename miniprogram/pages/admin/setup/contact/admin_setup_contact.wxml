@@ -1,0 +1,31 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}"> 
+
+		<view class="form-box shadow">
+			<view class="form-group">
+				<view class="title">地址：</view>  
+			</view>
+			<view class="form-group"> 
+				<textarea placeholder="填写地址" placeholder-class="phc" model:value="{{formAddress}}" maxlength="200" focus="{{formAddressFocus}}" auto-height="{{true}}"></textarea>
+			</view>
+			<view wx:if="{{formAddressFocus}}" class="hint-desc error">{{formAddressFocus}}</view>
+
+			<view class="form-group">
+				<view class="title">电话：</view> 
+			</view> 
+
+			<view class="form-group"> 
+				<textarea placeholder="填写电话" placeholder-class="phc" model:value="{{formPhone}}" maxlength="50" focus="{{formPhoneFocus}}" auto-height="{{true}}"></textarea>
+			</view>
+			<view wx:if="{{formPhoneFocus}}" class="hint-desc error">{{formPhoneFocus}}</view>
+
+
+			<cmpt-img-upload isShowSize="{{false}}" title="客服二维码图片 (微信，企业微信等）：" imgMax="8" imgList="{{formServicePic}}" isCheck="{{false}}" bind:upload="bindUploadCmpt" data-item="formServicePic" />
+
+			<cmpt-img-upload isShowSize="{{false}}" title="官微二维码图片 (公众号，微博等）：" imgMax="8" imgList="{{formOfficePic}}" isCheck="{{false}}" bind:upload="bindUploadCmpt" data-item="formOfficePic" />
+		</view> 
+		 
+		<button bindtap="bindFormSubmit" class="btn-admin margin-top-xl">提交</button>
+		  
+</view>

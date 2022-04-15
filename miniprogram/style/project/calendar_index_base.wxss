@@ -1,0 +1,73 @@
+
+page {
+	background-color: #f2f2f2;
+}
+
+.main {
+	padding: 0 0 20rpx;
+}
+
+.main .plan-date {
+	width: 100%;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	box-shadow: var(--ShadowSize) var(--greyShadow);
+}
+
+.main .list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 30rpx 20rpx;
+}
+
+.main .list .item {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100rpx;
+	padding: 0 30rpx 0 0;
+	background-color: #fff;
+	margin-bottom: 30rpx;
+	border-radius: 10rpx;
+	overflow: hidden;
+}
+
+.main .list .item .left {
+	width: 8rpx;
+	height: 100rpx;
+	margin-right: 15rpx;
+
+}
+
+.main .list .item .img {
+	width: 65rpx;
+	height: 65rpx;
+	border-radius: 50%;
+	position: relative; 
+}
+
+.main .list .item .title {
+	flex: 1;
+	text-align: left;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #333;
+	margin-left: 20rpx;
+}
+
+.main .list .item .time {
+	width: 140rpx;
+	text-align: right;
+	font-size: 26rpx;
+	color: #999;
+}
+
+.main .list .no-project {
+	padding: 30rpx 30rpx;
+	font-size: 28rpx;
+}

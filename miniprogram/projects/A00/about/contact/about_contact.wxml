@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/about_contact_tpl.wxml" />
+<template is="aboutContactTpl" data="{{about,accountInfo,isLoad}}" />

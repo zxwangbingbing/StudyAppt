@@ -1,0 +1,12 @@
+@import "../../../style/comm/comm.wxss"; 
+@import "../../../style/project/base/project.wxss";  
+
+.form-group .upload-img .img-no {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 6rpx;
+    padding: 6rpx 12rpx;
+    height: 35rpx;
+    opacity: .9;
+}

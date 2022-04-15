@@ -1,0 +1,3 @@
+@import "../../../../style/project/base/detail.wxss";
+@import "../../skin/skin.wxss"; 
+@import "../../../../style/project/meet_join_base.wxss";

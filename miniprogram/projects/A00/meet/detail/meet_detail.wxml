@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/meet_detail_tpl.wxml" />
+<template is="meetDetailTpl" data="{{id,isLoad,skin,mainCur,showMind,showTime,tabCur,verticalNavTop,meet,beginDesc,endDesc,succDesc,limitDesc,cancelDesc,canNullTime,topShow}}" />

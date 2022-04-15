@@ -1,0 +1,11 @@
+<picker 
+  class="multi-picker picker-class"
+  mode="multiSelector"
+  bindchange="pickerChange"
+  bindcolumnchange="pickerColumnChange"
+  bindcancel="pickerCancel"
+  disabled="{{disabled}}"
+  value="{{multiIndex}}"
+  range="{{multiArray}}">
+  <slot/>
+</picker>

@@ -1,0 +1,5 @@
+<view wx:if="{{!_params}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+	<import src="../../../../tpls/project/news_index_tpl.wxml" />
+	<template is="newsIndexTpl" data="{{showUp:false,upImg:'',skin,dataList,_params,sortItems,sortMenus,search,listMode:listMode||'leftpic',isTotalMenu:false}}" />
+</block>

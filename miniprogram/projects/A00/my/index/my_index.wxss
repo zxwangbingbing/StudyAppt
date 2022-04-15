@@ -1,0 +1,25 @@
+@import "../../skin/skin.wxss";
+@import "../../../../style/project/my_index_base.wxss";
+
+page {
+	background-color: var(--projectCompareColor); 
+}
+
+/*投影*/
+.main .upside { 
+	border-bottom: 5rpx solid #333333; 
+}
+
+.main .upside .user-bar .detail .desc {
+	color: #fff
+}
+
+.main .upside {
+   height:300rpx;
+   padding:0 0 80rpx;
+}
+
+.main .down { 
+	margin-top: -110rpx;
+	z-index: 9999;
+}

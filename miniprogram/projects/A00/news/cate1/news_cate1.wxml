@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/news_index_tpl.wxml" />
+<template is="newsIndexTpl" data="{{showUp:false,upImg:'',skin,dataList,_params:{cateId:1},sortItems,sortMenus,search,listMode,isTotalMenu:false,curMenu:'news_cate1'}}" />

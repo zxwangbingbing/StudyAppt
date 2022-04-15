@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/my_index_tpl.wxml" />
+<template is="myIndexTpl" data="{{upImg:'',user,myTodayList,skin,returnHome:false,footColor:''}}" />

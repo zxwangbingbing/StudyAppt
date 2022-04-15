@@ -1,0 +1,43 @@
+.checkbox-group {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 0rpx 10rpx;
+}
+
+.checkbox-group .item {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	line-height: 2.1;
+	min-height: 70rpx;
+	border-bottom: 1rpx solid #eee;
+	font-size: 28rpx;
+}
+
+.checkbox-group .item label{
+	width: 100%; 
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+ 
+
+.checkbox-group .item:last-child {
+	border-bottom: 0;
+}
+
+.checkbox-group .item:nth-child(odd) {
+	background-color: #fcfcfc;
+}
+
+
+.checkbox-group .item checkbox {
+	margin-right: 20rpx;
+	padding-left: 10rpx; 
+} 

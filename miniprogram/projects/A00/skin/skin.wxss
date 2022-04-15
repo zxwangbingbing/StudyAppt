@@ -1,0 +1,99 @@
+page {
+	background-color: #f2f2f2;
+
+	--projectColor: #5D95FF;
+	--projectColorLight: #5D95FF;
+	--projectCompareColor: #d1dff8;
+
+	/*#### 父组件日历颜色定义*/
+	/* 整体颜色 */
+	--calendarPageColor: #fff;
+	/* 加重颜色*/
+	--calendarMainColor: #5D95FF !important;
+	/* 加重的亮颜色 用于选中日期的数据小圆点 */
+	--calendarLightColor: #5D95FF;
+}
+
+.text-project {
+	color: var(--projectColor) !important;
+}
+
+.bg-project {
+	background-color: var(--projectColor) !important;
+}
+
+.bg-project.light {
+	color: var(--projectColor) !important;
+	background-color: var(--projectColorLight) !important;
+}
+
+.border-project {
+	border-color: var(--projectColor) !important;
+}
+
+.tabs .cur {
+	color: var(--projectColor) !important;
+}
+
+.tabs .tab-menu.cur:after {
+	background-color: var(--projectColor) !important;
+}
+
+.load-project {
+	color: #8799a3 !important;
+}
+
+.padding-project {
+	padding-left: 20rpx !important;
+	padding-right: 20rpx !important;
+}
+
+.btn-project {
+	line-height: 90rpx;
+	height: 90rpx;
+	color: #fff;
+	background-color: var(--projectColor);
+	border-radius: 20rpx;
+	width: 98%;
+	box-shadow: 6rpx 6rpx 8rpx rgba(235, 132, 195, 0.2);
+}
+
+.shadow-project {
+	box-shadow: 6rpx 6rpx 8rpx rgba(200, 206, 208, 0.2);
+}
+
+.card-project,
+.main .list .item.card-project,
+.down .comm-list.menu.card-project,
+.article-box .article.card-project,
+.text-pic-list-box .item.card-project,
+.info-list-box .item.card-project,
+.main-content .content.card-project,
+.meet-list-box .item.card-project,
+.form-box.card-project,
+.bar .search-form {
+	border-radius: 20rpx !important;
+}
+
+.up-project {
+	width: 100%;
+	min-height: 200rpx;
+	background-color: #544643;
+	padding: 0;
+	margin: 0;
+}
+
+.up-project image {
+	padding: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.main .comm-list .item.arrow::before,
+.my-icon-project {
+	color: var(--projectColor) !important;
+}
+
+.meet-list-box {
+	padding: 20rpx 30rpx 30rpx 30rpx;
+}

@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/default_index_tpl.wxml" />
+<template is="defaultIndexTpl" data="{{isProfile,upImg:'../../skin/images/default_index_bg.jpg',skin,dataList,listMode:'upimg',returnHome:false}}" />

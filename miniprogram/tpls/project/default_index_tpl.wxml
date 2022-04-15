@@ -1,0 +1,37 @@
+<template name="defaultIndexTpl">
+	<view class="main">
+		<view class="up">
+			<image mode="aspectFill" src="{{upImg}}" />
+		</view>
+		<view class="down">
+			<view class="menu card-project shadow-project">
+				<view bindtap="url" data-url="../../news/index/news_index?id={{item.val}}" class="item" wx:for="{{skin.newsCateArr}}" wx:key="key">
+					<view class="item-inner">
+						<view class="img"><image src="../../skin/images/menu/news_{{item.val}}.png" /></view>
+						<view class="title">{{item.label}}</view>
+					</view>
+				</view>
+
+				<view bindtap="url" data-url="../../meet/index/meet_index?id={{item.val}}" class="item" wx:for="{{skin.meetTypeArr}}" wx:key="key">
+					<view class="item-inner">
+						<view class="img"><image src="../../skin/images/menu/meet_{{item.val}}.png" /></view>
+						<view class="title">{{item.label}}</view>
+					</view>
+				</view>
+
+			</view>
+
+			<!-- List Begin -->
+			<view wx:if="{{!dataList}}" class="margin-top load loading text-l load-project"></view>
+			<import src="../../tpls/public/base_list_tpl.wxml" />
+			<template is="baseListTpl" data="{{dataList,listMode}}" />
+			<!-- List END -->
+		</view>
+	</view>
+
+	<block wx:if="{{skin.IS_SUB}}">
+		<import src="../../tpls/public/menu_tpl.wxml" />
+		<template is="menuTpl" data="{{skin,curMenu:'home_index',returnHome}}" />
+	</block>
+
+</template>

@@ -1,0 +1,3 @@
+<template name="meetCheckinTpl">
+	<view class="margin-top load loading text-l text-grey"></view> 
+</template>

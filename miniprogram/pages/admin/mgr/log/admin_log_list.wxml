@@ -1,0 +1,45 @@
+<block wx:if="{{isAdmin}}">
+	<cmpt-comm-list type="admin_log_list" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" sortMenusDefaultIndex="0" route="admin/log_list" topBottom="50" placeholder="搜索标题，IP地址" bind:list="bindCommListCmpt">
+
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-black">共有{{dataList.total}}条符合条件记录 </view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="header">
+					<view class="left text-cut">{{item.LOG_TYPE_DESC}}操作</view>
+					<view class="right"></view>
+				</view>
+				<view class="info">
+					<view class="info-item">
+						<view class="title">操作人</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.LOG_ADMIN_NAME}}</view>
+					</view>
+					<view class="info-item">
+						<view class="title">操作时间</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.LOG_ADD_TIME}}</view>
+					</view>
+					<view class="info-item">
+						<view class="title">操作内容</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.LOG_CONTENT}}</view>
+					</view>
+					<view class="info-item">
+						<view class="title">IP地址</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.LOG_ADD_IP}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- List END --> 
+
+		<!--load begin-->
+		<import src="../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList, skin:'text-grey'}}" />
+		<!--load end--> 
+
+	</cmpt-comm-list>
+</block>

@@ -1,0 +1,72 @@
+@import '../../../../style/project/base/admin.wxss';
+
+
+.main-admin {
+	padding: 20rpx 0rpx;
+
+}
+
+.form-box {
+	border-radius: 0;
+}
+
+.modal-rules {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.modal-rules .padding-xl {
+	padding: 0;
+}
+
+.modal-rules .item {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 2rpx solid #ddd;
+	padding: 20rpx 0;
+	position: relative;
+}
+
+.modal-rules .item.cur {
+	background-color: #f2f2f2; 
+	font-weight: bold;
+}
+
+.modal-rules .item.cur .icon-right {
+	color: var(--adminColor)!important;
+}
+
+.modal-rules .item .icon-right {
+	right: 10rpx;
+	position: absolute;
+	top: 50rpx;
+}
+
+.modal-rules .item.item-last {
+	border-bottom: 0;
+}
+
+.modal-rules .item .title {
+	font-size: 36rpx;
+	color: #111;
+}
+
+.modal-rules .item .desc {
+	font-size: 28rpx;
+	color: #777;
+	margin-top: 10rpx;
+}
+
+cmpt-picker-multi {
+	flex: 1;
+}
+
+.form-group .desc-textarea {
+	height: 100rpx;
+}

@@ -1,0 +1,130 @@
+
+/* ==================
+          按钮
+ ==================== */
+
+ .btn {
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	font-size: 28rpx;
+	height: 64rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
+	border-radius: 12rpx;
+}
+
+.btn::after {
+	display: none;
+}
+
+.btn:not([class*="bg-"]) {
+	background-color: #f0f0f0;
+}
+
+.btn[class*="border"] {
+	background-color: transparent;
+}
+
+/* 伪元素边框 */
+.btn[class*="border"]::after {
+	content: " ";
+	display: block;
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1rpx solid currentColor;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	box-sizing: border-box;
+	z-index: 1;
+	pointer-events: none;
+	border-radius: 12rpx;
+} 
+
+.btn[class*="bg-"]::after {
+	display: none;
+}
+
+.btn.small {
+	padding: 0 20rpx;
+	font-size: 20rpx;
+	height: 48rpx;
+	border-radius: 10rpx;
+}
+
+.btn.mid {
+	padding: 0 20rpx;
+	font-size: 24rpx;
+	height: 50rpx;
+	border-radius: 10rpx;
+}
+
+.btn.large {
+	padding: 0 40rpx;
+	font-size: 32rpx;
+	height: 80rpx;
+	border-radius: 14rpx;
+}
+
+.btn.btn-icon.small {
+	width: 48rpx;
+	height: 48rpx;
+}
+
+.btn.btn-icon {
+	width: 64rpx;
+	height: 64rpx;
+	border-radius: 500rpx;
+	padding: 0;
+}
+
+button.btn-icon.large {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.btn.shadow-blur::before {
+	top: 4rpx;
+	left: 4rpx;
+	filter: blur(6rpx);
+	opacity: 0.6;
+}
+
+.btn.button-hover { 
+	opacity: .9;
+	transform: scale(0.95, 0.95);
+	position: relative;
+	top: 3rpx;
+	left: 3rpx;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, .1) inset;
+}
+
+.btn[disabled] {
+	opacity: 0.6;
+	color: var(--white);
+}
+
+
+.btn.round {
+	border-radius: 5000rpx;
+}
+
+.btn.round[class*="border"]::after {
+	border-radius: 1000rpx;
+}
+
+.btn.border-bold::after {
+	border: 6rpx solid currentColor;
+}
+

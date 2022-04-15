@@ -1,0 +1,12 @@
+
+.form-group .line-desc{
+	font-size:28rpx;
+	text-align: center;
+	width:100%;
+	color:#666;
+}
+
+.submit-line {
+	width: 100%;
+}
+ 

@@ -1,0 +1,102 @@
+{
+	"pages": [
+		"projects/A00/default/index/default_index",
+		"projects/A00/about/index/about_index",
+		"projects/A00/about/contact/about_contact",
+		"projects/A00/calendar/index/calendar_index",
+		"projects/A00/meet/index/meet_index",
+		"projects/A00/meet/join/meet_join",
+		"projects/A00/meet/detail/meet_detail",
+		"projects/A00/meet/self/meet_self",
+		"projects/A00/my/index/my_index",
+		"projects/A00/my/edit/my_edit",
+		"projects/A00/my/join/my_join",
+		"projects/A00/my/join_detail/my_join_detail",
+		"projects/A00/news/index/news_index",
+		"projects/A00/news/detail/news_detail",
+		"projects/A00/news/cate1/news_cate1",
+		"projects/A00/news/cate2/news_cate2",
+		"projects/A00/search/search",
+
+		"cmpts/public/form/form_set/field/form_set_field",
+		"pages/admin/index/home/admin_home",
+		"pages/admin/index/login/admin_login",
+		"pages/admin/content/admin_content",
+		"pages/admin/meet/content/admin_meet_content",
+		"pages/admin/meet/cover/admin_meet_cover",
+		"pages/admin/meet/edit/admin_meet_edit",
+		"pages/admin/meet/export/admin_join_export",
+		"pages/admin/meet/join/admin_meet_join",
+		"pages/admin/meet/list/admin_meet_list",
+		"pages/admin/meet/record/admin_record_list",
+		"pages/admin/meet/scan/admin_meet_scan",
+		"pages/admin/meet/self/admin_meet_self",
+		"pages/admin/meet/temp/admin_temp_select",
+		"pages/admin/meet/time/admin_meet_time",
+		"pages/admin/mgr/log/admin_log_list",
+		"pages/admin/news/list/admin_news_list",
+		"pages/admin/news/add/admin_news_add",
+		"pages/admin/news/edit/admin_news_edit",
+		"pages/admin/news/content/admin_news_content",
+		"pages/admin/setup/about/admin_setup_about",
+		"pages/admin/setup/contact/admin_setup_contact",
+		"pages/admin/setup/qr/admin_setup_qr",
+		"pages/admin/user/list/admin_user_list",
+		"pages/admin/user/export/admin_user_export"
+
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#5D95FF",
+		"navigationBarTitleText": "校庆小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#fefefe",
+		"color": "#999999",
+		"selectedColor": "#5D95FF",
+		"list": [{
+				"pagePath": "projects/A00/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/A00/skin/images/tabbar/home.png",
+				"selectedIconPath": "/projects/A00/skin/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/A00/news/cate1/news_cate1",
+				"text": "最新动态",
+				"iconPath": "/projects/A00/skin/images/tabbar/cate1.png",
+				"selectedIconPath": "/projects/A00/skin/images/tabbar/cate1_cur.png"
+			},   
+			{
+				"pagePath": "projects/A00/news/cate2/news_cate2",
+				"text": "政策法规",
+				"iconPath": "/projects/A00/skin/images/tabbar/cate2.png",
+				"selectedIconPath": "/projects/A00/skin/images/tabbar/cate2_cur.png"
+			}, 
+			{
+				"pagePath": "projects/A00/calendar/index/calendar_index",
+				"text": "预约日历",
+				"iconPath": "/projects/A00/skin/images/tabbar/day.png",
+				"selectedIconPath": "/projects/A00/skin/images/tabbar/day_cur.png"
+			},
+			{
+				"pagePath": "projects/A00/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/A00/skin/images/tabbar/my.png",
+				"selectedIconPath": "/projects/A00/skin/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"permission": {},
+	"useExtendedLib": {
+		"weui": true
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

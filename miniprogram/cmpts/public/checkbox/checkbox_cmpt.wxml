@@ -1,0 +1,9 @@
+<wxs src="../../../tpls/wxs/tools.wxs" module="tools" /> 
+<checkbox-group bindchange="bindChange" class="checkbox-group">
+	<view class="item" wx:for="{{sourceData}}" wx:key="key"> 
+		<label>
+			<checkbox disabled="{{disabled}}" value="{{item}}" checked="{{tools.includes(itemMulti,item)}}" />
+			<text>{{item}}</text>
+		</label>
+	</view>
+</checkbox-group>

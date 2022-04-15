@@ -1,0 +1,146 @@
+.editor-tab {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	z-index: 999;  
+	line-height: 3; 
+	height: 70rpx;
+	margin-top:40rpx;
+} 
+ 
+
+.editor-tab .item.cur::after {
+	width: 100%;
+	position: absolute;
+	bottom: 10rpx;
+	left: 0rpx;
+	height: 6rpx;
+	content: '';
+	background-color: #ff5858;
+}
+
+.iconfont {
+	font-size: 32rpx;
+	font-style: normal;
+}
+
+.editor-wrapper {
+	padding: 30rpx;
+	box-sizing: border-box; 
+}
+
+.editor-add-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0 auto;
+	font-size: 30rpx;
+	width: 100%;
+	justify-content: center;
+}
+
+.editor-add-wrapper>view {
+	width: 250rpx;
+	line-height: 2;
+	text-align: center;
+}
+
+.editor-add-wrapper .iconfont {
+	padding: 20rpx;
+	color: #666;
+	font-size: 48rpx;
+	box-sizing: border-box;
+}
+
+.editor-node-wrapper {
+	position: relative;
+	width: 100%;
+	margin-top: 10rpx;
+	margin-bottom: 10rpx;
+	border: 1rpx dashed #999;
+	background: #fff; 
+} 
+
+.editor-node-wrapper.is-view{ 
+	border: 1rpx solid #fff;
+	border-radius: 10rpx; 
+}
+
+.editor-node-wrapper.cur {
+	animation: glow 800ms ease-out infinite alternate;
+}
+
+@keyframes glow {
+	0% {
+		box-shadow: 0 0 5px rgba(252, 94, 94, .2), inset 0 0 5px rgba(252, 94, 94, .1), 0 0px 0 #d70c19;
+	}
+
+	100% {
+		border-color: #d70c19;
+		box-shadow: 0 0 20px rgba(252, 94, 94, .6), inset 0 0 10px rgba(252, 94, 94, .4), 0 0px 0 #d70c19;
+	}
+}
+
+.editor-delete {
+	position: absolute;
+	z-index: 999;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	top: -30rpx;
+	right: 0rpx;
+	color: #999;
+	background: hsla(0, 0%, 100%, .95);
+	border-radius: 40rpx;
+	padding: 15rpx;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}
+
+.editor-delete .iconfont {
+	padding: 0 20rpx;
+}
+
+.editor-wrapper .editor-node-wrapper .editor-textarea {
+	margin: 0;
+	display: block;
+	width: 100%;
+	line-height: 1.5;
+	padding: 35rpx 20rpx 20rpx;
+	min-height: 240rpx;
+	font-size: 32rpx;
+}
+
+.editor-images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 656rpx;
+	border: 2rpx solid #e4e7ed;
+	background: #fff;
+	padding: 20rpx;
+	min-height: 2.5em;
+}
+
+.editor-images .item-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5rpx;
+	width: 150rpx;
+	height: 150rpx;
+	box-sizing: border-box;
+}
+
+.editor-images .editor-images-add {
+	border: 4rpx dashed #c0c4cc;
+	color: #c0c4cc;
+}
+
+.editor-image {
+	display: block;
+	width: 100%;
+}

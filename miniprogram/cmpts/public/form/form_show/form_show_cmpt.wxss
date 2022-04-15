@@ -1,0 +1,62 @@
+.form-group .picker-base { 
+	flex:1;
+	text-align: right;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+
+.form-group .picker-select { 
+    padding-right: 40rpx;
+    overflow: hidden;
+	position: relative; 
+}  
+
+.form-group .title { 
+	height:unset!important;
+    min-height: 60rpx; 
+} 
+
+
+/* 核对信息窗口 */
+.modal-check-info {
+	width:100%;
+}
+
+.slot-class {
+	padding:0 20rpx 30rpx;
+}
+
+.modal-check-info .item{
+	width:100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	line-height: 1.8;
+	font-size: 30rpx;
+	border-bottom: 1rpx dotted #ddd;
+	color:#000; 
+	padding:10rpx 10rpx;
+}  
+
+.modal-check-info .item:nth-child(odd){ 
+	background-color: #f8f8f8;  
+}  
+.modal-check-info .item:last-child{ 
+	border-bottom: 0rpx; 
+}  
+
+.modal-check-info .item .title{
+	font-weight: bold; 
+	max-width: 150rpx;
+	margin-right: 20rpx;
+	text-align: left;
+}
+
+.modal-check-info .item .content{
+	flex:1;
+	color:#333;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	text-align: left;
+}

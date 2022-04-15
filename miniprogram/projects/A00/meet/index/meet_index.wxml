@@ -1,0 +1,5 @@
+<view wx:if="{{!_params}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+	<import src="../../../../tpls/project/meet_index_tpl.wxml" />
+	<template is="meetIndexTpl" data="{{skin,showUp:false,upImg:'',skin,dataList,_params,search,listMode: 'leftbig2',isTotalMenu:false}}" />
+</block>

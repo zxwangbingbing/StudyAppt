@@ -1,0 +1,2 @@
+<import src="../../../../tpls/project/calendar_index_tpl.wxml" />
+<template is="calendarIndexTpl" data="{{skin,day,hasDays,isLoad,list}}" />

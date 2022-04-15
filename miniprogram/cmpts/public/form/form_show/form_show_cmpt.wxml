@@ -1,0 +1,177 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-darkgreen text-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-darkgreen text-project"></view>
+
+<block wx:if="{{isLoad}}" wx:for="{{fields}}" wx:key="key">
+
+	<block wx:if="{{item.type=='line'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<input placeholder="{{item.desc||'请填写'+item.title}}" placeholder-class="phc" maxlength="{{item.len}}" bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}"></input>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='number'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<input type="number" placeholder="{{item.desc||'请填写'+item.title}}" placeholder-class="phc" maxlength="{{item.len}}" bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}"></input>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='digit'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<input type="digit" placeholder="{{item.desc||'请填写'+item.title}}" placeholder-class="phc" maxlength="{{item.len}}" bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}"></input>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='select'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<cmpt-picker sourceData="{{item.selectOptions}}" data-idx="{{index}}" bind:select="bindSelectCmpt" item="{{item.val}}" />
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='checkbox'}}">
+		<view class="form-group">
+			<view class="action text-bold text-l"><text class="text-red" wx:if="{{item.must}}">*</text>{{item.title}}
+			</view>
+			<view class="action">至少选择{{item.checkBoxLimit}}项</view>
+		</view>
+		<view class="form-group align-start" style="flex:1;padding-left:0;padding-right:20rpx;">
+			<cmpt-checkbox sourceData="{{item.selectOptions}}" data-idx="{{index}}" bind:select="bindCheckBoxCmpt" itemMulti="{{item.val}}" style="flex:1" />
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='date'}}">
+		<view class="form-group arrow">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<picker class="picker-base" data-idx="{{index}}" mode="date" bindchange="bindDayChange" value="{{item.val}}">
+				<view class="picker-select">
+					{{item.val || '年,月,日'}}
+				</view>
+			</picker>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='year'}}">
+		<view class="form-group arrow">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<picker class="picker-base" data-idx="{{index}}" mode="date" fields="year" bindchange="bindDayChange" value="{{item.val}}">
+				<view class="picker-select">
+					{{item.val || '年份'}}
+				</view>
+			</picker>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='month'}}">
+		<view class="form-group arrow">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<picker class="picker-base" data-idx="{{index}}" mode="date" fields="month" bindchange="bindDayChange" value="{{item.val}}">
+				<view class="picker-select">
+					{{item.val || '月份'}}
+				</view>
+			</picker>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='hourminute'}}">
+		<view class="form-group arrow">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<picker class="picker-base" data-idx="{{index}}" mode="time" bindchange="bindDayChange" value="{{item.val}}">
+				<view class="picker-select">
+					{{item.val || '时间点'}}
+				</view>
+			</picker>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='area'}}">
+		<view class="form-group arrow">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<picker class="picker-base" data-idx="{{index}}" mode="region" bindchange="bindAreaChange" value="{{item.val}}">
+				<view wx:if="{{item.val && item.val.length==3}}" class="picker-select">
+					{{item.val}}
+				</view>
+				<view wx:else class="picker-select">
+					省,区,市
+				</view>
+			</picker>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='switch'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}</view>
+			<switch wx:if="{{item.val}}" bindchange="switchModel" data-idx="{{index}}" class="green sm" checked="true">
+			</switch>
+			<switch wx:elif="{{!item.val}}" bindchange="switchModel" data-idx="{{index}}" class="green sm">
+			</switch>
+		</view>
+		<view class="hint-desc" wx:if="{{item.desc}}">{{item.desc}}</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='multi'}}">
+		<view class="form-group">
+			<view class="action text-bold text-l"><text class="text-red" wx:if="{{item.must}}">*</text>{{item.title}}
+			</view>
+			<view class="action">{{item.val.length}}/200</view>
+		</view>
+
+		<view class="form-group align-start">
+			<textarea bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}" placeholder-class="phc" placeholder="{{item.desc||'请填写'+item.title}}" style="min-height:100rpx" auto-height="true" maxlength="{{item.len}}"></textarea>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='idcard'}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<input type="idcard" placeholder="{{item.desc||'请填写'+item.title}}" placeholder-class="phc" maxlength="18" bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}"></input>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='mobile' && item.mobileTruth}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<text>{{item.val||'未填写'}}</text>
+			<button open-type="getPhoneNumber" bindgetphonenumber="bindGetPhoneNumber" class="btn bg-blue bg-project light" data-idx="{{index}}">{{item.val?'一键修改手机号':'一键填写手机号'}}</button>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+
+	<block wx:elif="{{item.type=='mobile' && !item.mobileTruth}}">
+		<view class="form-group">
+			<view class="title {{item.must?'must':''}}">{{item.title}}:</view>
+			<input placeholder="{{item.desc||'请填写'+item.title}}" placeholder-class="phc" maxlength="11" bindinput="bindLineBlur" data-idx="{{index}}" value="{{item.val}}"></input>
+		</view>
+		<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+	</block>
+</block>
+
+<cmpt-modal model:show="{{showCheckModal}}" type="longdialog" title="请核对填写的信息" bind:click="bindSubmitCmpt" class="modal-check-info" slot-class="slot-class" cancelText="返回修改" confirmText="确认提交">
+
+	<view class="item" wx:for="{{forms}}" wx:key="key">
+		<view class="title">{{item.title}}：</view>
+		<view class="content" wx:if="{{item.val===true|| item.val===false}}">{{item.val?'是':'否'}}</view>
+		<view class="content" wx:else>{{item.val}}</view>
+	</view>
+</cmpt-modal> 

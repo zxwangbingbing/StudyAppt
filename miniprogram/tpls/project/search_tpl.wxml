@@ -1,0 +1,25 @@
+<template name="searchTpl">
+	<view class="main main-search">
+		<view class="bar search bg-white">
+			<view class="search-form round">
+				<text class="icon-search"></text>
+				<input type="text" model:value="{{search}}" placeholder="请输入搜索内容" confirm-type="search" bindconfirm="bindSearchConfirm" maxlength="20"></input>
+				<text wx:if="{{search.length > 0}}" bindtap="bindClearKeyTap" class="icon-roundclosefill text-l text-gray clear"></text>
+			</view>
+			<view class="action">
+				<button bindtap="url" data-type="back" class="btn bg-project text-white shadow-blur round">返回</button>
+			</view>
+		</view>
+
+		<view class="his">
+			<view class="title">
+				<view class="tit">历史记录</view> <text bindtap="bindDelHisTap" class="del text-small icon-delete"></text>
+			</view>
+
+			<view class="search-content">
+				<view wx:for="{{hisKeys}}" bindtap="bindKeyTap" wx:key="key" data-key="{{item}}" class="btn mid  round text-darkgreen">{{item}}</view>
+			</view>
+		</view>
+
+	</view>
+</template>

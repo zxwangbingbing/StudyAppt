@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"cmpt-img-upload": "../../../../cmpts/public/img/img_upload_cmpt"
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"enablePullDownRefresh": true, 
+	"navigationBarTitleText": "编辑关于我们"
+}

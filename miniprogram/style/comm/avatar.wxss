@@ -1,0 +1,72 @@
+
+/* ==================
+          头像
+ ==================== */ 
+ .avatar {
+	font-variant: small-caps;
+	margin: 0;
+	padding: 0;
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center; 
+	color: var(--white);
+	white-space: nowrap;
+	position: relative;
+	width: 64rpx;
+	height: 64rpx;
+	background-size: cover;
+	background-position: center;
+	vertical-align: middle;
+	font-size: 1.5em;
+}
+
+.avatar:not([class*="bg-"]) {
+	background-color: #ccc;
+}
+
+.avatar.xs {
+	width: 32rpx;
+	height: 32rpx;
+	font-size: 1em;
+}
+
+.avatar.small {
+	width: 48rpx;
+	height: 48rpx;
+	font-size: 1em;
+}
+
+.avatar.large {
+	width: 96rpx;
+	height: 96rpx;
+	font-size: 2em;
+}
+
+.avatar.xl {
+	width: 128rpx;
+	height: 128rpx;
+	font-size: 2.5em;
+}
+
+.avatar .avatar-text {
+	font-size: 0.4em;
+}
+
+.avatar-group {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	padding: 0 10rpx 0 40rpx;
+	display: inline-block;
+}
+
+.avatar-group .avatar {
+	margin-left: -30rpx;
+	border: 4rpx solid var(--ghostWhite);
+	vertical-align: middle;
+}
+
+.avatar-group .avatar.small {
+	margin-left: -20rpx;
+	border: 1rpx solid var(--ghostWhite);
+}

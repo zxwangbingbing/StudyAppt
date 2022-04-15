@@ -1,0 +1,17 @@
+<picker class="multi-picker picker-class" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="pickerColumnChange" bindcancel="pickerCancel" disabled="{{disabled}}" value="{{multiIndex}}" range="{{multiArray}}">
+	<slot wx:if="{{isSlot}}" />
+	<block wx:else>
+		<block wx:if="{{multiIndex.length==2}}">
+			{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+		</block>
+		<block wx:if="{{multiIndex.length==3}}">
+			{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+		</block>
+		<block wx:if="{{multiIndex.length==4}}">
+			{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}，{{multiArray[3][multiIndex[3]]}}
+		</block>
+		<block wx:if="{{multiIndex.length==5}}">
+			{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}，{{multiArray[3][multiIndex[3]]}}，{{multiArray[4][multiIndex[4]]}}
+		</block>
+	</block>
+</picker>

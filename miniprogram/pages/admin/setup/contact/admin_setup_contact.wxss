@@ -1,0 +1,18 @@
+@import '../../../../style/project/base/admin.wxss';
+ 
+.btn-skin {
+	width: 155rpx;
+	padding-left: 20rpx !important;
+	padding-right: 20rpx !important;
+}
+
+textarea {
+	min-height: 90rpx;
+}
+
+.title-desc {
+	padding-left: 24rpx;
+	color: #666;
+	padding-bottom: 30rpx;
+	border-bottom: 1rpx solid #eee;
+}

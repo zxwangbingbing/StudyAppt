@@ -1,0 +1,114 @@
+<template name="myIndexTpl">
+	<view class="main {{skin.IS_SUB?'sub-margin-bottom':''}}">
+
+		<!--top area begin-->
+		<view class="upside upside-shadow">
+			<image wx:if="{{upImg}}" mode="aspectFill" lazy-load class="upImg loading" src="{{upImg}}" />
+			<view class="user-bar">
+				<view class="avatar">
+					<image mode="aspectFit" src="../../skin/images/tabbar/my_cur.png" />
+				</view>
+				<view class="detail" bindtap="url" data-url="../edit/my_edit">
+					<view class="name text-cut">{{user?user.USER_NAME:'欢迎回来~~~'}}</view>
+					<view class="desc">
+						<view class="text-cut">{{user?'修改个人资料':'马上注册，使用更多功能'}}</view>
+					</view>
+				</view> 
+			</view>
+		</view>
+		<!--top area end-->
+
+		<!--down area begin-->
+		<view class="down padding-project">
+			<view class="comm-list menu today-card card-project shadow-project">
+				<view class="today">
+					<view class="title">我的今日{{skin.MEET_NAME}}</view>
+					<view class="list">
+						<view class="item" wx:if="{{myTodayList===null}}">
+							<view class="load loading text-s text-project" style="line-height:1!important"></view>
+						</view>
+						<view wx:elif="{{myTodayList.length==0}}" class="item">
+							<view class="text-normal text-grey" style="line-height:1!important">您今天没有{{skin.MEET_NAME}}哦~ </view>
+						</view>
+						<view class="item" bindtap="url" data-url="../join_detail/my_join_detail?id={{item._id}}" wx:for="{{myTodayList}}" wx:key="key">
+							<view class="time">
+								<text>{{item.JOIN_MEET_TIME_START}}~{{item.JOIN_MEET_TIME_END}}</text>
+
+								<text wx:if="{{item.JOIN_STATUS==1}}" class="text-green status">预约成功{{item.JOIN_IS_CHECKIN==1?'，已签到':''}}</text>
+
+								<text wx:elif="{{item.JOIN_STATUS==10}}" class="text-grey status">已取消</text>
+
+								<text wx:elif="{{item.JOIN_STATUS==99}}" class="text-orange status">系统取消</text>
+
+							</view>
+							<view class="project text-cut">{{item.JOIN_MEET_TITLE}}</view>
+						</view>
+					</view>
+				</view>
+
+			</view>
+
+			<!--base begin -->
+			<view class="comm-list menu card-project shadow-project">
+				<view class="item arrow" bindtap="url" data-url="../join/my_join">
+					<view class="content">
+						<text class="icon-activityfill my-icon-project text-project"></text>
+						<text class="text-black">我的所有{{skin.MEET_NAME}}</text>
+					</view>
+				</view>
+				<view class="item arrow" bindtap="url" data-url="../edit/my_edit">
+					<view class="content">
+						<text class="icon-edit my-icon-project text-green"></text>
+						<text class="text-black">修改我的个人资料</text>
+					</view>
+				</view>
+			</view>
+			<!--base end -->
+
+			<!--sys begin -->
+			<view class="comm-list menu card-project shadow-project">
+
+				<view class="item arrow" bindtap="url" data-url="../../about/index/about_index">
+					<view class="content">
+						<text class="icon-friend my-icon-project text-purple"></text>
+						<text class="text-black">关于我们</text>
+					</view>
+				</view> 
+				
+				<view wx:if="{{!skin.IS_SUB}}" class="item arrow" bindtap="url" data-url="../../about/contact/about_contact">
+					<view class="content">
+						<text class="icon-phone my-icon-project  text-cyan"></text>
+						<text class="text-black">联系我们</text>
+					</view>
+				</view>
+				<view wx:else class="item arrow" bindtap="url" data-type="relaunch" data-url="../../../../pages/home/service/home_service">
+					<view class="content">
+						<text class="icon-phone my-icon-project text-cyan"></text>
+						<text class="text-black">联系作者了解更多详情</text>
+					</view>
+				</view>
+
+
+				<view class="item arrow" bindtap="bindSetTap">
+					<view class="content">
+						<text class="icon-settings my-icon-project text-grey"></text>
+						<text wx:if="{{skin.IS_SUB}}" class="text-red text-bold ">系统后台管理<text class="text-grey text-normal">（可试用）</text></text>
+						<text wx:else class="text-black">设置</text>
+					</view>
+				</view>
+
+			</view>
+			<!--sys end -->
+
+		</view>
+		<!--down area end-->
+
+	</view> 
+
+
+	<block wx:if="{{skin.IS_SUB}}">
+		<import src="../../tpls/public/menu_tpl.wxml" />
+		<template is="menuTpl" data="{{skin, curMenu:'my_index', returnHome}}" />
+	</block>
+
+</template>

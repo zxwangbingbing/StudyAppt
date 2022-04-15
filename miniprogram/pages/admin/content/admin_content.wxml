@@ -1,0 +1,15 @@
+<block wx:if="{{isAdmin}}">
+	<view class="main-admin"> 
+		<view class="form-box shadow">
+			<view class="form-group" style="width: 100%;">
+				<cmpt-editor nodeList="{{formContent}}" viewMode="{{true}}" style="width: 100%;" id="contentEditor"></cmpt-editor>
+			</view>
+		</view>   
+	</view> 
+	
+	<view class="btn-bottom-admin">
+		<view bindtap="url" data-type="back" class="return">不保存,返回</view>
+		<view bindtap="bindSaveTap" class="save">保存</view>
+	</view>
+
+</block>

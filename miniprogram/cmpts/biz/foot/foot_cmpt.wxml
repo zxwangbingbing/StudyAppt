@@ -1,0 +1,4 @@
+<view class="site-footer"  data-url="/pages/home/index/home_index">
+	<view class="info {{color}}">   {{company}} </view>
+	<view class="info margin-top-xs {{color}}">{{ver}}</view>
+</view>
