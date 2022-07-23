@@ -41,7 +41,7 @@ class DataService extends BaseService {
 
 	// 删除数据文件
 	async deleteDataExcel(key) {
-		console.log('[deleteExcel]  BEGIN... , key=' + key)
+		console.log('[deleteExcel]  BEGINx... , key=' + key)
 
 		// 取出数据
 		let whereExport = {
