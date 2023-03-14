@@ -1,4 +1,0 @@
-@import "../../../../style/project/base/article_list.wxss";
-@import "../../skin/skin.wxss"; 
-@import "../../../../style/project/my_join_base.wxss"; 
-

@@ -1,2 +1,0 @@
-<import src="../../../../tpls/project/meet_self_tpl.wxml" />
-<template is="meetCheckinTpl" />

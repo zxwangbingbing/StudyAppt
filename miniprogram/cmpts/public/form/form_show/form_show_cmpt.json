@@ -1,6 +1,0 @@
-{
-	"component": true,
-	"usingComponents": {
-		"cmpt-checkbox": "/cmpts/public/checkbox/checkbox_cmpt" 
-	}
-}

@@ -1,2 +1,0 @@
-<import src="../../../tpls/project/search_tpl.wxml" />
-<template is="searchTpl" data="{{cacheName,hisKeys,returnUrl,search,type}}" />

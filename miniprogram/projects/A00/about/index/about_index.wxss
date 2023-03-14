@@ -1,6 +1,0 @@
-@import "../../skin/skin.wxss"; 
-@import "../../../../style/project/about_index_base.wxss";
-
-.main .pics {
-	width: 100%; 
-}

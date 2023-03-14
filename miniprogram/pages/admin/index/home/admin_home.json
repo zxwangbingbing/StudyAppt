@@ -1,9 +1,0 @@
-{
-	"usingComponents": {
-		"cmpt-foot": "../../../../cmpts/biz/foot/foot_cmpt"
-	},
-	"enablePullDownRefresh": true,
-	"navigationBarBackgroundColor": "#2499f2",
-	"navigationBarTextStyle": "white",
-	"navigationBarTitleText": "后台管理"
-}

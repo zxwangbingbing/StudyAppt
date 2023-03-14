@@ -1,7 +1,0 @@
-{
-	"usingComponents": { 
-		"cmpt-form-show": "/cmpts/public/form/form_show/form_show_cmpt"  
-	},
-	"enablePullDownRefresh": true, 
-	"navigationBarTitleText": "预约详情"
-}

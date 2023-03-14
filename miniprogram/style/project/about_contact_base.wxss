@@ -1,4 +1,0 @@
-.main .content .title { 
-	text-align: left; 
-	border-bottom:1rpx dashed #ccc;
-}

@@ -1,3 +1,0 @@
-@import "../../../../style/project/about_contact_base.wxss";
-@import "../../skin/skin.wxss"; 
-@import "../index/about_index.wxss"; 

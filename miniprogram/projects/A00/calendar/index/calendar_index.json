@@ -1,7 +1,0 @@
-{
-	"usingComponents": {
-		"cmpt-calendar": "../../../../cmpts/public/calendar/calendar_comm/calendar_comm_cmpt"
-	},
-	"enablePullDownRefresh": true,
-	"navigationBarTitleText": "预约日历"
-}
