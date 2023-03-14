@@ -1,0 +1,8 @@
+{
+	"usingComponents": { 
+	},
+	"enablePullDownRefresh": true,
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "老师平台"
+}

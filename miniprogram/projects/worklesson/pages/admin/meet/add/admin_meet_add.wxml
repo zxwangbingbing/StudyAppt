@@ -1,0 +1,11 @@
+<block wx:if="{{isAdmin}}">
+	<view class="main-admin">
+
+		<include src="../add/admin_meet_form_tpl.wxml" />
+
+		<button bindtap="bindFormAddSubmit" class="btn-admin margin-top-l">创建</button>
+
+	</view>
+
+
+</block>

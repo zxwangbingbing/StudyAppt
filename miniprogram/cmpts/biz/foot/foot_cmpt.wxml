@@ -1,0 +1,4 @@
+<view class="site-footer" bindtap="url" data-type="mini" data-app="wx1a3ad7903d85f33a" data-url="/pages/home/index/home_index">
+	<view class="info {{color}}"> © {{company}} </view>
+	<view class="info margin-top-xs {{color}}">{{ver}}</view>
+</view>

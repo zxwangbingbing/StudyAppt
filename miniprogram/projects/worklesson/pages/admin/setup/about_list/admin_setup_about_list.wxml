@@ -1,0 +1,17 @@
+<!-- List Begin -->
+<view class="main-admin" wx:if="{{isAdmin}}">
+	<view class="admin-comm-list">
+		<view class="item" wx:for="{{list}}" wx:key="key" bindtap="url" data-url="../about/admin_setup_about?key={{item.key}}">
+			<view class="header">
+				<view class="left text-cut">《{{item.title}}》</view>
+				<view class="right">
+					<view class="btn round margin-right-s"><text class="icon-edit margin-right-xxs"></text>编辑</view>
+
+					<view catchtap="url" data-url="../../../about/list/about_list?key={{item.key}}" class="btn round margin-right-s"><text class="icon-attention margin-right-xxs"></text>预览</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- List END -->
+</view>

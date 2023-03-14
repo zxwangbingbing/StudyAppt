@@ -1,0 +1,348 @@
+
+/* ==================
+          操作条
+ ==================== */
+
+ .bar {
+	display: flex;
+	position: relative;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+
+.bar .action {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+	max-width: 100%;
+}
+
+
+.bar .content {
+	position: absolute;
+	text-align: center;
+	width: calc(100% - 340rpx);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	height: 60rpx;
+	font-size: 32rpx;
+	line-height: 60rpx;
+	cursor: none;
+	pointer-events: none;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.bar.ios .content {
+	bottom: 7px;
+	height: 30px;
+	font-size: 32rpx;
+	line-height: 30px;
+}
+
+.bar .action:first-child {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+}
+
+.bar .action:first-child>text[class*="icon-"] {
+	margin-left: -0.3em;
+	margin-right: 0.3em;
+}
+
+
+.bar .action:last-child {
+    margin-right: 30rpx;
+} 
+
+
+
+.bar .action>text[class*="icon-"],
+.bar .action>view[class*="icon-"] {
+	font-size: 36rpx;
+}
+
+.bar .action>text[class*="icon-"]+text[class*="icon-"] {
+	margin-left: 0.5em;
+}
+
+.bar .content {
+	position: absolute;
+	text-align: center;
+	width: calc(100% - 340rpx);
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	height: 60rpx;
+	font-size: 32rpx;
+	line-height: 60rpx;
+	cursor: none;
+	pointer-events: none;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.bar.ios .content {
+	bottom: 7px;
+	height: 30px;
+	font-size: 32rpx;
+	line-height: 30px;
+}
+
+.bar.btn-group {
+	justify-content: space-around;
+}
+
+.bar.btn-group button {
+	padding: 20rpx 32rpx;
+}
+
+.bar.btn-group button {
+	flex: 1;
+	margin: 0 20rpx;
+	max-width: 50%;
+}
+
+.bar .search-form {
+	background-color: #f5f5f5;
+	line-height: 64rpx;
+	height: 64rpx;
+	font-size: 24rpx;
+	color: var(--black);
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin: 0 30rpx;
+}
+
+.bar .search-form+.action {
+	margin-right: 30rpx;
+}
+
+.bar .search-form input {
+	flex: 1;
+	padding-right: 30rpx;
+	height: 64rpx;
+	line-height: 64rpx;
+	font-size: 26rpx;
+	background-color: transparent;
+}
+
+.bar .search-form [class*="icon-"] {
+	margin: 0 0.5em 0 0.8em;
+}
+
+.bar .search-form [class*="icon-"]::before {
+	top: 0rpx;
+}
+
+.bar.fixed,
+.nav.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1024;
+	box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.bar.foot {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	z-index: 1024;
+	box-shadow: 0 -1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.bar.tabbar {
+	padding: 0;
+	height: calc(100rpx + constant(safe-area-inset-bottom) / 2);
+	height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+	padding-bottom: calc(constant(safe-area-inset-bottom) / 2);
+	padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+
+.tabbar-height {
+	min-height: 100rpx;
+	height: calc(100rpx + constant(safe-area-inset-bottom) / 2);
+	height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+}
+
+.bar.tabbar.shadow {
+	box-shadow: 0 -1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+
+.bar.tabbar .action {
+	font-size: 22rpx;
+	position: relative;
+	flex: 1;
+	text-align: center;
+	padding: 0;
+	display: block;
+	height: auto;
+	line-height: 1;
+	margin: 0;
+	overflow: initial;
+}
+
+.bar.tabbar.shop .action {
+	width: 140rpx;
+	flex: initial;
+}
+
+.bar.tabbar .action.add-action {
+	position: relative;
+	z-index: 2;
+	padding-top: 50rpx;
+	background-color: inherit;
+}
+
+.bar.tabbar .action.add-action [class*="icon-"] {
+	position: absolute;
+	width: 70rpx;
+	z-index: 2;
+	height: 70rpx;
+	border-radius: 50%;
+	line-height: 70rpx;
+	font-size: 50rpx;
+	top: -35rpx;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 0;
+}
+
+.bar.tabbar .action.add-action::after {
+	content: "";
+	position: absolute;
+	width: 100rpx;
+	height: 100rpx;
+	top: -50rpx;
+	left: 0;
+	right: 0;
+	margin: auto;
+	box-shadow: 0 -3rpx 8rpx rgba(0, 0, 0, 0.08);
+	border-radius: 50rpx;
+	background-color: inherit;
+	z-index: 0;
+}
+
+.bar.tabbar .action.add-action::before {
+	content: "";
+	position: absolute;
+	width: 100rpx;
+	height: 30rpx;
+	bottom: 30rpx;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: inherit;
+	z-index: 1;
+}
+
+.bar.tabbar .btn-group {
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0 10rpx;
+}
+
+.bar.tabbar button.action::after {
+	border: 0;
+}
+
+.bar.tabbar .action [class*="icon-"] {
+	width: 100rpx;
+	position: relative;
+	display: block;
+	height: auto;
+	margin: 0 auto 10rpx;
+	text-align: center;
+	font-size: 40rpx;
+}
+
+.bar.tabbar .action .icon-cu-image {
+	margin: 0 auto;
+}
+
+.bar.tabbar .action .icon-cu-image image {
+	width: 50rpx;
+	height: 50rpx;
+	display: inline-block;
+}
+
+.bar.tabbar .submit {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	flex: 2;
+	align-self: stretch;
+}
+
+.bar.tabbar .submit:last-child {
+	flex: 2.6;
+}
+
+.bar.tabbar .submit+.submit {
+	flex: 2;
+}
+
+.bar.tabbar.border .action::before {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	border-right: 1rpx solid rgba(0, 0, 0, 0.1);
+	z-index: 3;
+}
+
+.bar.tabbar.border .action:last-child:before {
+	display: none;
+}
+
+.bar.input {
+	padding-right: 20rpx;
+	background-color: var(--white);
+}
+
+.bar.input input {
+	overflow: initial;
+	line-height: 64rpx;
+	height: 64rpx;
+	min-height: 64rpx;
+	flex: 1;
+	font-size: 30rpx;
+	margin: 0 20rpx;
+}
+
+.bar.input .action {
+	margin-left: 20rpx;
+}
+
+.bar.input .action [class*="icon-"] {
+	font-size: 48rpx;
+}
+
+.bar.input input+.action {
+	margin-right: 20rpx;
+	margin-left: 0rpx;
+}
+
+.bar.input .action:first-child [class*="icon-"] {
+	margin-left: 0rpx;
+} 

@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+	 
+	},
+	"disableScroll": true,
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTitleText": "老师平台",
+	"navigationBarTextStyle": "white"
+}

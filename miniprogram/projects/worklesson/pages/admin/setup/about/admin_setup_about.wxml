@@ -1,0 +1,14 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>
+
+<block wx:if="{{isAdmin&&isLoad}}">
+	<view class="main-admin">
+		<view class="form-box shadow">
+			<view class="form-group" style="width: 100%;">
+				<cmpt-editor nodeList="{{formContent}}" viewMode="{{true}}" style="width: 100%;" id="contentEditor"></cmpt-editor>
+			</view>
+		</view>
+	</view>
+	<view class="btn-bottom-admin"> 
+		<view bindtap="bindFormSubmit" class="save">保存修改</view>
+	</view>
+</block>

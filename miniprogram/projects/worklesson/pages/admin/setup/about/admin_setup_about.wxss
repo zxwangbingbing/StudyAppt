@@ -1,0 +1,17 @@
+@import '../../../../../../style/public/admin.wxss';
+ 
+.main-admin {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 30rpx 20rpx;
+	padding-bottom: 200rpx;
+}
+
+.form-group {
+	padding: 1rpx 1rpx;
+	overflow: hidden;
+}
+  
+.btn-bottom-admin>view {
+    width: 100%;
+}

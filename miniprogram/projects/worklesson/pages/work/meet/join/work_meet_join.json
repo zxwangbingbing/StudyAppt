@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		 
+	},
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white",   
+	"navigationBarTitleText": "分时段预约名单"
+}

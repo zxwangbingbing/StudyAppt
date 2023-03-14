@@ -1,0 +1,15 @@
+<view class="custom" style="height:{{customBarHeight}}px">
+	<view bindtap="bindTap" class="bar {{textColor}}" style="height:{{customBarHeight}}px;padding-top:{{statusBarHeight}}px;">
+		<view class="action">
+			<text wx:if="{{method=='back'}}" class="icon-back"></text>
+			<text wx:else class="icon-homefill"></text>
+		</view>
+
+		<view class="content {{textColor}}" style="top:{{statusBarHeight}}px;">
+			<slot name="content"></slot>
+		</view>
+
+		<slot name="right"></slot>
+
+	</view>
+</view>

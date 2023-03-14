@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"cmpt-editor": "/cmpts/public/editor/editor_cmpt"
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"enablePullDownRefresh": true, 
+	"navigationBarTitleText": "编辑"
+}

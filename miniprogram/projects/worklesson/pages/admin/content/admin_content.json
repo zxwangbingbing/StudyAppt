@@ -1,0 +1,8 @@
+{
+	"usingComponents": { 
+		"cmpt-editor": "/cmpts/public/editor/editor_cmpt"
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white", 
+	"navigationBarTitleText": "后台-详细内容编辑"
+}

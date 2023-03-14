@@ -1,0 +1,123 @@
+﻿<view style="height:200rpx"></view>
+
+<view wx:if="{{doHome&&mode!='right'&&mode!='left'}}" bindtap="bindHomeTap" class="cmpt-fixed-home-btn"><text class="icon-home"></text><text style="font-size:22rpx;">首页</text></view>
+
+<!--回页首 begin-->
+<block wx:if="{{doTop}}">
+	<import src="../../../tpls/public/top_tpl.wxml" />
+	<template is="topTpl" data="{{topBtnShow, bottom:topBtnBottom}}" />
+</block>
+<!--回页首 end-->
+
+<!--mode1 BEGIN-->
+<view wx:if="{{mode=='mode1'}}" class="cmpt-biz-detail-mode1 safe-bottom">
+	<view wx:if="{{tag}}" class="has-tag">{{tag}}</view>
+	<view class="fav btn-inner" bindtap="bindFavTap" wx:if="{{doFav}}">
+		<block wx:if="{{isFav>0}}">
+			<text class="icon-favorfill margin-right-xxs text-project" style="color:{{color||bg}}!important"></text><text class="text-project" style="color:{{color||bg}}!important">已收藏</text>
+		</block>
+		<block wx:else>
+			<text class="icon-favor margin-right-xxs"></text>加入收藏
+		</block>
+	</view>
+	<view class="btn-inner" bindtap="bindShareTap" wx:if="{{doShare&&doPoster}}">
+		<view class="share"><text class="icon-forward margin-right-xxs"></text>分享</view>
+	</view>
+	<view class="btn-inner" wx:if="{{doShare&&!doPoster}}">
+		<button class="share clearbtn" open-type="share" style="margin-top:-10rpx"><text class="icon-forward margin-right-xxs"></text>分享</button>
+	</view>
+
+	<slot />
+
+</view>
+<!--mode1 end-->
+
+<!--mode2 BEGIN-->
+<view wx:if="{{mode=='mode2'}}" class="cmpt-biz-detail-mode2 safe-bottom">
+	<view wx:if="{{tag}}" class="has-tag">{{tag}}</view>
+	<view class="inner">
+		<button class="share clearbtn" bindtap="bindShareTap" wx:if="{{doShare&&doPoster}}">
+			<text class="icon-forward"></text>
+			<text class="text-s">分享</text>
+		</button>
+		<button class="share clearbtn" open-type="share" wx:if="{{doShare&&!doPoster}}">
+			<text class="icon-forward"></text>
+			<text class="text-s">分享</text>
+		</button>
+		<block wx:if="{{doFav}}">
+			<view bindtap="bindFavTap" class="fav text-project" wx:if="{{isFav>0}}">
+				<text class="icon-favorfill"></text>
+				<text class="text-s">已收藏</text>
+			</view>
+			<view bindtap="bindFavTap" class="fav" wx:else>
+				<text class="icon-favor"></text>
+				<text class="text-s">收藏</text>
+			</view>
+		</block>
+		<view class="slot-inner">
+			<slot />
+		</view>
+	</view>
+</view>
+<!--mode2 end-->
+
+<!--mode right BEGIN-->
+<view wx:if="{{mode=='right'}}" class="cmpt-biz-detail-mode-right safe-bottom"> 
+	<view class="inner">
+		<block wx:if="{{doHome}}">
+			<view bindtap="bindHomeTap" class="fixed-btn">
+				<text class="icon-home"></text> 
+			</view> 
+		</block>
+		<button class="fixed-btn clearbtn" bindtap="bindShareTap" wx:if="{{doShare&&doPoster}}">
+			<text class="icon-forward"></text> 
+		</button>
+		<button class="fixed-btn clearbtn" open-type="share" wx:if="{{doShare&&!doPoster}}">
+			<text class="icon-forward"></text> 
+		</button>
+		<block wx:if="{{doFav}}">
+			<view bindtap="bindFavTap" class="fixed-btn" wx:if="{{isFav>0}}">
+				<text class="icon-favorfill"></text> 
+			</view>
+			<view bindtap="bindFavTap" class="fixed-btn" wx:else>
+				<text class="icon-favor"></text> 
+			</view>
+		</block> 
+		<view class="slot-inner">
+			<slot />
+		</view>
+	</view>
+</view>
+<!--mode right end-->
+
+
+<!--mode left BEGIN-->
+<view wx:if="{{mode=='left'}}" class="cmpt-biz-detail-mode-left safe-bottom"> 
+	<view class="inner">
+		<block wx:if="{{doHome}}">
+			<view bindtap="bindHomeTap" class="fixed-btn">
+				<text class="icon-home"></text> 
+			</view> 
+		</block>
+		<button class="fixed-btn clearbtn" bindtap="bindShareTap" wx:if="{{doShare&&doPoster}}">
+			<text class="icon-forward"></text> 
+		</button>
+		<button class="fixed-btn clearbtn" open-type="share" wx:if="{{doShare&&!doPoster}}">
+			<text class="icon-forward"></text> 
+		</button>
+		<block wx:if="{{doFav}}">
+			<view bindtap="bindFavTap" class="fixed-btn" wx:if="{{isFav>0}}">
+				<text class="icon-favorfill"></text> 
+			</view>
+			<view bindtap="bindFavTap" class="fixed-btn" wx:else>
+				<text class="icon-favor"></text> 
+			</view>
+		</block> 
+		<view class="slot-inner">
+			<slot />
+		</view>
+	</view>
+</view>
+<!--mode left end-->
+
+<cmpt-poster model:show="{{showPoster}}" doPoster="{{doPoster}}" wx:if="{{ posterConfig}}" config="{{posterConfig}}" />

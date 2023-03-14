@@ -1,0 +1,9 @@
+<view class="date-cmpt">
+	<view class="month">{{month||'2022年'}}</view>
+	<scroll-view scroll-x class="date-select" scroll-into-view="{{toView}}" enable-flex="{{true}}" >
+		<view id="day-{{item.day}}" class="item {{item.day == selected ? 'cur' : ''}}" wx:for="{{range}}" wx:key="key" bindtap='bindTap' data-day="{{item.day}}" data-month="{{item.month}}">
+			<view class="week">{{item.week}}</view>
+			<view class="date">{{item.show}}</view> 
+		</view>
+	</scroll-view>
+</view>

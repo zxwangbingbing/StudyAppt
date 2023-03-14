@@ -1,0 +1,2 @@
+@import "../../../../../style/public/detail.wxss"; 
+@import "../../../style/skin.wxss"; 

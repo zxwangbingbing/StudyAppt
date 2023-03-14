@@ -1,0 +1,54 @@
+@import "../calendar_comm/din.wxss";
+
+.date-cmpt {
+	width: 100%;
+}
+
+.date-cmpt .month {
+	width: 100%;
+	padding: 10rpx 15rpx;
+	font-size: 32rpx;
+	color: #000;
+	font-weight: bold;
+	font-family: 'din';
+}
+
+.date-select {
+	white-space: nowrap;
+}
+
+.date-select .item {
+	margin: 10rpx 10rpx 10rpx 0rpx;
+	text-align: center;
+	font-size: 24rpx;
+	line-height: 55rpx;
+	height: 110rpx;
+	width: 85rpx;
+	border: 1rpx solid #ddd;
+	border-radius: 17rpx;
+	display: inline-block;
+}
+
+.date-select .item:first-child {
+	margin-left: 5rpx;
+}
+
+.date-select .item .date {
+	font-size: 32rpx;
+	color: #000;
+	font-family: 'din';
+}
+
+.date-select .item .week {
+	font-size: 24rpx;
+	color: #666;
+}
+
+.date-select .item.cur {
+	background-color: #f37445;
+}
+
+.date-select .item.cur .week,
+.date-select .item.cur .date {
+	color: #fff;
+}

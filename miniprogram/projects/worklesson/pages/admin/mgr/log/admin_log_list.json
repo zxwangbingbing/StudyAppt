@@ -1,0 +1,8 @@
+{
+	"usingComponents": { 
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white", 
+	"disableScroll": true, 
+	"navigationBarTitleText": "后台-操作日志"
+}

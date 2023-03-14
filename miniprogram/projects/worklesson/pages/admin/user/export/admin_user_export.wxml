@@ -1,0 +1,41 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view> 
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<view class="form-box shadow">
+		<view class="form-group" style="padding:20rpx 15rpx 20rpx;">
+			<view class="title-desc">
+				※ 数据说明： 针对本次查询结果导出全部数据
+			</view>
+		</view>
+		<view class="form-group">
+			<view class="title" style="font-size:30rpx">数据下载链接<text wx:if="{{time}}" class="text-gray text-s margin-left-s">({{time}} 生成)</text> </view>
+			<button hover-class="button-hover" class="btn bg-admin text-white shadow" bindtap="url" data-type="copy" data-url="{{url}}">复制</button>
+		</view>
+		<view class="form-group align-start" bindtap="url" data-type="copy" data-url="{{url}}">
+			<textarea maxlength="500" placeholder="数据文件尚未生成，点击下方按钮生成" placeholder-class="phc" value="{{url}}" style="height:50rpx"></textarea>
+		</view>
+
+		<block wx:if="{{url}}">
+			<view class="form-group" style="padding:20rpx 15rpx 20rpx;">
+				<view class="title-desc">
+					<text user-select="true">※ <text class="text-black">链接使用说明</text>
+						1. 复制以上链接地址，建议在电脑浏览器中打开链接下载数据文件
+						2. 为保障信息安全，请勿外传数据链接
+						3. 为了防止隐私数据泄露，请在下载后及时点击下方按钮删除
+					</text>
+				</view>
+			</view>
+		</block>
+	</view>
+
+	<button bindtap="bindExportTap" class="btn-admin margin-top">{{url?'重新生成数据':'生成数据'}} (Excel文件)</button> 
+
+	<button wx:if="{{url}}" bindtap="bindOpenTap" class="btn-admin bg-purple light">直接打开数据文件</button>  
+
+	<button wx:if="{{url}}" bindtap="bindDelTap" class="btn-admin margin-bottom-s bg-red light">删除数据文件</button>  
+
+	<view class="form-group" wx:if="{{url}}">
+		<view class="title-desc text-red"><text class="icon-info margin-right-xs"></text>为了防止隐私数据泄露，请在下载上述文件后及时点击按钮删除
+		</view>
+	</view>
+</view>

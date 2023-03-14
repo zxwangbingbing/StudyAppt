@@ -1,0 +1,42 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-admin"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-admin"></view>
+
+<view class="main-admin" wx:if="{{isLoad&&isAdmin}}">
+	<!-- edit form begin -->
+	<view class="form-box shadow">
+		
+		<view class="form-group">
+			<view class="title must">登录账号</view>
+			<input maxlength="30" placeholder="请填写登录账号" placeholder-class="phc" model:value="{{formName}}" focus="{{formNameFocus}}"></input>
+		</view>
+		<view wx:if="{{formNameFocus}}" class="hint-desc error">{{formNameFocus}}</view>
+
+		<view class="form-group">
+			<view class="title must">姓名</view>
+			<input maxlength="30" placeholder="请填写管理员姓名" model:value="{{formDesc}}" focus="{{formDescFocus}}"></input>
+		</view>
+		<view wx:if="{{formDescFocus}}" class="hint-desc error">{{formDescFocus}}</view>
+
+		<view class="form-group">
+			<view class="title">*手机</view>
+			<input maxlength="11" placeholder="请填写手机号码" model:value="{{formPhone}}" focus="{{formPhoneFocus}}"></input>
+		</view>
+		<view wx:if="{{formPhoneFocus}}" class="hint-desc error">{{formPhoneFocus}}</view>
+
+	</view>
+	
+	<view class="form-box shadow">
+		<view class="form-group text-orange">
+			<text class="icon-info">不修改密码则保持以下为空</text>
+		</view>  
+		<view class="form-group">
+			<view class="title must">新密码</view>
+			<input maxlength="30" type="password" placeholder="请填写密码" model:value="{{formPassword}}" focus="{{formPasswordFocus}}"></input>
+		</view>
+		<view wx:if="{{formPasswordFocus}}" class="hint-desc error">{{formPasswordFocus}}</view>
+
+	</view>
+
+	<button bindtap="bindFormSubmit" class="btn-admin margin-top">确定修改</button>
+
+</view>

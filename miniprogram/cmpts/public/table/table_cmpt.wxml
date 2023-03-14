@@ -1,0 +1,25 @@
+<view scroll-x="{{true}}" scroll-y="{{true}}" scroll-anchoring="{{true}}" enhanced="{{true}}" bounces="{{false}}" class="table table-border">
+	<!-- 表格头 start -->
+	<view class="thead thead-border"  >
+		<view wx:for="{{ headers }}" wx:key="*this" class="td" style="width:200rpx;">
+			{{ item.label }}
+		</view>
+	</view>
+	<!-- 表格头 end -->
+
+	<!-- 表格体 start -->
+	<view   class="tbody"  >
+		<block wx:if="{{ data.length > 0 }}" wx:for-item="it" wx:for="{{ data }}" wx:key="*this" wx:for-index="idx">
+			<view class="tbody-tr tbody-tr-stripe1  tbody-tr-border">
+				<view wx:for-item="head" wx:for="{{ headers }}" wx:key="*this" class="td" style="width:200rpx; ">
+					{{it[head["prop"]]}}
+				</view>
+			</view>
+		</block>
+		<!-- 列表无数据处理 -->
+		<block wx:if="{{ data.length === 0 }}">
+			<view class="no-data">{{ msg }}</view>
+		</block>
+	</view>
+	<!-- 表格体 end -->
+</view>

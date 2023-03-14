@@ -1,0 +1,55 @@
+<view class="form-box shadow">
+	<view class="form-group">
+		<view class="title must">标题</view>
+	</view>
+
+	<view class="form-group">
+		<input placeholder="简短的标题" placeholder-class="phc" model:value="{{formTitle}}" focus="{{formTitleFocus}}" maxlength="50"></input>
+	</view>
+	<view wx:if="{{formTitleFocus}}" class="hint-desc error">{{formTitleFocus}}</view>
+
+	<view wx:if="{{cateIdOptions.length>1}}" class="form-group arrow" id="formCateId">
+			<view class="title must">分类</view>
+			<cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="url" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+		</view>
+		<view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view>
+
+	<view class="form-group">
+		<view class="title must">排序号<text class="text-grey text-normal margin-left-xs">(小的先显示)</text></view>
+		<input placeholder="排序号，小的先显示" type="number" placeholder-class="phc" model:value="{{formOrder}}" focus="{{formOrderFocus}}" maxlength="4"></input>
+	</view>
+	<view wx:if="{{formOrderFocus}}" class="hint-desc error">{{formOrderFocus}}</view>
+
+	<view class="form-group">
+		<view class="action text-bold text-l">简介</view>
+		<view class="action">{{formDesc.length}}/100</view>
+	</view>
+
+	<view class="form-group align-start">
+		<textarea name="content" placeholder-class="phc" placeholder="请输入本文简介，若不填写则直接取内容前100个字作为简介" style="min-height:150rpx" model:value="{{formDesc}}" maxlength="100" focus="{{formDescFocus}}" auto-height="true"></textarea>
+	</view>
+	<view wx:if="{{formDescFocus}}" class="hint-desc error">{{formDescFocus}}</view> 
+  
+	<view class="form-group arrow" bindtap="url" data-url="../../content/admin_content">
+		<view class="title must">详细内容<text class="text-grey text-normal margin-left-xs">(必填)</text></view>
+		<view class="form-text {{contentDesc=='未填写'?'text-orange':''}}">{{contentDesc}}</view>
+	</view>
+	<view wx:if="{{formContentFocus}}" class="hint-desc error">{{formContentFocus}}</view>
+
+
+</view> 
+ 
+
+<view class="form-box shadow">
+	<!-- img upload begin -->
+	<cmpt-img-upload imgMax="{{1}}" title="封面图上传 (必填)" isCheck="{{false}}" imgUploadSize="{{10}}" imgList="{{imgList}}" bind:upload="bindImgUploadCmpt" />
+	<!-- img upload end -->
+</view>
+
+<view class="form-box shadow margin-top-xs">
+	<cmpt-form-show id="cmpt-form" mark="cmpt-form" source="admin" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{id?false:true}}">
+	</cmpt-form-show>
+</view>
+
+
+<button bindtap="bindFormSubmit" class="btn-admin margin-top-xs">提交</button>

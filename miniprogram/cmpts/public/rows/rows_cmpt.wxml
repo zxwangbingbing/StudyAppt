@@ -1,0 +1,35 @@
+<block wx:for="{{list}}" wx:key="key">
+	<view class="form-group form-rows-item" style="padding-right:0rpx;padding-left:5rpx">
+
+		<view class="line1">
+			<view wx:if="{{hasPic}}" bindtap='bindPicTap' data-idx="{{index}}" class="pic">
+				<image wx:if="{{item.pic}}" class="loading" src="{{item.pic}}" />
+				<text wx:else class="icon-cameraadd"></text>
+			</view>
+
+			<text wx:if="{{hasVal}}" class="text-bold">{{titleName}}{{index+1}}标题：</text><input bindinput='bindTitleBlur' bindblur='bindTitleBlur' data-idx="{{index}}" placeholder="请输入{{titleName}}{{index+1}}{{hasVal?'标题':''}}" maxlength="200" focus="{{item.focus}}" placeholder-class="phc" value="{{item.title}}"></input>
+
+			<view wx:if="{{hasDetail}}" bindtap="url" data-url="/cmpts/public/form/form_show/content/form_show_content?from=rows&cmptId={{mark}}&cmptFormName={{index}}&cmptParentId={{parentMark}}&upDirectDir={{upDirectDir}}" class="detail-set text-blue"><text class="icon-edit"></text><text class="{{item.detail.length==0?'text-orange':''}}">{{detailName}}{{item.detail.length==0?'未填':''}}</text></view>
+			<view bindtap="bindDelTap" data-idx="{{index}}" class="icon-roundclose margin-left-xs text-red select-close"></view>
+
+		</view>
+		<block wx:if="{{hasVal}}">
+			<view class="line1 line2" wx:if="{{valMode=='input'}}">
+				<text class="tit">{{valName}}：</text><input bindinput='bindValBlur' bindblur='bindValBlur' data-idx="{{index}}" placeholder="请输入{{valName}}{{index+1}} " maxlength="200" focus="{{item.focus}}" placeholder-class="phc" value="{{item.val}}"></input>
+			</view>
+			<view class="line1 line3" wx:if="{{valMode=='textarea'}}">
+				<view class="tit">{{valName}}：</view>
+				<textarea bindinput='bindValBlur' bindblur='bindValBlur' data-idx="{{index}}" placeholder="请输入{{valName}}{{index+1}}" style="min-height:120rpx" auto-height="true" focus="{{item.focus}}" placeholder-class="phc" value="{{item.val}}"></textarea>
+				<view class="no">{{index+1}}</view>
+			</view>
+		</block>
+	</view>
+	<view wx:if="{{item.focus}}" class="hint-desc error">{{item.focus}}</view>
+</block>
+
+
+<view class="form-group form-rows-add" bindtap="bindAddTap">
+	<view> <text class="icon-roundaddfill margin-right-xs"></text>添加新{{titleName}}
+	</view>
+
+</view>

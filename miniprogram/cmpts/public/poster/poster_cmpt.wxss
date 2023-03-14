@@ -1,0 +1,84 @@
+.main-poster .poster-share {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 30rpx 50rpx 10rpx;
+}
+
+.main-poster .poster-share .item {
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	color: #333;
+}
+
+.main-poster .poster-share .item .pic {
+	height: 100rpx;
+	width: 100rpx;
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-poster .poster-share .item-share {
+	margin-top: 15rpx;
+}
+
+.main-poster .poster-share .item-share>text {
+	margin-top: 15rpx !important;
+}
+
+.main-poster .poster-share .item .pic image {
+	height: 50rpx;
+	width: 50rpx;
+}
+
+.main-poster .poster-share .item .pic .friend {
+	height: 60rpx;
+	width: 60rpx;
+}
+
+.main-poster .poster-share .item>text {
+	margin-top: 15rpx;
+	font-size: 30rpx;
+	text-align: center;
+}
+
+.main-poster .poster-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 0rpx;
+	padding-bottom: 0rpx;
+	min-height: 600rpx;
+	margin-top: 30rpx;
+	flex-direction: column;
+}
+
+.main-poster .poster-img .save-hint {
+	font-size: 30rpx;
+	color: #555;
+	margin-top: 10rpx;
+}
+
+.load.loading::after {
+	content: "海报生成中...";
+}
+
+.main-poster .poster-img image {
+	width: 375rpx;
+	border-radius: 15rpx;
+}
+
+.main-poster .line {
+	width: 100%;
+	margin: 30rpx 0 30rpx;
+	border-top: 1rpx solid #ddd;
+	padding: 30rpx 0 20rpx;
+	font-size: 32rpx;
+}

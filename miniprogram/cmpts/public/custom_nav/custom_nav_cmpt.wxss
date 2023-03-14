@@ -1,0 +1,34 @@
+  .bar {
+	display: flex;
+	position: relative;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+
+.custom {
+	display: block;
+	position: fixed;
+	width:100%;
+	z-index: 99999;
+}
+.custom .title{
+	color:#fff;
+}
+.custom .bar {
+	width:100%;
+	min-height: 0px;
+	padding-right: 220rpx;
+	box-shadow: 0rpx 0rpx 0rpx;
+	z-index: 9999;
+}
+
+.custom .bar .content {
+	width: 100%;
+}
+
+
+.custom .bar .content image {
+	height: 60rpx;
+	width: 240rpx;
+}  

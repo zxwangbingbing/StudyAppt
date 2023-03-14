@@ -1,0 +1,103 @@
+.radio-group {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 0rpx 20rpx;
+}
+
+.radio-group .item {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	line-height: 2.1;
+	min-height: 70rpx;
+	border-bottom: 1rpx solid #eee;
+	font-size: 28rpx;
+}
+
+.radio-group .item.row { 
+	border-bottom: unset;      
+}    
+
+.radio-group .item .item-label{
+	width: 100%; 
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+ 
+
+.radio-group .item:last-child {
+	border-bottom: 0;
+}
+
+.radio-group .item:nth-child(odd) {
+	background-color: #fcfcfc;
+}
+
+.radio-group .item.row:nth-child(odd) {
+	background-color: #fff;
+}
+
+
+.radio-group .item .item-radio {
+	margin-right: 20rpx;
+	padding-left: 10rpx; 
+} 
+
+/*按行排列*/ 
+.radio-group.row{ 
+	flex-direction: row!important; 
+	flex-wrap: wrap!important;
+	justify-content: flex-start;
+}
+
+.radio-group.row .item{ 
+	width:unset!important;
+	margin-right: 25rpx;
+}
+
+.radio-group.row .item.row {
+	margin-right: 0rpx;
+	margin-left: 25rpx;
+}
+
+.radio-group.row .item .item-radio {
+     margin-right: 5rpx;  
+      padding-left: 0rpx;  
+}
+
+/*标签形式*/
+.form-radio-tags {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.form-radio-tags .item {  
+	padding:15rpx 10rpx;
+}
+ 
+
+.form-radio-tags .item .tag-txt {
+	padding: 9rpx 25rpx;
+	background-color: #f8f8f8;
+	border: 1rpx solid #ccc;
+	color: #000;
+	border-radius: 7rpx;
+	font-size: 28rpx;
+}
+
+.form-radio-tags .item .tag-txt.cur {
+	border: 1rpx solid var(--btnColor);
+	background-color: var(--btnColor);
+	color: #fff;
+
+}

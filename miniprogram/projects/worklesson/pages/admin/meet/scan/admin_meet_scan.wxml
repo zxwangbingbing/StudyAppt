@@ -1,0 +1,6 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-admin"></view>
+
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<include src="admin_meet_scan_tpl.wxml" />
+</view>

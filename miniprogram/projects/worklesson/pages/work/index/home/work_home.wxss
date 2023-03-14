@@ -1,0 +1,162 @@
+@import '../../../../style/work.wxss'; 
+
+.main-work {
+	padding: 0;
+}
+
+.work-info {
+	height: 200rpx;
+	width: 100%;
+	color: #fff;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	border-bottom-left-radius: 50rpx;
+}
+
+.work-info .pic {
+	width: 100rpx;
+	height: 100rpx;
+	font-size: 70rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20rpx;
+	border-radius: 50%;
+	margin-left: 20rpx;
+	background-color: #fff;
+}
+
+.work-info .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.work-info .pic image {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: inherit;
+}
+
+.work-info .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.work-info .right .name {
+	font-size: 32rpx;
+	line-height: 1.8;
+}
+
+.work-info .right .desc {
+	font-size: 24rpx;
+	line-height: 1.3;
+}
+
+.work-info .exit-work {
+	position: absolute;
+	top: 12rpx;
+	right: 12rpx;
+	font-size: 45rpx;
+}
+
+
+.main-work .comm-list {
+	background-color: #fff;
+	width: 100%;
+	border-radius: 20rpx;
+}
+
+.main-work .exit {
+	width: 100%;
+	padding: 0 20rpx;
+	margin-bottom: 50rpx;
+}
+
+.main-work .exit button {
+	width: 100%;
+	color: #fff;
+	height: 70rpx;
+}
+
+.mid {
+	width: 100%;
+	padding: 20rpx 15rpx;
+}
+
+.main-menu {
+	margin-top: 10rpx;
+	width: 100%;
+	padding: 0rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.main-menu .title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5rpx 15rpx;
+	background-color: #f2f2f2;
+	color: #999;
+	border-bottom-left-radius: 10rpx;
+	font-size: 24rpx;
+}
+
+.main-menu .item {
+	width: 33.33%;
+	display: flex;
+	flex-direction: column;
+	padding: 20rpx 0;
+	align-items: center;
+}
+
+.main-menu .item .ico {
+	margin-bottom: 0rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30rpx;
+	position: relative;
+	padding: 20rpx 0;
+}
+
+.main-menu .item .ico text {
+	font-size: 60rpx;
+}
+
+.main-menu .item .ico .status {
+	position: absolute;
+	top: 8rpx;
+	right: -15rpx;
+	font-size: 24rpx;
+	padding: 3rpx 10rpx;
+	background-color: var(--red);
+	color: #fff;
+	border-radius: 20rpx;
+	z-index: 99999;
+}
+
+.main-menu .item .desc {
+	font-size: 28rpx;
+}
+
+.btn-exit {
+	width: 100%;
+	margin-top: 50rpx;
+}
+
+.base-hint {
+	width: 100%;
+	padding: 10rpx 20rpx;
+	border-radius: 5rpx;
+	background-color: #FDF6EC;
+	color: #FEB13E;
+	line-height: 1.5;
+}

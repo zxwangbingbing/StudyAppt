@@ -1,0 +1,185 @@
+.cmpt-fixed-home-btn {
+	position: fixed;
+	bottom: 180rpx;
+	left: 10rpx;
+	font-size: 45rpx;
+	height: 80rpx;
+	width: 80rpx;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	z-index: 99999;
+
+}
+
+/*MODE1*/
+.cmpt-biz-detail-mode1 {
+	box-shadow: 0 -6rpx 8rpx rgba(114, 130, 138, 0.2);
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background-color: #f2f2f2;
+	z-index: 9999999;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	font-size: 32rpx;
+	color: #333; 
+}
+
+.cmpt-biz-detail-mode1 .has-tag {
+	position: absolute;
+	top: 0rpx;
+	right: 0rpx;
+	z-index: 9999;
+	font-size: 22rpx; 
+	padding: 0rpx 4rpx;
+	border-radius: 5rpx; 
+	color: #fff; 
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cmpt-biz-detail-mode1 .btn-inner {
+	padding: 30rpx 0rpx;
+	flex: 1 1 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cmpt-biz-detail-mode1 .btn-inner {
+	border-right: 1rpx solid #ddd;
+}
+
+.cmpt-biz-detail-mode1 .btn-inner:last-child {
+	border-right: unset;
+}
+
+.cmpt-biz-detail-mode1 .btn-inner .fav {
+	background: inherit;
+}
+
+.cmpt-biz-detail-mode1 .btn-inner .share {
+	background: inherit;
+}
+
+/*MODE2*/
+.cmpt-biz-detail-mode2 {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	background-color: #fff;
+	box-shadow: 0 -6rpx 8rpx rgba(114, 130, 138, 0.1);
+	z-index: 999;
+}
+
+.cmpt-biz-detail-mode2 .has-tag {
+	position: absolute;
+	top: 5rpx;
+	right: 10rpx;
+	z-index: 9999;
+	font-size: 24rpx;
+	background-color: #f8f8f8;
+	padding: 5rpx 10rpx;
+	border-radius: 10rpx;
+	color: #666;
+	border: 1rpx solid #eee;
+}
+
+.cmpt-biz-detail-mode2 .inner {
+	width: 100%;
+	padding: 20rpx 20rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cmpt-biz-detail-mode2 .inner .slot-inner {
+	flex: 1;
+	padding: 0 20rpx;
+}
+
+.cmpt-biz-detail-mode2 .share,
+.cmpt-biz-detail-mode2 .fav {
+	font-size: 35rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20rpx;
+	width: 120rpx;
+}
+
+.cmpt-biz-detail-mode2 .share .text-s,
+.cmpt-biz-detail-mode2 .fav .text-s {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+
+/*MODE RIGHT*/
+.cmpt-biz-detail-mode-right { 
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	position: fixed;
+	bottom: 90rpx;
+	right:15rpx;  
+	z-index: 99999; 
+}
+ 
+.cmpt-biz-detail-mode-right .fixed-btn { 
+	font-size: 35rpx;
+	height: 60rpx;
+	width: 60rpx;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin-bottom: 15rpx;
+}
+
+.cmpt-biz-detail-mode-right .fixed-btn .text-t{ 
+	font-size: 22rpx;  
+}
+
+
+/*MODE LEFT*/
+.cmpt-biz-detail-mode-left {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	position: fixed;
+	bottom: 90rpx;
+	left: 15rpx;
+	z-index: 99999;
+}
+
+.cmpt-biz-detail-mode-left .fixed-btn {
+	font-size: 35rpx;
+	height: 60rpx;
+	width: 60rpx;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin-bottom: 15rpx;
+}
+
+.cmpt-biz-detail-mode-left .fixed-btn .text-t {
+	font-size: 22rpx;
+}

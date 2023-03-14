@@ -1,0 +1,42 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-grey"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-grey"></view>
+
+<view wx:if="{{isLoad && isAdmin}}" class="main-admin">
+	<view class="admin-comm-list">
+		<view class="item">
+			<view class="info">
+				<view class="info-item">
+					<view class="title">用户昵称</view>
+					<view class="mao">：</view>
+					<view class="content text-admin  text-l">{{user.USER_NAME}} </view>
+				</view>
+				<view class="info-item" bindtap="url" data-type="phone" data-url="{{user.USER_MOBILE}}">
+					<view class="title">手机号码</view>
+					<view class="mao">：</view>
+					<view class="content">{{user.USER_MOBILE}} <text class="icon-phone text-l margin-left-xs"></text></view>
+				</view>
+				<view class="info-item">
+					<view class="title">课时数</view>
+					<view class="mao">：</view>
+					<view class="content">{{user.USER_LESSON_TOTAL_CNT}} 课时</view>
+				</view>
+				<view class="info-item">
+					<view class="title">添加时间</view>
+					<view class="mao">：</view>
+					<view class="content">{{user.USER_ADD_TIME}} </view>
+				</view>
+				<view class="info-item" wx:if="{{user.USER_TYPE==1}}">
+					<view class="title">注册时间</view>
+					<view class="mao">：</view>
+					<view class="content">{{user.USER_REG_TIME}} </view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view style="height:30rpx;"></view>
+
+	<import src="../../../../../../tpls/public/admin_forms_detail_tpl.wxml" />
+	<template is="adminFormsDetailTpl" data="{{forms:user.USER_FORMS}}" />
+
+
+</view>

@@ -1,0 +1,60 @@
+.picker-set {
+	line-height: 100rpx;
+	font-size: 24rpx;
+	width: 100%;
+	text-align: right;
+	color: #999;
+	width: 210rpx;
+}
+ 
+.form-group .picker-set {
+	padding-right: 40rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.form-group.cur {
+	animation: glow 800ms linear 1 alternate;
+} 
+ 
+@keyframes glow { 
+	0% {
+		background-color: #ececec;
+	} 
+	100% {
+		background-color: #fff;
+	}
+}
+
+.form-group-active{
+	background-color: #ececec;
+}
+
+.form-group .title {
+	font-weight: normal;
+	color: #333;
+	flex: 1;
+	padding-right: 10rpx;
+}
+
+.form-group .field-oprt {
+	color: #777;
+	background: hsla(0, 0%, 100%, .95);
+	border-radius: 5rpx; 
+	box-shadow: 0 0 5px rgba(0, 0, 0, .1); 
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15rpx; 
+}
+
+.form-group .field-oprt>view{
+	width:70rpx;
+	height:55rpx;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-size:36rpx;
+} 

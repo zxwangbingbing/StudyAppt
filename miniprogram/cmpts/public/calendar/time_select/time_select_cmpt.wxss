@@ -1,0 +1,119 @@
+@import "../calendar_comm/din.wxss";
+
+.time-table {
+	width: 100%;
+	padding: 0 5rpx;
+}
+
+.time-table .table-inner {
+	width: 100%;
+	font-size: 28rpx;
+}
+
+
+.time-table .list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.time-table .list .item {
+	color: #000;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	height: 42rpx;
+	padding: 0
+}
+
+.time-table .list .item .left {
+	background-color: #f5fafe;
+	height: inherit;
+	width: 140rpx;
+	text-align: center;
+	padding-top: 4rpx;
+	border-right: 1rpx solid #ddd;
+	border-left: 1rpx solid #ddd;
+	font-size: 30rpx;
+	font-weight: normal !important;
+	font-family: 'din';
+}
+
+.time-table .list .item:last-child .left {
+	border-bottom: 1rpx solid #ddd;
+}
+
+.time-table .list .item .left.top {
+	border-top: 1rpx solid #ddd !important;
+	border-bottom: 0 !important;
+}
+
+
+.time-table .list .item .right {
+	flex: 1;
+	height: inherit;
+	border-right: 1rpx solid #ddd;
+	border-top: 1rpx solid #ddd;
+	background-color: #fff;
+	color: #444;
+	padding: 0 10rpx;
+	width: 100%;
+	text-align: center;
+}
+
+.time-table .list .item:last-child .right {
+	border-bottom: 1rpx solid #ddd !important;
+}
+
+.time-table .list .item:first-child .right {
+	border-top: 1rpx solid #ddd !important;
+}
+
+.time-table .list .item .right.selected {
+	border-top: 1rpx solid #dfffd8;
+	background-color: #dfffd8;
+}
+
+.time-table .list .item .right.selected-first {
+	border-top: 1rpx solid #ddd !important;
+}
+
+.time-table .list .item .right.expire {
+	background-color: #f5f5f5;
+	color: #999;
+}
+
+.time-table .list .item .right.used,
+.time-table .list .item .right.used-first {
+	border-top: 0rpx solid #E0EBFE;
+	background-color: #E0EBFE;
+	color: #f37445;
+	font-size: 28rpx;
+	border-left: 6rpx solid #1A65FF;
+	text-align: left;
+}
+
+.time-table .list .item .right.used-first {
+	border-top: 1rpx solid #ddd !important;
+}
+
+.time-submit {
+	width: 100%;
+	position: fixed;
+	bottom: 15rpx;
+	padding: 20rpx 30rpx;
+	z-index: 999999;
+}
+
+.time-submit .inner {
+	width: 100%;
+	background-color: #999;
+	font-size: 36rpx;
+	border-radius: 15rpx;
+	padding: 15rpx 0;
+	text-align: center;
+	color: #fff;
+}

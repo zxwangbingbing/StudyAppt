@@ -1,0 +1,14 @@
+<radio-group wx:if="{{show!='tag'}}" bindchange="bindChange" class="radio-group {{show=='row'?'row':''}}">
+	<view class="item {{show}}" wx:for="{{options}}" wx:key="key">
+		<label class="item-label">
+			<radio class="item-radio" disabled="{{disabled}}" value="{{item.value}}" checked="{{itemSelected==item.value}}" />
+			<text>{{item.label}}{{labelExt}}</text>
+
+		</label>
+	</view>
+</radio-group>
+<block wx:else>
+	<view class="form-radio-tags">
+		<view bindtap="bindTagChange" data-val="{{item.value}}" class="item" wx:for="{{options}}" wx:key="key"><text class="tag-txt  {{itemSelected==item.value?'cur':''}}">{{item.label}}{{labelExt}}</text></view> 
+	</view> 
+</block>

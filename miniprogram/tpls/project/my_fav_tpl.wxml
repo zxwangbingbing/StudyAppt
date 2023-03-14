@@ -1,0 +1,25 @@
+<cmpt-comm-list type="my-fav" search="{{search||''}}" _menus="{{sortMenus||[]}}" _items="{{sortItems||[]}}" route="fav/my_list" isTotalMenu="{{false}}" topBottom="120" placeholder="搜索标题" returnUrl='/pages/my/fav/my_fav' bind:list="myCommListListener">
+
+	<!-- List Begin -->
+	<view class="text-pic-list-box">
+		<view wx:for="{{dataList.list}}" wx:key="key" class="item shadow item-simple" bindtap="url" data-url="{{item.FAV_PATH}}">
+			<view class="simple">
+				<view class="simple-right">
+					<view class="simple-title content-cut-one">{{item.FAV_TITLE}}</view>
+					<view class="simple-desc">
+						<text class="text-grey text-bold">{{item.FAV_TYPE}}</text>
+						<text class="margin-left-s">{{item.FAV_ADD_TIME}}</text>
+						<button catchtap="bindDelTap" data-oid="{{item.FAV_OID}}" class="margin-left btn mid bg-white text-red"><text class="icon-delete"></text>删除</button>
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+		<!--load begin-->
+		<import src="../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+	</view>
+	<!-- List END -->
+</cmpt-comm-list>

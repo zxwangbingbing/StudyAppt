@@ -1,0 +1,67 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-work"></view>
+
+<view class="main-work" wx:if="{{isLoad && isWork}}">
+
+	<view class="work-info bg-work">
+		<view class="pic">
+			<image mode="aspectFill" class="loading" src="{{work.pic||'../../../../images/work/pic.png'}}" />
+		</view>
+		<view class="right">
+			<view class="name">
+				<text class="text-xl">{{work.name}}</text>
+			</view>
+			<view wx:if="{{work.cnt}}" class="desc text-s">共登录{{work.cnt}}次，上次{{work.last}}</view>
+			<view wx:else class="desc text-s">首次登录~</view>
+		</view>
+		<view class="exit-work" bindtap="bindExitTap"><text class="icon-exit"></text></view>
+	</view>
+
+
+	<view class="mid">
+		<view class="main-menu" style="margin-top:30rpx">  
+			<view class="item" bindtap="url" data-url="../../meet/edit/work_meet_edit?id={{id}}">
+				<view class="ico">
+					<view wx:if="{{stat}}" class="status">{{stat.dayCnt}}</view>
+					<text class="icon-calendar"></text>
+				</view>
+				<view class="desc">预约设置与排期</view>
+			</view>
+			<view class="item" bindtap="url" data-url="../../meet/record/work_meet_record?meetId={{id}}">
+				<view class="ico"> 
+					<text class="icon-form"></text>
+				</view>
+				<view class="desc">用户预约记录</view>
+			</view>
+			<view class="item" bindtap="url" data-url="../../meet/scan/work_meet_scan?meetId={{id}}">
+				<view class="ico"> 
+					<text class="icon-scan"></text>
+				</view>
+				<view class="desc">核销预约</view>
+			</view>
+			 
+
+		</view>
+
+		<view class="main-menu" style="margin-top:30rpx"> 
+			<view class="item" bindtap="url" data-url="../pwd/work_pwd">
+				<view class="ico"> 
+					<text class="icon-edit"></text>
+				</view>
+				<view class="desc">修改登陆密码</view>
+			</view>
+			<view class="item" bindtap="url" data-url="../../../meet/detail/meet_detail?id={{id}}">
+				<view class="ico"> 
+					<text class="icon-attention"></text>
+				</view>
+				<view class="desc">预览预约页面</view>
+			</view>
+
+		</view>
+
+		<view bindtap="bindExitTap" class="btn-work btn-exit" style="border-radius:20rpx">退出登录</view>
+
+	</view>
+
+
+	<view style="height:150rpx;"></view>
+</view>

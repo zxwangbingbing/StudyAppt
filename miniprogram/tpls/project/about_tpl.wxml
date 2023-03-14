@@ -1,0 +1,35 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<view wx:if="{{isLoad}}" class="main padding-project">
+
+	<view class="article-box margin-top-xs">
+		<!-- article content begin -->
+		<view class="article card-project shadow-project"> 
+
+			<block wx:for="{{about}}" wx:key="key">
+				<view class="content" wx:if="{{item.type=='text'}}">
+					<text user-select>{{item.val}}</text>
+				</view>
+
+				<view class="pics" wx:if="{{item.type=='img'}}">
+					<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+					</image>
+				</view>
+			</block>
+			<!-- article content end -->
+
+
+
+
+		</view>
+		<!-- article content end -->
+
+
+	</view>
+
+	<view wx:if="{{accountInfo}}" class='text-center text-xs text-grey margin-top'>
+		v{{accountInfo.miniProgram.version}} {{accountInfo.miniProgram.envVersion}}
+	</view>
+
+</view>

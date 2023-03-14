@@ -1,0 +1,27 @@
+<view class="form-box shadow-project card-project">
+	 
+	 
+	
+	<view class="form-group">
+		<view class="title must">姓名</view>
+		<input type="nickname" placeholder="填写您的姓名" placeholder-class="phc" model:value="{{formName}}" maxlength="30"></input>
+	</view>
+	<view wx:if="{{formNameFocus}}" class="hint-desc error">{{formNameFocus}}</view>
+
+	<view class="form-group">
+		<view class="title must">手机</view>
+		<input wx:if="{{!mobileCheck}}" placeholder="填写您的手机号码" placeholder-class="phc" model:value="{{formMobile}}" maxlength="11"></input>
+
+		<block wx:else>
+			<view class="mobile">{{formMobile||'未填写'}}</view>
+			<button open-type="getPhoneNumber" bindgetphonenumber="bindGetPhoneNumber" class="btn phone-button"><text wx:if="{{!formMobile}}">一键填写手机号</text><text wx:else>一键修改手机号</text></button>
+		</block>
+	</view>
+	<view wx:if="{{formMobileFocus}}" class="hint-desc error">{{formMobileFocus}}</view>
+
+</view>
+
+<view class="form-box shadow-project card-project margin-top-xs">
+	<cmpt-form-show id="cmpt-form" mark="cmpt-form" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{isEdit?false:true}}">
+	</cmpt-form-show>
+</view>

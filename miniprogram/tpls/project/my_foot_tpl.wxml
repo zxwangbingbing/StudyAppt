@@ -1,0 +1,19 @@
+<!-- List Begin -->
+<view class="text-pic-list-box">
+	<view class="simple text-center text-grey padding" wx:if="{{!footList || footList.length==0}}">暂无记录哦~</view>
+	<view wx:for="{{footList}}" wx:key="key" class="item shadow item-simple" bindtap="url" data-url="{{item.path}}">
+		<view class="simple">
+			<view class="simple-right">
+				<view class="simple-title content-cut-one">{{item.title}}</view>
+				<view class="simple-desc">
+					<text class="text-grey text-bold">{{item.type}}</text>
+					<text class="margin-left-s">{{item.time}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+
+</view>
+<!-- List END -->

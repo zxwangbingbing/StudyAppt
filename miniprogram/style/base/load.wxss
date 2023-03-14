@@ -1,0 +1,245 @@
+/* ==================
+          加载
+ ==================== */
+
+ .load {
+	display: block;
+	line-height: 3em;
+	text-align: center;
+	z-index: 99999;
+}
+
+.load::before {
+	font-family: "icon";
+	display: inline-block;
+	margin-right: 6rpx;
+}
+
+.load.loading::before, .load.loading-none::before {
+	content: "\e67a";
+	animation: icon-spin 2s infinite linear;
+}
+
+.load.loading::after {
+	content: "加载中...";
+}
+
+.load.over::before {
+	content: "\e64a";
+}
+
+.load.over::after {
+	content: "没有更多了";
+}
+
+.load.error::before {
+	content: "\e658";
+}
+/*
+.load.error::after {
+	content: "加载失败";
+}*/
+
+.load.notexist::before {
+	content: "\e658";
+}
+
+.load.notexist::after {
+	content: "数据不存在或者已删除";
+}
+
+.load.load-icon::before {
+	font-size: 32rpx;
+}
+
+.load.load-icon::after {
+	display: none;
+}
+
+.load.load-icon.over {
+	display: none;
+}
+
+.load.load-modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 140rpx;
+	left: 0;
+	margin: auto;
+	width: 260rpx;
+	height: 260rpx;
+	background-color: var(--white);
+	border-radius: 10rpx;
+	box-shadow: 0 0 0rpx 2000rpx rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 28rpx;
+	z-index: 9999;
+	line-height: 2.4em;
+}
+
+.load.load-modal [class*="icon-"] {
+	font-size: 60rpx;
+}
+
+.load.load-modal image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.load.load-modal::after {
+	content: "";
+	position: absolute;
+	background-color: var(--white);
+	border-radius: 50%;
+	width: 200rpx;
+	height: 200rpx;
+	font-size: 10px;
+	border-top: 6rpx solid rgba(0, 0, 0, 0.05);
+	border-right: 6rpx solid rgba(0, 0, 0, 0.05);
+	border-bottom: 6rpx solid rgba(0, 0, 0, 0.05);
+	border-left: 6rpx solid var(--orange);
+	animation: icon-spin 1s infinite linear;
+	z-index: -1;
+}
+
+.load-progress {
+	pointer-events: none;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	z-index: 2000;
+}
+
+.load-progress.hide {
+	display: none;
+}
+
+.load-progress .load-progress-bar {
+	position: relative;
+	width: 100%;
+	height: 4rpx;
+	overflow: hidden;
+	transition: all 200ms ease 0s;
+}
+
+.load-progress .load-progress-spinner {
+	position: absolute;
+	top: 10rpx;
+	right: 10rpx;
+	z-index: 2000;
+	display: block;
+}
+
+.load-progress .load-progress-spinner::after {
+	content: "";
+	display: block;
+	width: 24rpx;
+	height: 24rpx;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: solid 4rpx transparent;
+	border-top-color: inherit;
+	border-left-color: inherit;
+	border-radius: 50%;
+	-webkit-animation: load-progress-spinner 0.4s linear infinite;
+	animation: load-progress-spinner 0.4s linear infinite;
+}
+
+@-webkit-keyframes load-progress-spinner {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load-progress-spinner {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+/* ==================
+         进度条
+ ==================== */
+
+.progress {
+	overflow: hidden;
+	height: 28rpx;
+	background-color: #ebeef5;
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+}
+
+.progress+view,
+.progress+text {
+	line-height: 1;
+}
+
+.progress.xs {
+	height: 10rpx;
+}
+
+.progress.sm {
+	height: 20rpx;
+}
+
+.progress view {
+	width: 0;
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-items: flex-end;
+	justify-content: space-around;
+	font-size: 20rpx;
+	color: var(--white);
+	transition: width 0.6s ease;
+}
+
+.progress text {
+	align-items: center;
+	display: flex;
+	font-size: 20rpx;
+	color: var(--black);
+	text-indent: 10rpx;
+}
+
+.progress.text-progress {
+	padding-right: 60rpx;
+}
+
+.progress.striped view {
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+	background-size: 72rpx 72rpx;
+}
+
+.progress.active view {
+	animation: progress-stripes 2s linear infinite;
+}
+
+@keyframes progress-stripes {
+	from {
+		background-position: 72rpx 0;
+	}
+
+	to {
+		background-position: 0 0;
+	}
+}

@@ -1,0 +1,17 @@
+<view class="form-box shadow">
+	<view class="form-group" wx:if="{{isAdmin}}">
+		<view class="title text-cut">{{title}}</view>
+	</view>
+
+</view>
+
+<view class="form-box shadow margin-top-xs">
+
+	<view class="checkin" bindtap="bindScanTap">
+		<view class="notice"><text class="icon-scan margin-right-s text-bold"></text>扫码核销</view>
+		<view class="desc" wx:if="{{isAdmin}}">管理员扫描用户预约码进行核销</view>
+		<view class="desc" wx:if="{{isWork}}">扫描用户预约码进行核销</view>
+		<view class="oprt">立即核销</view>
+	</view>
+
+</view>

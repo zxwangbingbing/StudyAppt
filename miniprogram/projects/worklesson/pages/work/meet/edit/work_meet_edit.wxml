@@ -1,0 +1,13 @@
+<view wx:if="{{id&&isLoad===null}}" class="margin-top load notexist text-l text-grey"></view>
+<view wx:if="{{id&&isLoad===false}}" class="margin-top load loading text-l text-grey"></view>
+<block wx:if="{{isWork&& isLoad}}">
+	<view class="main-work">
+
+		<include src="../../../admin/meet/add/admin_meet_form_tpl.wxml" />
+ 
+		<button bindtap="bindFormEditSubmit" class="btn-work margin-top-l">保存</button>
+
+	</view>
+
+
+</block>

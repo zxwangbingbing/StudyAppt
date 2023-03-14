@@ -1,0 +1,125 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list id="cmpt-comm-list" source='admin' type="admin-user-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/user_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../add/admin_user_add" class="btn mid radius bg-orange text-white margin-right-s"><text class="icon-add margin-right-xxs"></text>添加待注册学员</button>
+			<button bindtap="url" data-url="../export/admin_user_export?condition={{dataList.condition}}" class="btn mid radius bg-admin text-white margin-right-s"><text class="icon-down margin-right-xxs"></text>导出学员</button>
+		</view>
+
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录 </view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut">{{item.USER_NAME}}
+					</view>
+					<view class="right">
+						<block wx:if="{{item.USER_TYPE==1}}">
+						<text wx:if="{{item.USER_STATUS==1}}" class="text-black">「已注册，状态正常」</text> 
+						<text wx:elif="{{item.USER_STATUS==9}}" class="text-purple">「已注册，状态禁用」</text>
+						</block>
+						<block wx:if="{{item.USER_TYPE==0}}">
+							<text class="text-orange">「待注册」</text>
+						</block>
+
+					</view>
+				</view>
+
+				<view class="info">
+					<view wx:if="{{item.USER_STATUS==8}}" class="info-item">
+						<view class="title">审核理由</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_CHECK_REASON||'未填写'}}</view>
+					</view>
+					<view class="info-item" bindtap="url" data-type="phone" data-url="{{item.USER_MOBILE}}">
+						<view class="title">手机</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_MOBILE||'未填写'}} <text wx:if="{{item.USER_MOBILE}}" class="icon-phone margin-left-s"></text></view>
+					</view>
+
+					<view class="info-item" style="font-size: 32rpx;">
+						<view class="title">课时数</view>
+						<view class="mao">：</view>
+						<view class="content">可使用{{item.USER_LESSON_TOTAL_CNT}}节，已使用{{item.USER_LESSON_USED_CNT}}节 </view>
+					</view>
+
+					<view class="info-item" wx:if="{{item.USER_TYPE==0}}">
+						<view class="title">创建</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_ADD_TIME}}</view>
+					</view>
+					<view class="info-item" wx:else>
+						<view class="title">注册</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.USER_REG_TIME}}</view>
+					</view>
+
+					<view class="info-item" bindtap="url" data-url="../detail/admin_user_detail?id={{item.USER_MINI_OPENID}}">
+						<view class="title">详情</view>
+						<view class="mao">：</view>
+						<view class="content text-blue">查看更多学员资料...</view>
+					</view>
+					<view class="oprt"> 
+						<block wx:if="{{item.USER_TYPE==1}}">
+
+
+						<view wx:if="{{item.USER_STATUS==9}}" bindtap="bindStatusTap" data-status="1" data-idx="{{index}}" class="btn  margin-right-s"><text class="icon-check margin-right-xxs text-green"></text>恢复正常</view>
+
+						<view wx:if="{{item.USER_STATUS!=9}}" bindtap="bindStatusTap" data-status="9" data-idx="{{index}}" class="btn  margin-right-s"><text class="icon-close margin-right-xxs text-purple"></text>禁用</view>
+						</block>
+
+						<view bindtap="bindDelTap" data-id="{{item.USER_MINI_OPENID}}" class="btn  margin-right-s"><text class="icon-delete margin-right-xxs text-orange"></text>删除</view> 
+
+						<block wx:if="{{item.USER_STATUS==1}}">
+							<view bindtap="bindLessonTap" data-idx="{{index}}" data-type="增加" class="btn  margin-right-s">增加课时</view>
+							<view bindtap="bindLessonTap" data-idx="{{index}}" data-type="减少" class="btn  margin-right-s">减少课时</view>
+						</block>
+ 
+
+						<view bindtap="url" data-url="../../../meet/lesson_log/meet_lesson_log?id={{item.USER_MINI_OPENID}}" class="btn  margin-right-s">课时记录</view>
+
+					</view>
+				
+				</view>
+			</view>
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'text-grey',dataList}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+
+	<cmpt-modal wx:if="{{checkModalShow}}" model:show="{{checkModalShow}}" type="dialog" title="审核不过" bind:click="bindCheckCmpt" class="modal-form" cancelText="返回" confirmText="确定">
+		<view class="form-group" style="padding:0 10rpx">
+			<view class="title">审核不过理由 <text class="text-grey text-mid">(选填)</text>：</view>
+			<view bindtap="bindClearReasonTap" style="width:150rpx;text-align: right;" class="text-grey"><text class="icon-roundclose"></text>清空</view>
+		</view>
+
+		<view class="form-group cancel-area">
+			<textarea placeholder-class="phc" placeholder="请输入审核不过理由 (非必填)" style="height:110rpx" model:value="{{formReason}}" maxlength="100"></textarea>
+		</view>
+	</cmpt-modal>
+
+
+	<cmpt-modal wx:if="{{lessonModalShow}}" model:show="{{lessonModalShow}}" type="dialog" title="{{lessonType}}课时" bind:click="bindLessonCmpt" class="modal-form" cancelText="返回" confirmText="确定{{lessonType}}">
+		<view class="form-group" style="padding:0 10rpx">
+			<view class="title">*课时数：</view>
+			<input placeholder="请填写{{lessonType}}课时数" type="number" placeholder-class="phc" model:value="{{formLessonChangeCnt}}" focus="{{formLessonChangeCntFocus}}" maxlength="4"></input>
+		</view>
+
+		<view class="form-group" style="padding:0 10rpx">
+			<view class="title">备注：</view>
+			<input placeholder="请填写备注" type="text" placeholder-class="phc" model:value="{{formLessonDesc}}" focus="{{formLessonDescFocus}}" maxlength="200"></input>
+		</view>
+
+
+	</cmpt-modal>
+
+</block>

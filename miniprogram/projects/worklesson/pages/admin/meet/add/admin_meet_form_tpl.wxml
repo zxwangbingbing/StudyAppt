@@ -1,0 +1,72 @@
+<view class="form-box shadow">
+	<view class="form-group">
+		<view class="title must">标题</view>
+		<input placeholder="简短的标题" placeholder-class="phc" model:value="{{formTitle}}" focus="{{formTitleFocus}}" maxlength="50"></input>
+	</view>
+	<view wx:if="{{formTitleFocus}}" class="hint-desc error">{{formTitleFocus}}</view>
+
+	<view wx:if="{{cateIdOptions.length>1&&isAdmin}}" class="form-group arrow" id="formCateId">
+		<view class="title must">分类</view>
+		<cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="bindCateIdSelect" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+	</view>
+	<view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view>
+
+
+
+	<view class="form-group" wx:if="{{isAdmin}}">
+		<view class="title must">排序号<text class="text-grey text-normal margin-left-xs">(小的先显示)</text></view>
+		<input placeholder="排序号，小的先显示" type="number" placeholder-class="phc" model:value="{{formOrder}}" focus="{{formOrderFocus}}" maxlength="4"></input>
+	</view>
+	<view wx:if="{{formOrderFocus}}" class="hint-desc error">{{formOrderFocus}}</view>
+
+
+	<view class="form-group" id="formCancelSet">
+		<view class="title must">取消设置</view>
+		<cmpt-picker mark="cancelSet" style="flex:1" model:item="{{formCancelSet}}" sourceDataStr="0=不可取消,1=随时可取消,10=开始前均可取消,11=开始前1小时可取消,12=开始前2小时可取消,13=开始前3小时可取消,14=开始前4小时可取消,15=开始前5小时可取消" />
+	</view>
+	<view wx:if="{{formCancelSetFocus}}" class="hint-desc error">{{formCancelSetFocus}}</view>
+
+</view>
+
+<view id="formDaysSet" class="form-box shadow" style="background-color: #fef2ce;">
+	<view bindtap="url" data-url="../time/{{isAdmin?'admin':'work'}}_meet_time" class="form-group arrow">
+		<view class="title must ">预约时段排期设置</view>
+		<view wx:if="{{formDaysSet.length}}" class="form-text text-red text-bold">{{formDaysSet.length}}天可约</view>
+		<view wx:else class="form-text text-orange">请配置可预约时段</view>
+	</view>
+	<view wx:if="{{formDaysSetFocus}}" class="hint-desc error">{{formDaysSetFocus}}</view>
+
+</view>
+
+
+<view id="formPhone" class="form-box shadow" wx:if="{{isAdmin&&formCateId==1}}">
+	<view class="form-group">
+		<view class="title">老师登陆手机</view>
+		<input maxlength="11" type="number" placeholder="请填写登陆手机号码" model:value="{{formPhone}}" focus="{{formPhoneFocus}}"></input>
+	</view>
+	<view wx:if="{{formPhoneFocus}}" class="hint-desc error">{{formPhoneFocus}}</view>
+
+	<view class="form-group text-orange" wx:if="{{isAdmin&&isEdit}}">
+		<text class="icon-info" style="font-size: 24rpx;">不修改密码则保持以下为空</text>
+	</view>
+	<view class="form-group">
+		<view class="title">老师登陆密码</view>
+		<input maxlength="30" placeholder="请填写登陆密码" model:value="{{formPassword}}" focus="{{formPasswordFocus}}"></input>
+	</view>
+	<view wx:if="{{formPasswordFocus}}" class="hint-desc error">{{formPasswordFocus}}</view>
+
+
+</view>
+
+
+<view class="form-box shadow margin-top-xs">
+	<cmpt-form-show id="cmpt-form" mark="cmpt-form" source="admin" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{id?false:true}}">
+	</cmpt-form-show>
+</view>
+
+<view class="form-box shadow" wx:if="{{isAdmin}}">
+	<view class="form-group">
+		<view class="title must">预约用户填写数据项目 <text class="text-grey text-normal">(共{{formJoinForms.length}}个字段)</text></view>
+	</view>
+	<cmpt-form-set id="form-set" bind:formset="bindJoinFormsCmpt" fields="{{formJoinForms}}" />
+</view>

@@ -1,0 +1,9 @@
+{
+	"usingComponents": {
+		"cmpt-picker-time": "/cmpts/public/picker_time/picker_time_cmpt"
+	},
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white", 
+	"enablePullDownRefresh": true,  
+	"navigationBarTitleText": "扫码核销"
+}
