@@ -1,0 +1,23 @@
+@import "../../../style/skin.wxss"; 
+page {
+	background-color: #E8EDF4!important;
+}
+
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+}
+
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+	font-size:28rpx;
+}

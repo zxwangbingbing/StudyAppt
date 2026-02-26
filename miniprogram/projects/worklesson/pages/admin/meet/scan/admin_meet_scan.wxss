@@ -1,0 +1,36 @@
+@import '../../../../../../style/public/admin.wxss'; 
+
+.form-box .checkin {
+	width: 100%;
+	padding: 40rpx 40rpx 80rpx;
+	padding-bottom: 150rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.form-box .checkin .notice {
+	width: 100%;
+	font-size: 46rpx;
+	text-align: center;
+	color: #000;
+	margin-bottom: 30rpx;
+}
+
+.form-box .checkin .desc {
+	width: 100%;
+	font-size: 32rpx;
+	text-align: center;
+	color: #666;
+}
+
+.form-box .checkin .oprt {
+	width: 600rpx;
+	margin-top: 40rpx;
+	text-align: center;
+	font-size: 34rpx;
+	color: var(--adminColor);
+	border: 2rpx solid var(--adminColor);
+	padding: 30rpx 20rpx;
+}

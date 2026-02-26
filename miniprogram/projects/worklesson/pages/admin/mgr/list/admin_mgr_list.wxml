@@ -1,0 +1,83 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-mgr" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/mgr_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索账号，姓名，手机" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../add/admin_mgr_add" class="btn radius bg-admin text-white  margin-right-s"><text class="icon-roundadd margin-right-xxs"></text>添加管理员</button>
+		</view>
+
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录 </view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut">{{item.ADMIN_NAME}}
+					</view>
+					<view class="right">
+						<text class="text-green" wx:if="{{item.ADMIN_STATUS==1}}">「正常」</text>
+						<text class="text-red" wx:if="{{item.ADMIN_STATUS==0}}">「停用」</text>
+					</view>
+				</view>
+
+				<view class="info title-mid">
+					<view class="info-item">
+						<view class="title">管理员身份</view>
+						<view class="mao">：</view>
+						<view wx:if="{{item.ADMIN_TYPE==1}}" class="content text-bold text-red">超级管理员</view>
+						<view wx:else class="content">普通管理员</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">登录账号</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ADMIN_NAME}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">姓名</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ADMIN_DESC||'未填写'}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">手机</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ADMIN_PHONE}}</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">最近登录</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.ADMIN_LOGIN_CNT}}次 / {{item.ADMIN_LOGIN_TIME}}</view>
+					</view> 
+					 
+
+					<view class="oprt">
+						<view bindtap="url" data-url="../edit/admin_mgr_edit?id={{item._id}}" class="btn  margin-right-s"><text class="icon-edit margin-right-xxs"></text>编辑</view>
+
+						<block wx:if="{{item.ADMIN_TYPE!=1}}">
+							<view wx:if="{{item.ADMIN_STATUS==0}}" class="btn text-green" bindtap="bindStatusTap" data-id="{{item._id}}" data-status="1" class="btn  margin-right-s"><text class="icon-delete margin-right-xxs"></text>启用</view>
+
+							<view wx:if="{{item.ADMIN_STATUS==1}}" class="btn margin-left-s text-orange" bindtap="bindStatusTap" data-id="{{item._id}}" data-status="0" class="btn margin-right-s"><text class="icon-roundclose margin-right-xxs text-red"></text>停用</view>
+
+							<view bindtap="bindDelTap" data-id="{{item._id}}" class="btn margin-right-s"><text class="icon-delete margin-right-xxs text-orange"></text>删除</view>
+
+						</block>
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList, skin:'text-grey'}}" />
+		<!--load end--> 
+
+	</cmpt-comm-list>
+
+</block>

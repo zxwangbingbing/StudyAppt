@@ -1,0 +1,139 @@
+
+/* ==================
+          标签
+ ==================== */
+
+ .tag {
+	font-size: 24rpx;
+	vertical-align: middle;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0rpx 16rpx;
+	height: 48rpx;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	white-space: nowrap;
+}
+
+.tag:not([class*="bg"]):not([class*="border"]) {
+	background-color: var(--ghostWhite);
+}
+
+.tag[class*="border-"]::after {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1rpx solid currentColor;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	box-sizing: border-box;
+	border-radius: inherit;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.tag.radius[class*="border"]::after {
+	border-radius: 12rpx;
+}
+
+.tag.round[class*="border"]::after {
+	border-radius: 1000rpx;
+}
+
+.tag[class*="border-"]::after {
+	border-radius: 0;
+} 
+
+.tag.border-bold::after {
+	border: 6rpx solid currentColor;
+} 
+
+.tag+.tag {
+	margin-left: 10rpx;
+}
+
+.tag.small {
+	font-size: 20rpx;
+	padding: 0rpx 12rpx;
+	height: 32rpx;
+}
+
+.capsule {
+	display: inline-flex;
+	vertical-align: middle;
+}
+
+.capsule+.capsule {
+	margin-left: 10rpx;
+}
+
+.capsule .tag {
+	margin: 0;
+}
+
+.capsule .tag[class*="border-"]:last-child::after {
+	border-left: 0rpx solid transparent;
+}
+
+.capsule .tag[class*="border-"]:first-child::after {
+	border-right: 0rpx solid transparent;
+}
+
+.capsule.radius .tag:first-child {
+	border-top-left-radius: 6rpx;
+	border-bottom-left-radius: 6rpx;
+}
+
+.capsule.radius .tag:last-child::after,
+.capsule.radius .tag[class*="border-"] {
+	border-top-right-radius: 12rpx;
+	border-bottom-right-radius: 12rpx;
+}
+
+.capsule.round .tag:first-child {
+	border-top-left-radius: 200rpx;
+	border-bottom-left-radius: 200rpx;
+	text-indent: 4rpx;
+}
+
+.capsule.round .tag:last-child::after,
+.capsule.round .tag:last-child {
+	border-top-right-radius: 200rpx;
+	border-bottom-right-radius: 200rpx;
+	text-indent: -4rpx;
+}
+
+.tag.badge {
+	border-radius: 200rpx;
+	position: absolute;
+	top: -10rpx;
+	right: -10rpx;
+	font-size: 20rpx;
+	padding: 0rpx 10rpx;
+	height: 28rpx;
+	color: var(--white);
+}
+
+.tag.badge:not([class*="bg-"]) {
+	background-color: #dd514c;
+}
+
+.tag:empty:not([class*="icon-"]) {
+	padding: 0rpx;
+	width: 16rpx;
+	height: 16rpx;
+	top: -4rpx;
+	right: -4rpx;
+}
+
+.tag[class*="icon-"] {
+	width: 32rpx;
+	height: 32rpx;
+	top: -4rpx;
+	right: -4rpx;
+}

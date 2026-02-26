@@ -1,0 +1,17 @@
+@import '../../../../../../style/public/admin.wxss';
+
+page {
+	background-color: #f8f8f8;
+}
+
+.main-admin {
+	padding: 40rpx 0;
+}
+
+.admin-comm-list .item {
+	margin-bottom: 40rpx;
+}
+
+.admin-comm-list .item .header .left {
+	font-size: 32rpx !important;
+}

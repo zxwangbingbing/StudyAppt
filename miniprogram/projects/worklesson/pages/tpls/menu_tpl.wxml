@@ -1,0 +1,32 @@
+<template name="menuTpl"> 
+	<view class="tab-bar" >   
+		<view wx:if="{{returnHome}}" class="tab-bar-home" bindtap="url" data-type="relaunch"
+			data-url="/pages/home/index/home_index">
+			<text class="tab-bar-home-text icon-homefill text-grey"></text>
+		</view>
+
+		<view class="tab-bar-border"></view>
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/worklesson/pages/default/index/default_index">
+			<image class="tab-icon" src="/projects/worklesson/images/tabbar/home{{curMenu=='home_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='home_index'?'menu-project':''}}">首页</view>
+		</view>
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/worklesson/pages/news/index/news_index">
+			<image class="tab-icon" src="/projects/worklesson/images/tabbar/news{{curMenu=='news_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='news_index'?'menu-project':''}}">最新通知</view>
+		</view> 
+	 
+
+		<view wx:if="{{skin.cate2!==false}}" class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/worklesson/pages/meet/calendar/meet_calendar">
+			<image class="tab-icon" src="/projects/worklesson/images/tabbar/day{{curMenu=='meet_calendar'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='meet_calendar'?'menu-project':''}}">预约日历</view>
+		</view>
+	 
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/worklesson/pages/my/index/my_index">
+			<image class="tab-icon" src="/projects/worklesson/images/tabbar/my{{curMenu=='my_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='my_index'?'menu-project':''}}">个人中心</view>
+		</view>
+
+
+	</view>
+</template>

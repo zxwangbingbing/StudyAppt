@@ -1,0 +1,127 @@
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: #E8EDF4;
+}
+
+.main {
+	width: 100%;
+	padding: 10rpx 35rpx;
+}
+
+.date {
+	white-space: nowrap;
+	display: flex;
+	padding: 25rpx;
+	height: 145rpx;
+}
+
+.date .item {
+	width: 100rpx;
+	height: 70rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15rpx;
+	overflow: hidden;
+	color: #666;
+	font-size: 28rpx;
+	position: relative;
+}
+
+.date .item .dot {
+	position: absolute;
+	top: 8rpx;
+	right: 8rpx;
+	width: 8rpx;
+	height: 8rpx;
+	border-radius: 50%;
+	background-color: var(--projectColor);
+}
+
+.date .item.cur {
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333;
+	position: relative;
+}
+
+.date .item.cur:after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	bottom: 5rpx;
+	width: 28%;
+	height: 8rpx;
+	border-radius: 2rpx;
+	background-color: #333;
+	transform: translateX(-50%);
+	border-radius: 20rpx;
+}
+
+.list {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.list .item {
+	width: calc((100% - 30rpx)/2);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #fff;
+	margin-bottom: 30rpx;
+	border-radius: 30rpx;
+	flex-direction: column;
+	padding: 30rpx;
+	position: relative;
+	height: 220rpx;
+}
+
+.list .item:nth-child(2n+1) {
+	margin-right: 30rpx;
+}
+
+.list .item .title {
+	font-size: 28rpx;
+	font-weight: bold;
+	width: 100%;
+}
+
+
+.list .item .desc {
+	font-size: 24rpx;
+	width: 100%;
+	text-align: left;
+	color: #bbb;
+	margin-top: 10rpx;
+}
+
+.list .item .img {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.list .item .img image {
+	margin-top: 20rpx;
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+}
+
+.list .item .appt {
+	position: absolute;
+	right: 0;
+	bottom: 30rpx;
+	background-color: #E8EDF4;
+	font-size: 24rpx;
+	padding: 8rpx 20rpx;
+	border-top-left-radius: 20rpx;
+	border-bottom-left-radius: 20rpx;
+}

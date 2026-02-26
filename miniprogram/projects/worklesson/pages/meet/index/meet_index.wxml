@@ -1,0 +1,34 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+	<cmpt-comm-list type="meet-list" _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="meet/list" topBottom="120" isTotalMenu="{{false}}" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<!-- List Begin -->
+		<view class="main">
+			<view class="list">
+				<view class="item" bindtap="url" data-url="../detail/meet_detail?id={{item._id}}" wx:for="{{dataList.list}}" wx:key="k">
+					<view class="left">
+						<image src="{{item.MEET_OBJ.cover[0]}}" class="loading {{item.MEET_CATE_ID==1?'round shadow':''}}" mode="aspectFill" />
+					</view>
+					<view class="right">
+						<view class="title">{{item.MEET_TITLE}}</view>
+						<view class="desc">{{item.MEET_OBJ.desc}}</view>
+					</view>
+					<view class="arrow"><text class="icon-right"></text></view>
+				</view>
+			</view>
+		</view>
+
+
+
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+	</cmpt-comm-list>
+
+
+
+</block>

@@ -1,0 +1,65 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-news-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/news_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索标题" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../add/admin_news_add" class="btn radius bg-admin text-white margin-right-s"><text class="icon-roundadd margin-right-xxs"></text>添加{{NEWS_NAME}}</button>
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut"><text wx:if="{{item.NEWS_ORDER==0}}" class="text-black margin-right-xxs" style="font-weight:normal;font-size:24rpx">[置顶]</text><text wx:if="{{item.NEWS_VOUCH==1}}" class="text-black margin-right-xxs" style="font-weight:normal;font-size:24rpx">[首页推荐]</text> {{item.NEWS_TITLE}}
+					</view>
+					<view class="right">
+						<text wx:if="{{item.NEWS_STATUS==1}}" class="text-black">「正常」</text>
+						<text wx:elif="{{item.NEWS_STATUS==0}}" class="text-orange">「停用」</text>
+					</view>
+				</view>
+
+				<view class="info">
+					<view wx:if="{{cateIdOptions.length>1}}" class="info-item">
+						<view class="title">分类</view>
+						<view class="mao">：</view>
+						<view class="content">『{{item.NEWS_CATE_NAME}}』</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">排序号</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_ORDER}} <text class="margin-left-xxs text-grey">(小的先显示)</text></view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">创建</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+						<view bindtap="url" data-url="../edit/admin_news_edit?id={{item._id}}" class="btn round margin-right-s"><text class="icon-edit margin-right-xxs"></text>编辑</view> 
+
+						<view bindtap="bindStatusMoreTap" data-id="{{item._id}}" class="btn margin-right-s">状态管理</view>
+
+						<view data-idx="{{index}}"  bindtap="bindMoreTap" data-id="{{item._id}}" data-idx="{{index}}" data-qr="{{item.NEWS_QR}}" data-title="{{item.NEWS_TITLE}}" class="btn margin-right-s">更多操作</view> 
+
+						<view bindtap="url"  data-url="../../../news/detail/news_detail?id={{item._id}}" class="btn margin-right-s">预览</view>
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

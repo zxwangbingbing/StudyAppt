@@ -1,0 +1,57 @@
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list type="my_join"  _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="meet/my_join_list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="index">
+
+				<view class="status bg-grey light" wx:if="{{item.isTimeout}}">已过期</view>
+				<view class="status bg-green light" wx:elif="{{item.JOIN_STATUS==1&&item.JOIN_IS_CHECKIN==0}}">可使用</view> 
+				<view class="status bg-blue light" wx:elif="{{item.JOIN_STATUS==1&&item.JOIN_IS_CHECKIN==1}}">已核销</view> 
+				<view class="status bg-orange light" wx:elif="{{item.JOIN_STATUS==10}}">已取消</view>
+				<view class="status bg-red light" wx:elif="{{item.JOIN_STATUS==99}}">系统取消</view>
+
+
+
+				<view bindtap="url" data-url="../my_join_detail/meet_my_join_detail?id={{item._id}}" wx:if="{{!item.isTimeout&&item.JOIN_STATUS==1&&item.JOIN_IS_CHECKIN==0}}" class="qr"><text class="icon-qrcode"></text></view>
+
+				<view class="title">{{item.JOIN_MEET_TITLE}}</view>
+
+				<view class="author content-cut-two">姓名：{{item.JOIN_OBJ.name}}</view>
+				<view class="author">时间：{{item.JOIN_MEET_DAY}} {{item.JOIN_MEET_TIME_START}}～{{item.JOIN_MEET_TIME_END}}
+				</view>
+
+				<view class="data">
+
+					<block wx:if="{{item.JOIN_STATUS==99}}">
+						<text class="text-red"><text class="icon-bad margin-right-xxs"></text>系统取消<text class="text-grey" wx:if="{{item.JOIN_REASON}}">：{{item.JOIN_REASON}}</text></text>
+					</block>
+
+				</view>
+
+				<view class="data data-button">
+					<button bindtap="url" data-url="../my_join_detail/meet_my_join_detail?id={{item._id}}" class="btn mid bg-gray text-black">查看详情</button>
+					<button wx:if="{{(!item.isTimeout&&item.JOIN_STATUS==1||item.JOIN_STATUS==0) && item.JOIN_IS_CHECKIN==0}}" bindtap="bindCancelTap" data-id="{{item._id}}" class="btn mid bg-grey light"><text class="icon-close"></text>取消</button>
+				</view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+
+	<!--  button Begin -->
+	<!--  button END -->
+
+</block>

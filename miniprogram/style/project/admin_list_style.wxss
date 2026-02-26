@@ -1,0 +1,13 @@
+
+.admin-comm-list .item .info .oprt {
+	padding: 0rpx 0rpx;
+	display: flex;
+	justify-content: space-between;
+}
+
+.admin-comm-list .item .info .oprt .btn {
+	width: 155rpx;
+	margin-right: 0rpx !important;
+	height: 60rpx !important;
+	padding: 0 0rpx;
+}

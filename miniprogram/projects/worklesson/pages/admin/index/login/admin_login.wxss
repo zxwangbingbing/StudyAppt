@@ -1,0 +1,71 @@
+@import '../../../../../../style/public/admin.wxss';
+
+.main-admin {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative; 
+}
+
+.login {
+	width: 500rpx;
+	background-color: #fff;
+	min-height: 550rpx;
+	border-radius: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50rpx 20rpx;
+	margin-top: -100rpx;
+}
+
+.login button {
+	width: 85%;
+	color: #fff;
+	font-size: 32rpx;
+}
+
+.login .hint {
+	width: 100%;
+	color: #000;
+	font-weight: bold;
+	font-size: 36rpx;
+	text-align: center;
+}
+
+.login .return {
+	width: 100%;
+	font-size: 30rpx;
+	text-align: center;
+	font-size: 26rpx;
+}
+
+.pic {
+	width: 180rpx;
+	height: 180rpx;
+	font-size: 130rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.foot-bottom {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 50rpx;
+}
+
+.site-footer {
+	color: #fff !important;
+}
+
+.form-group .title {
+    color:#333;
+}

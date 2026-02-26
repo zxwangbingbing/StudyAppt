@@ -1,0 +1,59 @@
+@import "../../../../../style/public/detail.wxss";
+@import "../../../style/skin.wxss";
+
+.form-group .line-desc {
+	font-size: 28rpx;
+	text-align: center;
+	width: 100%;
+	color: #666;
+}
+
+.submit-line {
+	width: 100%;
+}
+
+.user-list {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border-bottom: 2rpx dashed #ddd;
+}
+
+.user-list .left {
+	width: 280rpx;
+	font-size: 28rpx;
+} 
+
+.user-list .right {
+	display: flex;
+	width: 190rpx;
+	justify-content: flex-end;
+}
+
+.user-list .right>view {
+	font-size: 24rpx;
+	padding: 8rpx 15rpx;
+	border-radius: 10rpx;
+}
+
+.add-line {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 40rpx 60rpx;
+}
+
+
+.add-line .line {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 15rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	border-radius: 50rpx;
+	border: 2rpx dashed #ccc;
+	color: #666;
+	background-color: #f8f8f8;
+}
+  

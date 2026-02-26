@@ -1,0 +1,96 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+<block wx:if="{{isLoad}}">
+	<view class="main">
+		<view class="meet-title">
+			<image mode="aspectFill" class="loading shadow" src="{{meet.MEET_OBJ.cover[0]}}" />
+			<view class="title">{{meet.MEET_TITLE}}</view>
+		</view>
+		<view class="meet-tab">
+			<view bindtap="bindTabTap" data-cur="time" class="item {{cur=='time'?'cur':''}}"><text class="icon-calendar margin-right-xxs"></text>预约时段</view>
+			<view bindtap="bindTabTap" data-cur="mind" class="item {{cur=='mind'?'cur':''}}"><text class="icon-notice margin-right-xxs"></text>预约须知</view>
+		
+		</view>
+
+		<view wx:if="{{cur=='mind'}}" class="article-box">
+			<view class="article">
+				<view class="cancel">
+					<text class="icon-notice text-bold">取消规则：</text>
+					<text wx:if="{{meet.MEET_CANCEL_SET==0}}">不可取消</text>
+					<text wx:if="{{meet.MEET_CANCEL_SET==1}}">随时可取消</text>
+					<text wx:if="{{meet.MEET_CANCEL_SET==10}}">开始前可取消</text>
+					<text wx:if="{{meet.MEET_CANCEL_SET>10}}">开始前{{meet.MEET_CANCEL_SET-10}}小时可取消</text>
+				</view>
+			</view>
+			<view class="article" wx:if="{{meet.MEET_OBJ.content && meet.MEET_OBJ.content.length>0}}">
+				<block wx:for="{{meet.MEET_OBJ.content}}" wx:key="key">
+					<view class="content" wx:if="{{item.type=='text'}}">
+						<text user-select="{{true}}">{{item.val}}</text>
+					</view>
+
+					<view class="pics" wx:if="{{item.type=='img'}}">
+						<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+						</image>
+					</view>
+				</block>
+			</view>
+		</view>
+
+
+		<block wx:if="{{cur=='time'&&meet.MEET_STATUS!=1}}">
+			<view class="margin-top load text-l load-project">该项目已经关闭或者停止!</view>
+		</block>
+		<block wx:if="{{cur=='time'&&meet.MEET_STATUS==1}}">
+			<block wx:if="{{days.length>0}}">
+				<scroll-view scroll-x class="date" enable-flex="{{true}}">
+					<view bindtap="bindDayTap" data-idx="{{index}}" class="date-inner" wx:for="{{days}}" wx:key="key" wx:for-index="index">
+						<view class="item {{dayIdx==index?'cur':''}}">
+
+							<text wx:if="{{dayIdx==index}}" class="status cur"><text class="icon-check"></text></text>
+							<text wx:else class="status {{item.status=='今天'?'bg-project text-white':''}}">{{item.status||'可约'}}</text>
+
+							<text class="week">{{item.week}}</text>
+							<text class="day">{{item.date}}</text>
+						</view>
+					</view>
+				</scroll-view>
+
+				<view class="time-title">请选择时段</view>
+				<view class="time">
+					<view bindtap="bindTimeTap" data-timeidx="{{idx}}" wx:for="{{days[dayIdx].times}}" wx:key="k1" wx:for-item="itm" wx:for-index="idx" class="item {{(timeIdx==idx)?'cur':''}} {{itm.error?'selected':''}}">
+						<block wx:if="{{!itm.error}}">
+							<text wx:if="{{timeIdx!=idx}}" class="status">可约</text>
+							<text wx:else class="status"><text class="icon-check"></text></text>
+						</block>
+
+						<text class="t1">{{index}}{{itm.start}}~{{itm.end}}</text>
+						<text wx:if="{{!itm.error&&itm.isLimit&&itm.limit>1}}" class="t3">剩余:{{itm.limit-itm.stat.succCnt}}</text>
+						<text wx:if="{{!itm.error&&!itm.isLimit}}" class="t3">人数不限</text>
+						<text wx:if="{{itm.error}}" class="t3">{{itm.error}}</text>
+					</view>
+				</view>
+				<View style="height: 250rpx;"></View>
+			</block>
+			<view wx:elif="{{days.length==0}}" class="margin-top load notexist text-l load-project day-load"></view>
+			<view wx:else class="margin-top load loading text-l load-project"></view>
+		</block>
+
+
+	</view> 
+	
+	<view class="bottom safe-bottom" wx:if="{{meet.MEET_STATUS==1}}">
+		<view class="inner">
+			<view class="line2">
+				<view wx:if="{{timeIdx>-1}}" class="left text-red">{{days[dayIdx].day+' '+ days[dayIdx].times[timeIdx].start+'~'+days[dayIdx].times[timeIdx].end}}</view>
+				<view wx:else class="left text-red">未选定预约时段</view>
+				<view bindtap="bindJoinTap" class="right">马上预约</view>
+			</view>
+		</view>
+	</view> 
+
+
+	<cmpt-detail   doTop="{{true}}" mode="left" topBtnShow="{{topBtnShow}}" topBtnBottom="150" tag="" oid="{{id}}" cate="{{meet.MEET_CATE_NAME}}" title="{{meet.MEET_TITLE}}" cover="{{meet.MEET_OBJ.cover[0]}}" qr="{{meet.MEET_QR}}" desc="查看详情" bg="{{skin.PROJECT_COLOR}}">
+
+	</cmpt-detail>
+
+</block>

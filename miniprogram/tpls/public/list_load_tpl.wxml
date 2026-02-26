@@ -1,0 +1,17 @@
+<template name="listLoadTpl">
+	<view wx:if="{{!dataList || (dataList && dataList.page < dataList.count)}}"
+		class="load text-grey loading {{skin}}"></view>
+	<view wx:if="{{dataList && dataList.page > 1 && dataList.page == dataList.count }}"
+		class="load text-grey over {{skin}}"></view>
+
+	<block wx:if="{{noHintImg}}">
+		<image style="height:500rpx" mode="heightFix" wx:if="{{dataList && dataList.total == 0}}" src="{{noHintImg}}" mode="aspectFit" />
+	</block>
+
+	<block wx:else> 
+		<view wx:if="{{dataList && dataList.total == 0}}" class="load text-grey {{skin}}">{{noHint?noHint:'暂无记录哦~'}}</view>
+	</block>
+
+	<view style="height:200rpx;"></view>
+
+</template>

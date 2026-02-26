@@ -1,0 +1,9 @@
+{
+	"usingComponents": { 
+	 
+	},
+	"enablePullDownRefresh": true,
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "时间模板选择"
+}

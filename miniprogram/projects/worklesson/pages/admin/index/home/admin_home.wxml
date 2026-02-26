@@ -1,0 +1,108 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-admin"></view>
+
+<view class="main-admin" wx:if="{{isLoad && isAdmin}}">
+
+	<view class="admin-info bg-admin">
+		<view class="pic"><text class="icon-profilefill"></text></view>
+		<view class="right">
+			<view class="name">
+				<text class="text-xl">{{admin.name}}</text>
+
+				<text wx:if="{{admin.type==1}}" class="tag small bg-orange light radius margin-left-s">超级管理员</text>
+				<text wx:if="{{admin.type==0}}" class="tag small bg-green radius margin-left-s">一般管理员</text>
+
+			</view>
+			<view class="desc text-s">共登录{{admin.cnt}}次，上次{{admin.last}}</view>
+		</view>
+		<view class="exit-admin" bindtap="bindExitTap"><text class="icon-exit"></text></view>
+	</view>
+
+
+
+
+	<view class="bar bg-white solid-bottom margin-top-s ">
+		<view class="action">
+			<text class="icon-title"></text>功能管理
+		</view>
+	</view>
+
+	<view class="comm-list grid col-3">
+		<view class="item" bindtap="url" data-url="../../user/list/admin_user_list"> <text class="icon-group_fill text-green"></text> <text class="text-black">学员&课时管理</text>
+		</view>
+
+		<view class="item" bindtap="url" data-url="../../news/list/admin_news_list"> <text class="icon-form text-darkgreen"></text> <text class="text-black">通知管理</text>
+		</view>
+
+		<view class="item" bindtap="url" data-url="../../meet/list/admin_meet_list"> <text class="icon-friend text-blue"></text> <text class="text-black">老师&预约管理</text>
+		</view> 
+
+
+
+	</view>
+
+
+	<!-- BOTTOM begin -->
+	<view class="comm-list menu  margin-top">
+
+		<view class="item arrow" bindtap="url" data-url="../../setup/about_list/admin_setup_about_list">
+			<view class="content">
+				<text class="icon-edit text-darkgreen"></text>
+				<text class="text-black">编辑 - 关于我们 </text>
+			</view>
+		</view>
+
+
+		
+		<view class="item arrow" bindtap="url" data-url="../../setup/qr/admin_setup_qr">
+			<view class="content">
+				<text class="icon-qr_code text-mauve"></text>
+				<text class="text-black">小程序二维码</text>
+			</view>
+		</view>
+
+
+	</view>
+
+	<view class="comm-list menu">
+		<view wx:if="{{isSuperAdmin}}" class="item arrow" bindtap="url" data-url="../../mgr/list/admin_mgr_list">
+			<view class="content">
+				<text class="icon-profile text-red"></text>
+				<text class="text-black">系统管理员管理</text>
+			</view>
+		</view>
+
+		<view class="item arrow" bindtap="url" data-url="../../mgr/pwd/admin_mgr_pwd">
+			<view class="content">
+				<text class="icon-lock text-orange"></text>
+				<text class="text-black">修改我的管理员密码</text>
+			</view>
+		</view>
+
+		<view class="item arrow" bindtap="url" data-url="../../mgr/log/admin_log_list">
+			<view class="content">
+				<text class="icon-footprint text-brown"></text>
+				<text class="text-black">管理员操作日志</text>
+			</view>
+		</view>
+
+	</view>
+
+	<view class="comm-list menu margin-bottom-xl">
+		<view class="item arrow" bindtap="bindMoreTap">
+			<view class="content">
+				<text class="icon-settings text-grey"></text>
+				<text class="text-black">更多设置</text>
+			</view>
+		</view>
+	</view>
+
+
+
+	<!-- BOTTOM END -->
+	<button bindtap="bindExitTap" class="btn-admin margin-top">退出登录</button>
+
+	<view class="foot-bottom">
+		<cmpt-foot />
+	</view>
+
+</view>

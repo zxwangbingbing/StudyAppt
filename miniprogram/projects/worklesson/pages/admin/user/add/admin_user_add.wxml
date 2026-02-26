@@ -1,0 +1,29 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<view class="form-box shadow">
+		<view class="form-group text-orange" style="padding:30rpx">
+			※ 此处添加待注册学员：当学员注册时填写的姓名和手机信息匹配，则注册成功！
+		</view>
+		<view class="form-group">
+			<view class="title must">姓名</view>
+			<input placeholder="请填写姓名" placeholder-class="phc" model:value="{{formName}}" focus="{{formNameFocus}}" maxlength="20"></input>
+		</view>
+		<view wx:if="{{formNameFocus}}" class="hint-desc error">{{formNameFocus}}</view>
+
+		<view class="form-group">
+			<view class="title must">手机号</view>
+			<input placeholder="请填写手机号" type="number" placeholder-class="phc" model:value="{{formMobile}}" focus="{{formMobileFocus}}" maxlength="11"></input>
+		</view>
+		<view wx:if="{{formMobileFocus}}" class="hint-desc error">{{formMobileFocus}}</view>
+
+		<view class="form-group">
+			<view class="title must">课时数</view>
+			<input placeholder="请填写课时数" type="number" placeholder-class="phc" model:value="{{formLessonCnt}}" focus="{{formLessonCntFocus}}" maxlength="4"></input>
+		</view>
+		<view wx:if="{{formLessonCntFocus}}" class="hint-desc error">{{formLessonCntFocus}}</view>
+
+	</view>
+	<button bindtap="bindFormSubmit" class="btn-admin margin-top-xs">提交</button>
+
+
+</view>

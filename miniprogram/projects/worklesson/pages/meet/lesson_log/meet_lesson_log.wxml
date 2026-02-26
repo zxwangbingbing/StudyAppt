@@ -1,0 +1,35 @@
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list type="meet_one_lesson_list"  _params="{{_params}}" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="meet/one_lesson_list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="key"> 
+				<view wx:if="{{item.LESSON_LOG_CHANGE_CNT>=0}}" class="status bg-green light">+{{item.LESSON_LOG_CHANGE_CNT}}</view>
+				<view wx:else class="status bg-orange light">{{item.LESSON_LOG_CHANGE_CNT}}</view>
+
+				<view class="author">时间：{{item.LESSON_LOG_ADD_TIME}}</view>
+				<view class="author">类型：{{item.type}}</view>
+				<view class="author">变更：<text class="{{item.LESSON_LOG_CHANGE_CNT>0?'text-green':'text-orange'}}">{{item.LESSON_LOG_CHANGE_CNT>=0?'增加':'扣除'}}<text class="margin-right-xxs margin-left-xxs">{{item.LESSON_LOG_CHANGE_CNT>=0?item.LESSON_LOG_CHANGE_CNT:-item.LESSON_LOG_CHANGE_CNT}}</text>节</text></view>  
+				<view class="author">备注：{{item.LESSON_LOG_DESC||'无'}}</view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+
+	<!--  button Begin -->
+	<!--  button END -->
+
+</block>

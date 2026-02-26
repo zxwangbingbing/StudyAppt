@@ -1,0 +1,10 @@
+{
+	"usingComponents": { 
+		"cmpt-picker-multi": "/cmpts/public/picker_multi/picker_multi_cmpt",
+		"cmpt-calendar": "/cmpts/public/calendar/calendar_meet/calendar_meet_cmpt"
+	},
+	"enablePullDownRefresh": true,
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "排期时段设置"
+}

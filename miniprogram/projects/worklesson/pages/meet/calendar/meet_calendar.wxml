@@ -1,0 +1,41 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+
+<view class="main" wx:if="{{isLoad}}">
+	<wxs src="/tpls/wxs/tools.wxs" module="tools" />
+	<scroll-view scroll-x class="date" enable-flex="{{true}}">
+		<view class="date-inner" wx:for="{{days}}" wx:key="key1">
+			<view bindtap="bindClickTap" data-day="{{item.full}}" class="item {{item.full==day?'cur':''}}">
+			<view  wx:if="{{tools.includes(hasDays,item.full)}}" class="dot"></view>	
+			<text></text>{{item.val}}
+			</view>
+		</view>
+	</scroll-view> 
+
+	<view wx:if="{{list===null}}" class="load loading text-l text-grey"></view>
+	<text wx:elif="{{list.length==0}}" class="no-project icon-emoji text-l text-grey"> 本日没有可预约的项目哦~</text>
+
+	<view class="list"> 
+		<view class="item shadow-project" wx:for="{{list}}" wx:key="key" bindtap="url" data-url="../detail/meet_detail?id={{item._id}}">
+
+			<view class="title text-cut">{{item.title}}</view>
+			<view class="desc">{{item.timeDesc}}可约</view>
+			<view class="img">
+				<image class="loading shadow" mode="aspectFill" src="{{item.pic}}"></image>
+			</view>
+			<view class="line">
+				<view class="appt">预约</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+ 
+
+<view style="height: 150rpx;"></view>
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'meet_calendar',returnHome:false}}" />
+</block>

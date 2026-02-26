@@ -1,0 +1,6 @@
+{
+	"component": true,
+	"usingComponents": {
+		"cmpt-poster": "/cmpts/public/poster/poster_cmpt"
+	}
+}

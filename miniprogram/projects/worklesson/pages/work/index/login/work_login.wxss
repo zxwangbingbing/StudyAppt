@@ -1,0 +1,60 @@
+@import '../../../../style/work.wxss';
+
+.main-work {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative; 
+}
+
+.login {
+	width: 550rpx;
+	background-color: #fff;
+	min-height: 550rpx;
+	border-radius: 20rpx;
+	border-bottom-left-radius: 70rpx;
+	border-top-right-radius: 70rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50rpx 20rpx;
+	margin-top: -100rpx;
+}
+
+.login button {
+	width: 85%;
+	color: #fff;
+	font-size: 32rpx;
+}
+
+.login .hint {
+	width: 100%;
+	color: #000;
+	font-weight: bold;
+	font-size: 36rpx;
+	text-align: center;
+}
+
+.login .return {
+	width: 100%;
+	font-size: 30rpx;
+	text-align: center;
+	font-size: 26rpx;
+}  
+
+.form-group .title {
+    color:#333;
+}
+
+.pic {
+	width: 180rpx;
+	height: 180rpx;
+	font-size: 130rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

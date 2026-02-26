@@ -1,0 +1,3 @@
+.text-pic-list-box .item .simple .simple-title { 
+    width: 100%;
+}

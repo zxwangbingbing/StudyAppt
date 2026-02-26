@@ -1,0 +1,96 @@
+.form-rows-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-rows-item .line1 {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 100rpx;
+	padding-left: 0rpx;
+}
+
+.form-rows-item .line1 .pic {
+	width: 90rpx;
+	height: calc(100% - 10rpx);
+	background-color: #f2f2f2;
+	margin-right: 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50rpx;
+	color: #999;
+}
+
+.form-rows-item .line1 image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.form-rows-item .line1 input {
+	flex: 1;
+}
+
+.form-rows-item .line1 .select-close {
+	width: 80rpx;
+	font-size: 40rpx !important;
+	font-weight: bold;
+	text-align: center;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-rows-item .line1 .detail-set {
+	min-width: 80rpx;
+	font-size: 26rpx !important;
+	text-align: center;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-rows-item .line2 {
+	display: flex;
+}
+
+.form-rows-item .line3 {
+	display: flex;
+	height: unset;
+	align-items: flex-start;
+	border-top: 1rpx dashed #f2f2f2;
+	padding-top: 15rpx;
+	position: relative;
+}
+
+.form-rows-item .line3 textarea {
+	margin: unset;
+	line-height: 1.4 !important;
+	z-index: 99;
+}
+
+.form-rows-item .line3 .no {
+	position: absolute;
+	right: 15rpx;
+	bottom: 5rpx;
+	color: #eee;
+	font-size: 40rpx;
+	font-weight: bold;
+}
+
+.form-rows-item .line1 .tit {
+	font-weight: bold;
+	line-height: 1.4 !important;
+}
+
+
+.form-rows-add {
+	display: flex;
+	align-items: center;
+	color: var(--blue);
+	font-weight: normal;
+	font-size: 28rpx;
+}

@@ -1,0 +1,330 @@
+/*** 图文列表盒子 ***/
+.text-pic-list-box {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20rpx 20rpx 30rpx 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.text-pic-list-box .item {
+	padding: 40rpx 30rpx 16rpx 40rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-bottom: 30rpx;
+	position: relative;
+}
+
+/*扇形角标*/
+.text-pic-list-box .item .corner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 0 0rpx 0rpx 80rpx;
+	background-color: #EAEAEA;
+	font-size: 45rpx;
+	font-weight: bold;
+	color: #fff;
+	font-style: italic;
+	padding-top: 10rpx;
+	padding-left: 36rpx;
+}
+
+/*倾斜角标*/
+.text-pic-list-box .item .lean-corner-box {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.text-pic-list-box .item .lean-corner-right-top {
+	background-color: green;
+	color: white;
+	width: 50%;
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	margin-left: 70%;
+	margin-top: 18rpx;
+	position: absolute;
+	transform: rotate(45deg);
+	z-index: 1999;
+	font-size: 24rpx;
+	opacity: .6;
+}
+
+.text-pic-list-box .item .lean-corner-right-bottom {
+	background-color: green;
+	color: white;
+	width: 50%;
+	height: 40rpx;
+	line-height: 40rpx;
+	text-align: center;
+	margin-left: 70%;
+	margin-bottom: 18rpx;
+	position: absolute;
+	bottom: 0;
+	transform: rotate(-45deg);
+	z-index: 1999;
+	font-size: 24rpx;
+	opacity: .8;
+}
+
+.text-pic-list-box .item .status-right-top,
+.text-pic-list-box .item .status-right-bottom {
+	position: absolute;
+	padding:0 20rpx;
+	height: 40rpx;
+	background-color: #f8f8f8;
+	font-size: 24rpx;
+	color: #aaa;
+	line-height: 40rpx;
+	text-align: center;
+}
+
+.text-pic-list-box .item .status-right-top {
+	top: 0;
+	right: 0;
+	border-top-right-radius: inherit;
+	border-bottom-left-radius: inherit;
+}
+
+.text-pic-list-box .item .status-right-bottom {
+	right: 0;
+	bottom: 0;
+	border-top-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+}
+
+.text-pic-list-box .item .title {
+	max-height: 88rpx;
+	line-height: 44rpx;
+	font-size: 32rpx;
+	color: #000;
+	font-weight: bold;
+	z-index: 999;
+}
+
+.text-pic-list-box .item .title .tag {
+	font-size: 20rpx;
+	padding: 0rpx 8rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	opacity: .8;
+}
+
+.text-pic-list-box .item .author {
+	margin-top: 20rpx;
+	font-size: 24rpx;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	z-index: 999;
+}
+
+.text-pic-list-box .item .author .av {
+	margin-right: 5rpx;
+	width: 40rpx;
+}
+
+.text-pic-list-box .item .desc {
+	margin-top: 15rpx;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.text-pic-list-box .item .desc text {
+	max-height: 120rpx;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color: #777;
+	flex: 1;
+}
+
+.text-pic-list-box .item .desc .pic {
+	margin-left: 10rpx;
+	width: 200rpx;
+	height: 122rpx;
+	border-radius: 10rpx;
+}
+
+.text-pic-list-box .item .desc .pic.pic-left {
+	margin-left: 0rpx;
+	margin-right: 10rpx;
+}
+
+.text-pic-list-box .item .desc.pic-list {
+	justify-content: space-between;
+}
+
+.text-pic-list-box .item .desc.pic-list .pic {
+	margin-left: 0rpx;
+}
+
+.text-pic-list-box .item .data {
+	line-height: 1.5;
+	font-size: 28rpx;
+	color: #666;
+	margin-top: 10rpx;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.text-pic-list-box .item .data.data-button {
+	width: 100%;
+	justify-content: flex-end;
+	margin-bottom: 10rpx;
+}
+
+.text-pic-list-box .item .data.data-button button {
+	margin-left: 10rpx;
+}
+
+/*简约模式*/
+.text-pic-list-box .item.item-simple {
+	padding: 24rpx;
+}
+
+.text-pic-list-box .item .simple {
+	width: 100%;
+	display: flex;
+}
+
+.text-pic-list-box .item .simple .simple-left {
+	width: 100rpx;
+	height: 100rpx;
+	background-color: #E4DACE;
+	border-radius: 20rpx;
+	margin-right: 52rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 36rpx;
+}
+
+.text-pic-list-box .item .simple .simple-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.text-pic-list-box .item .simple .simple-title {
+	font-size: 32rpx;
+	color: #000;
+	line-height: 1.5;
+	margin-top: 10rpx;
+	width: 450rpx;
+}
+
+.text-pic-list-box .item .simple .simple-desc {
+	margin-top: 20rpx;
+	font-size: 24rpx;
+	color: #999;
+}
+
+/**snake接龙**/
+.text-pic-list-box .item.item-snake {
+	padding: 14rpx;
+	border-radius: 0rpx;
+	margin-bottom: 0;
+	border-bottom: 2rpx dashed #f2f2f2;
+}
+
+.text-pic-list-box .item .snake {
+	width: 100%;
+	display: flex;
+}
+
+.text-pic-list-box .item .snake .snake-left {
+	width: 40rpx;
+	height: 40rpx;
+	background-color: #E4DACE;
+	border-radius: 50%;
+	margin-right: 32rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 36rpx;
+}
+
+.text-pic-list-box .item .snake .snake-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.text-pic-list-box .item .snake .snake-title {
+	font-size: 28rpx;
+	color: #000;
+	line-height: 1.3;
+	margin-top: 5rpx;
+	width: 450rpx;
+}
+
+.text-pic-list-box .item .snake .snake-desc {
+	font-size: 24rpx;
+	color: rgb(203, 203, 203);
+}
+
+/* 左大图模式 */
+.text-pic-list-box .item.item-leftbig {
+	padding: 0;
+	max-height: 230rpx;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .leftbig-left {
+	width: 180rpx;
+	height: 230rpx;
+	border-top-left-radius: 20rpx;
+	border-bottom-left-radius: 20rpx;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .leftbig-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .leftbig-title {
+	font-size: 32rpx;
+	color: #000;
+	line-height: 1.5;
+	margin-top: 10rpx;
+	width: 500rpx;
+	font-weight: bold;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .leftbig-title.long {
+	width: 650rpx;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .leftbig-desc {
+	margin-top: 20rpx;
+	font-size: 24rpx;
+	color: #aaa;
+}
+
+.text-pic-list-box .item-leftbig .leftbig-card .data {
+	margin-top: 30rpx;
+	color: #888;
+	padding-bottom: 25rpx;
+}

@@ -1,0 +1,16 @@
+{
+	"usingComponents": {
+		"cmpt-customer-nav": "/cmpts/public/custom_nav/custom_nav_cmpt",
+		"cmpt-swiper": "/cmpts/public/swiper/swiper_cmpt",
+		"cmpt-date-select": "/cmpts/public/calendar/date_select/date_select_cmpt",
+		"cmpt-time-select": "/cmpts/public/calendar/time_select/time_select_cmpt",
+		"cmpt-picker-time": "/cmpts/public/picker_time/picker_time_cmpt",
+		"cmpt-poster": "/cmpts/public/poster/poster_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-checkbox": "/cmpts/public/checkbox/checkbox_cmpt",
+		"cmpt-editor": "/cmpts/public/editor/editor_cmpt",
+		"cmpt-table": "/cmpts/public/table/table_cmpt",
+		"cmpt-ex-form": "/cmpts/public/form/form_show/form_show_cmpt",
+		"cmpt-picker-multi": "/cmpts/public/picker_multi/picker_multi_cmpt"
+	}
+}

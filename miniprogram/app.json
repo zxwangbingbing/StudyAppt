@@ -1,0 +1,114 @@
+{
+	"pages": [
+		 "projects/worklesson/pages/default/index/default_index",
+				"projects/worklesson/pages/about/list/about_list",
+				"projects/worklesson/pages/about/index/about_index",
+				"projects/worklesson/pages/search/search",
+				"projects/worklesson/pages/my/index/my_index",
+				"projects/worklesson/pages/my/reg/my_reg",
+				"projects/worklesson/pages/my/edit/my_edit",
+				"projects/worklesson/pages/my/foot/my_foot",
+				"projects/worklesson/pages/my/fav/my_fav",
+				"projects/worklesson/pages/news/index/news_index",
+				"projects/worklesson/pages/news/detail/news_detail",
+				"projects/worklesson/pages/news/cate1/news_cate1",
+				"projects/worklesson/pages/news/cate2/news_cate2",
+				"projects/worklesson/pages/admin/news/list/admin_news_list",
+				"projects/worklesson/pages/admin/news/add/admin_news_add",
+				"projects/worklesson/pages/admin/news/edit/admin_news_edit",
+				"projects/worklesson/pages/admin/setup/about/admin_setup_about",
+				"projects/worklesson/pages/admin/setup/about_list/admin_setup_about_list",
+				"projects/worklesson/pages/admin/setup/qr/admin_setup_qr",
+				"projects/worklesson/pages/admin/index/home/admin_home",
+				"projects/worklesson/pages/admin/index/login/admin_login",
+				"projects/worklesson/pages/admin/content/admin_content",
+				"projects/worklesson/pages/admin/mgr/log/admin_log_list",
+				"projects/worklesson/pages/admin/mgr/edit/admin_mgr_edit",
+				"projects/worklesson/pages/admin/mgr/list/admin_mgr_list",
+				"projects/worklesson/pages/admin/mgr/add/admin_mgr_add",
+				"projects/worklesson/pages/admin/mgr/pwd/admin_mgr_pwd", 
+				"projects/worklesson/pages/admin/user/add/admin_user_add", 
+				"projects/worklesson/pages/admin/user/list/admin_user_list",
+				"projects/worklesson/pages/admin/user/detail/admin_user_detail",
+				"projects/worklesson/pages/admin/user/export/admin_user_export",
+				"projects/worklesson/pages/meet/index/meet_index",
+				"projects/worklesson/pages/meet/calendar/meet_calendar",
+				"projects/worklesson/pages/meet/join/meet_join",
+				"projects/worklesson/pages/meet/detail/meet_detail",
+				"projects/worklesson/pages/meet/my_join_list/meet_my_join_list",
+				"projects/worklesson/pages/meet/my_join_detail/meet_my_join_detail",
+				"projects/worklesson/pages/meet/lesson_log/meet_lesson_log",
+				"projects/worklesson/pages/admin/meet/add/admin_meet_add",
+				"projects/worklesson/pages/admin/meet/edit/admin_meet_edit",
+				"projects/worklesson/pages/admin/meet/export/admin_join_export",
+				"projects/worklesson/pages/admin/meet/join/admin_meet_join",
+				"projects/worklesson/pages/admin/meet/list/admin_meet_list",
+				"projects/worklesson/pages/admin/meet/record/admin_meet_record",
+				"projects/worklesson/pages/admin/meet/scan/admin_meet_scan",
+				"projects/worklesson/pages/admin/meet/temp/admin_meet_temp",
+				"projects/worklesson/pages/admin/meet/time/admin_meet_time",
+				"projects/worklesson/pages/work/index/home/work_home",
+				"projects/worklesson/pages/work/index/login/work_login",
+				"projects/worklesson/pages/work/index/pwd/work_pwd",
+				"projects/worklesson/pages/work/meet/edit/work_meet_edit",
+				"projects/worklesson/pages/work/meet/time/work_meet_time",
+				"projects/worklesson/pages/work/meet/temp/work_meet_temp",
+				"projects/worklesson/pages/work/meet/record/work_meet_record",
+				"projects/worklesson/pages/work/meet/join/work_meet_join",
+				"projects/worklesson/pages/work/meet/scan/work_meet_scan",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#E8EDF4",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#E8EDF4",
+		"navigationBarTitleText": "学员课时预约小程序",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#000000",
+		"list": [
+			{
+				"pagePath": "projects/worklesson/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/worklesson/images/tabbar/home.png",
+				"selectedIconPath": "/projects/worklesson/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/worklesson/pages/news/cate1/news_cate1",
+				"text": "最新通知",
+				"iconPath": "/projects/worklesson/images/tabbar/news.png",
+				"selectedIconPath": "/projects/worklesson/images/tabbar/news_cur.png"
+			},
+			{
+				"pagePath": "projects/worklesson/pages/meet/calendar/meet_calendar",
+				"text": "预约日历",
+				"iconPath": "/projects/worklesson/images/tabbar/day.png",
+				"selectedIconPath": "/projects/worklesson/images/tabbar/day_cur.png"
+			},
+		 
+			{
+				"pagePath": "projects/worklesson/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/worklesson/images/tabbar/my.png",
+				"selectedIconPath": "/projects/worklesson/images/tabbar/my_cur.png"
+			}
+		]
+	}, 
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

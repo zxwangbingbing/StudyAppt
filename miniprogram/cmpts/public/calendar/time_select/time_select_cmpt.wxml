@@ -1,0 +1,14 @@
+<view class="time-table">
+	<view class="table-inner">
+		<view class="list">
+			<view bindtap="bindSelectTap" class="item" wx:for="{{times}}" wx:key="key" data-idx="{{index}}">
+				<view class="left {{item.title?'top':''}}">{{item.title}}</view>
+				<view class="right {{item.selected?'selected':''}}  {{item.start==selectedStart?'selected-first':''}} {{item.expire?'expire':''}} {{item.used?'used':''}}  {{item.usedFirst?'used-first':''}} text-cut">{{item.usedText}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view style="height: 150rpx;"></view>
+<view bindtap="bindSumbitTap" wx:if="{{selectedStart&&selectedEnd&&selectedEndPoint}}" class="time-submit safe-bottom ">
+	<view class="inner bg-project">确认预约 ({{selectedStart}}~{{selectedEndPoint}})</view>
+</view>

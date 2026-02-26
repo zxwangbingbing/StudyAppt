@@ -1,0 +1,12 @@
+{
+	"usingComponents": { 
+		"cmpt-form-set": "/cmpts/public/form/form_set/form_set_cmpt",
+		"cmpt-form-show": "/cmpts/public/form/form_show/form_show_cmpt",
+		"cmpt-picker-time": "/cmpts/public/picker_time/picker_time_cmpt",
+		"cmpt-picker-multi": "/cmpts/public/picker_multi/picker_multi_cmpt"
+	},
+	"enablePullDownRefresh": true,
+	"navigationBarBackgroundColor": "#1C9399",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "预约设置与时段排期"
+}

@@ -1,0 +1,26 @@
+ function indexOf(data, key) {
+ 	return data.indexOf(key);
+ }
+
+ function includes(data, key) {
+ 	return data.indexOf(key) > -1 ? true : false;
+ }
+
+ function split(str, chr) {
+ 	var arr = str.split(chr);
+ 	if (arr.length == 0) return [];
+
+ 	return arr;
+ } 
+
+function number(str) {
+	return Number(str);
+}
+
+ module.exports = {
+ 	split: split,
+ 	indexOf: indexOf,
+	includes: includes,
+	number: number
+ };
+ module.exports.msg = "hello tools";

@@ -1,0 +1,5 @@
+@import "../../style/skin.wxss"; 
+@import "../../../../style/project/search_style.wxss";
+.bg-project {
+	color:#000!important;
+}

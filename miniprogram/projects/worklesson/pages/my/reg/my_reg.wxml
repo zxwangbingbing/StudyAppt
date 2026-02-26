@@ -1,0 +1,7 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<view wx:if="{{isLoad}}" class="main padding-project">
+	<include src="../edit/user_form.wxml" /> 
+	<button bindtap="bindSubmitTap" class="btn-base btn-project shadow">提交注册</button>
+</view>

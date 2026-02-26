@@ -1,0 +1,6 @@
+<wxs src="../../../../../../tpls/wxs/tools.wxs" module="tools" />
+
+<block wx:if="{{isAdmin}}">
+	<include src="../../../admin/meet/time/admin_meet_time_form_tpl.wxml" />
+
+</block>

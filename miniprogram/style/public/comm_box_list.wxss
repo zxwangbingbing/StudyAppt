@@ -1,0 +1,599 @@
+/*** 图文列表盒子 ***/
+.comm-list-box {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20rpx 30rpx 30rpx 30rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.comm-list-box .item {
+	padding: 0rpx 0rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-bottom: 30rpx;
+	position: relative;
+}
+
+.comm-list-box .bottom-tag {
+	background-color: #f2f2f2;
+	padding: 6rpx 15rpx;
+	border-radius: 8rpx;
+}
+
+/* 左大图模式  */
+.comm-list-box .item.item-leftbig {
+	max-height: 230rpx;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+}
+
+.comm-list-box .item-leftbig .leftbig-left {
+	width: 200rpx;
+	height: 230rpx;
+	border-top-left-radius: inherit;
+	border-bottom-left-radius: inherit;
+}
+
+.comm-list-box .item-leftbig .leftbig-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	padding: 15rpx 10rpx;
+}
+
+.comm-list-box .item-leftbig .leftbig-right .leftbig-title {
+	width: 100%;
+	font-size: 34rpx;
+	color: #000;
+	line-height: 1.5;
+	margin-top: 0rpx;
+	font-weight: bold;
+}
+
+.comm-list-box .item-leftbig .leftbig-desc {
+	margin-top: 5rpx;
+	font-size: 26rpx;
+	color: #666;
+	line-height: 1.4;
+	height: 107rpx;
+	margin-bottom: 10rpx;
+}
+
+
+.comm-list-box .item-leftbig .data { 
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 0rpx;
+	color: #bbb;
+	font-size: 24rpx;
+	position: relative;
+	min-height: 40rpx;
+}
+
+.comm-list-box .item-leftbig .data .bottom-tag-list {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+.comm-list-box .item-leftbig .leftbig-right .bottom-status {
+	font-size: 24rpx;
+}
+
+/* 大文字模式  */
+.comm-list-box .item.item-bigtext {
+	height: 220rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: #fff;
+	color: #333;
+	padding: 0 40rpx;
+}
+
+.comm-list-box .item-bigtext .left {
+	margin-right: 20rpx;
+	width: 100rpx;
+	height: 100rpx;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+.comm-list-box .item-bigtext .left image {
+	border-radius: 50%;
+	width: 100rpx;
+	height: 100rpx;
+}
+
+.comm-list-box .item-bigtext .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.comm-list-box .item-bigtext .right .bigtext-title {
+	width: 100%;
+	font-size: 36rpx;
+	font-weight: bold;
+	text-align: left;
+}
+
+.comm-list-box .item-bigtext .right .data-desc {
+	width: 100%;
+	font-size: 28rpx;
+	opacity: .7;
+}
+
+.comm-list-box .item-bigtext .data-status {
+	font-size: 24rpx;
+	position: absolute;
+	bottom: 10rpx;
+	right: 40rpx;
+	opacity: .8;
+}
+
+/* 上下图模式  */
+.comm-list-box .item.item-upimg {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: #fff;
+	color: #000;
+	padding: 0 0rpx 10rpx;
+	overflow: hidden;
+}
+
+
+.comm-list-box .item-upimg .upimg-title {
+	width: 100%;
+	font-size: 38rpx;
+	font-weight: bold;
+	text-align: left;
+	padding: 10rpx 20rpx;
+}
+
+
+.comm-list-box .item-upimg image {
+	width: 100%;
+	border-top-left-radius: inherit;
+	border-top-right-radius: inherit;
+}
+
+.comm-list-box .item-upimg .data-desc {
+	width: 100%;
+	font-size: 28rpx;
+	color: #666;
+	padding: 10rpx 20rpx;
+	max-height: 90rpx;
+}
+
+.comm-list-box .item-upimg .data-status {
+	width: 100%;
+	font-size: 24rpx;
+	color: #bbb;
+	padding-right: 20rpx;
+	text-align: right;
+}
+
+/* 左大图模式1  */
+.comm-list-box .item.item-leftbig1 {
+	max-height: 200rpx;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+	margin-bottom: 20rpx;
+	padding: 20rpx;
+}
+
+.comm-list-box .item-leftbig1 .leftbig-left {
+	width: 240rpx;
+	height: 160rpx;
+	border-radius: 10rpx !important;
+	overflow: hidden;
+}
+
+.comm-list-box .item-leftbig1 .leftbig-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: relative;
+	height: 160rpx;
+}
+
+.comm-list-box .item-leftbig1 .leftbig-right .leftbig-title {
+	width: 100%;
+	font-size: 34rpx;
+	color: #000;
+	font-weight: bold;
+}
+
+.comm-list-box .item-leftbig1 .leftbig-desc {
+	margin-top: 5rpx;
+	font-size: 27rpx;
+	color: #666; 
+}
+
+
+.comm-list-box .item-leftbig1 .data { 
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	color: #bbb;
+	font-size: 24rpx;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.comm-list-box .item-leftbig1 .data .bottom-tag-list {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+.comm-list-box .item-leftbig1 .leftbig-right .bottom-status {
+	font-size: 24rpx;
+}
+
+
+/* 左大图模式2  */
+.comm-list-box .item.item-leftbig2:first-child {
+	margin-top: 60rpx;
+}
+
+.comm-list-box .item.item-leftbig2 {
+	max-height: 230rpx;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	margin-bottom: 70rpx;
+}
+
+.comm-list-box .item-leftbig2 .leftbig-left {
+	width: 200rpx;
+	height: 250rpx;
+	margin-left: 25rpx;
+	margin-top: -45rpx;
+	border-radius: 10rpx !important;
+	overflow: hidden;
+}
+
+.comm-list-box .item-leftbig2 .leftbig-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	padding: 15rpx 10rpx;
+}
+
+.comm-list-box .item-leftbig2 .leftbig-right .leftbig-title {
+	width: 100%;
+	font-size: 34rpx;
+	color: #000;
+	line-height: 1.5;
+	margin-top: 0rpx;
+	font-weight: bold;
+}
+
+.comm-list-box .item-leftbig2 .leftbig-desc {
+	margin-top: 5rpx;
+	font-size: 28rpx;
+	color: #666;
+	line-height: 1.4;
+	height: 107rpx;
+	margin-bottom: 10rpx;
+}
+
+
+.comm-list-box .item-leftbig2 .data {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 0rpx;
+	color: #999;
+	font-size: 24rpx;
+	position: relative;
+	min-height: 40rpx;
+}
+
+.comm-list-box .item-leftbig2 .data .bottom-tag-list {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+.comm-list-box .item-leftbig2 .leftbig-right .bottom-status {
+	font-size: 24rpx;
+}
+
+/* 左大图模式3  */
+.comm-list-box .item.item-leftbig3:first-child {
+	margin-top: 60rpx;
+}
+
+.comm-list-box .item.item-leftbig3 {
+	max-height: 180rpx;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	margin-bottom: 70rpx;
+}
+
+.comm-list-box .item-leftbig3 .leftbig-left {
+	width: 190rpx;
+	height: 210rpx;
+	margin-left: 0rpx;
+	margin-top: -30rpx;
+	border-radius: 15rpx !important;
+	overflow: hidden;
+	box-shadow: var(--ShadowSize) var(--greyShadow);
+}
+
+.comm-list-box .item-leftbig3 .leftbig-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20rpx;
+	margin-right: 20rpx;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	padding: 15rpx 10rpx;
+}
+
+.comm-list-box .item-leftbig3 .leftbig-right .leftbig-title {
+	width: 100%;
+	font-size: 34rpx;
+	color: #000;
+	line-height: 1.5;
+	margin-top: 0rpx;
+	font-weight: bold;
+}
+
+.comm-list-box .item-leftbig3 .leftbig-desc {
+	margin-top: 5rpx;
+	font-size: 28rpx;
+	color: #666;
+	line-height: 1.4;
+	height: 60rpx;
+	margin-bottom: 10rpx;
+}
+
+
+.comm-list-box .item-leftbig3 .data {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 0rpx;
+	color: #999;
+	font-size: 24rpx;
+	position: relative;
+	min-height: 40rpx;
+}
+
+.comm-list-box .item-leftbig3 .data .bottom-tag-list {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+.comm-list-box .item-leftbig3 .leftbig-right .bottom-status {
+	font-size: 24rpx;
+}
+
+/*右边/左边图*/
+.comm-list-box .item.item-rightpic,
+.comm-list-box .item.item-leftpic {
+	padding: 40rpx 30rpx 16rpx 40rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-bottom: 20rpx;
+	position: relative;
+}
+
+.comm-list-box .item-rightpic .title,
+.comm-list-box .item-leftpic .title {
+	max-height: 88rpx;
+	line-height: 44rpx;
+	font-size: 34rpx;
+	color: #000;
+	font-weight: bold;
+	z-index: 999;
+}
+
+.comm-list-box .item-rightpic .desc,
+.comm-list-box .item-leftpic .desc {
+	margin-top: 32rpx;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+
+}
+
+.comm-list-box .item-rightpic .desc text,
+.comm-list-box .item-leftpic .desc text {
+	max-height: 120rpx;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color: #666;
+	flex: 1;
+}
+
+.comm-list-box .item-rightpic .desc .pic {
+	margin-left: 15rpx;
+	width: 180rpx;
+	height: 122rpx;
+	border-radius: 10rpx;
+}
+
+
+.comm-list-box .item-leftpic .desc .pic {
+	margin-left: 0rpx;
+	margin-right: 15rpx;
+	width: 180rpx;
+	height: 122rpx;
+	border-radius: 10rpx;
+}
+
+.comm-list-box .item-rightpic .data,
+.comm-list-box .item-leftpic .data {
+	height: 24rpx;
+	line-height: 24rpx;
+	font-size: 24rpx;
+	color: #bbb;
+	margin-top: 30rpx;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+}
+
+/*横向*/
+.comm-list-scroll {
+	width: 100%;
+	margin-top: 10rpx;
+	background-color: #fff;
+	white-space: nowrap;
+}
+
+.comm-list-scroll .item-scroll {
+	display: inline-block;
+	padding: 10rpx 25rpx 10rpx 0rpx;
+}
+
+.comm-list-scroll .item-scroll image {
+	width: 300rpx;
+	height: 185rpx;
+	border-radius: 10rpx;
+}
+
+.comm-list-scroll .item-scroll .title {
+	font-size: 28rpx;
+	width: 300rpx;
+	height: 40rpx;
+	color:#000;
+}
+
+
+/*瀑布流*/
+.comm-list-flow {
+	margin-top: 10rpx;
+	background-color: #fff;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 0 20rpx;
+}
+
+.comm-list-flow .item-flow {
+	width: 50%;
+	padding: 10rpx 15rpx 20rpx;
+}
+
+.comm-list-flow .item-flow .item-flow-inner {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.comm-list-flow .item-flow .item-flow-inner image {
+	width: 100%;
+	height: 420rpx;
+	border-radius: 10rpx;
+	border: 1rpx solid #ddd;
+}
+
+.comm-list-flow .item-flow .item-flow-inner .title-flow {
+	width: 100%;
+	text-align: left;
+	color: #333;
+	font-size: 28rpx;
+	font-weight: bold;
+	margin-top: 20rpx;
+}
+
+/*文字条目*/
+.comm-list-box .item-line {
+	width: 100%;
+	background-color: #fff;
+	padding: 30rpx 20rpx;
+	display: flex;
+	border-bottom: 1rpx solid #ddd;
+	justify-content: center;
+}
+
+.comm-list-box .item-line:last-child {
+	border-bottom: unset;
+}
+
+.comm-list-box .item-line .left {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.comm-list-box .item-line .left .order {
+	min-width: 50rpx;
+	padding: 0 10rpx;
+	height: 35rpx;
+	display: flex;
+	margin-right: 10rpx;
+	align-items: center;
+	justify-content: center;
+	font-size: 24rpx;
+	border-bottom-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+
+.comm-list-box .item-line .left .title {
+	flex: 1;
+	font-size: 34rpx;
+	color: #000;
+}
+
+.comm-list-box .item-line .right {
+	width: 40rpx;
+	font-size: 26rpx;
+	text-align: right;
+	color: #999;
+} 
