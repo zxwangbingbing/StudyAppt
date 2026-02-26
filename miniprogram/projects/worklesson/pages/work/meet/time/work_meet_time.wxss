@@ -1,7 +1,0 @@
-@import "../../../admin/meet/time/admin_meet_time.wxss";
-@import "../../../../style/work.wxss"; 
-
-
-.time-oprt { 
-    color: var(--workColor);
-}

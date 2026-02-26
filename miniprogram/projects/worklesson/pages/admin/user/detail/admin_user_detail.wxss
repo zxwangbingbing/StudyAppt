@@ -1,5 +1,0 @@
-@import '../../../../../../style/public/admin.wxss';
-
-.main-admin {
-	padding: 30rpx 0rpx;
-}

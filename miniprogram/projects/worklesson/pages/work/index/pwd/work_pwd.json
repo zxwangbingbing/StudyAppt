@@ -1,8 +1,0 @@
-{
-	"usingComponents": { 
-	},
-	"enablePullDownRefresh": true,
-	"navigationBarBackgroundColor": "#1C9399",
-	"navigationBarTextStyle": "white",
-	"navigationBarTitleText": "修改密码"
-}

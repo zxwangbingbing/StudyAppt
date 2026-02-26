@@ -1,6 +1,0 @@
-{
-	"usingComponents": { 
-		"cmpt-editor": "/cmpts/public/editor/editor_cmpt"
-	}, 
-	"navigationBarTitleText": "详细内容"
-}
